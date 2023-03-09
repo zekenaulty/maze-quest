@@ -9,8 +9,9 @@
 
 <body>
   <h2>Blocks and Items</h2>
+  <div class="images"></div>
   <pre class="output"></pre>
-  <table id="rows" class="items">
+  <table id="rows" class="items" style="display:none;">
     <tbody>
       <tr class="row">
         <td class="id">0</td>
@@ -5047,20 +5048,273 @@
       </tr>
     </tbody>
   </table>
-  <script>
+  <style>
+    body {
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
+      color: silver;
+      background-color: black;
+    }
+    
+    .images {
+      max-width: 256px;
+    }
+    .img{
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      overflow: hidden;
+    }
+  </style>
+  <script type="module">
     let ids = document.querySelectorAll('.id');
+    let idsMc = document.querySelectorAll('.text-id');
     let names = document.querySelectorAll('.name');
     let pre = document.querySelector('.output');
     let byId = {};
     let byName = {};
+    let materials = {};
+    let toFix = {};
+    let texturePaths = [];
+    let index = 0;
 
-    for (let i = 0; i < ids.length; i++) {
+    let d = document.querySelector('.images');
+    const addTexture = (s, n) => {
+      if (!texturePaths.includes(s)) {
+        texturePaths.push(s);
+        let img = document.createElement('img');
+        img.src = s;
+        img.style.width='32px';
+        img.onclick = () => {
+          alert(`${n} - ${s}, ${img.width}x${img.height}`);
+        };
+        let i = document.createElement('div');
+        i.classList.add('img');
+        i.appendChild(img);
+        document.body.insertBefore(i, pre);
+      }
+    };
+
+    const cleanName = (name) => {
+      name = name.replaceAll(' ', '_');
+      name = name.replaceAll('(', '');
+      name = name.replaceAll(')', '');
+      name = name.replace('wood_plank', 'planks');
+      name = name.replace('wood', 'log');
+      name = name.replace('logen', 'wooden');
+      name = name.replace('lazuli_ore', 'lazuli');
+      name = name.replace('lazuli_block', 'block');
+      name = name.replace('grass_path', 'dirt_path');
+
+      return name;
+    };
+
+    let skip = [
+      'dragon_egg',
+      'ladder',
+      'cauldron',
+      'end_portal_frame',
+      'end_rod',
+      'peony',
+      'cobweb',
+      'beacon',
+      'nether_portal',
+      'brewing_stand',
+      'grass',
+      'dandelion',
+      'poppy',
+      'fern',
+      'allium',
+      'anvil',
+      'hopper',
+      'torch'];
+
+    let dirtBottom = [
+      'podzol',
+      'grass_block',
+      'mycelium',
+      'dirt_path'
+      ];
+
+    /* items start at 442 */
+    for (let i = 0; i < 442; i++) {
+
       let id = new Number(ids[i].innerText.replaceAll(':', '.'));
-      let name = names[i].innerText.toLowerCase().replaceAll(' ', '_').replaceAll('(', '').replaceAll(')', '');
+      let name = cleanName(names[i].innerText.toLowerCase());
+
+      if (id == 2) {
+        name = 'grass_block';
+      }
+
+      if (skip.includes(name) ||
+        name.indexOf('sapling') > -1 ||
+        name.indexOf('end_') > -1 ||
+        name.indexOf('slab') > -1 ||
+        name.indexOf('glass') > -1 ||
+        name.indexOf('rail') > -1 ||
+        name.indexOf('orchid') > -1 ||
+        name.indexOf('bluet') > -1 ||
+        name.indexOf('tulip') > -1 ||
+        name.indexOf('dead') > -1 ||
+        name.indexOf('daisy') > -1 ||
+        name.indexOf('mushroom') > -1 ||
+        name.indexOf('daisy') > -1 ||
+        name.indexOf('bars') > -1 ||
+        name.indexOf('pot') > -1 ||
+        name.indexOf('pumpkin') > -1 ||
+        name.indexOf('trip') > -1 ||
+        name.indexOf('lily') > -1 ||
+        name.indexOf('stairs') > -1 ||
+        name.indexOf('fence') > -1 ||
+        name.indexOf('wall') > -1 ||
+        name.indexOf('rose') > -1 ||
+        name.indexOf('fern') > -1 ||
+        name.indexOf('lilac') > -1 ||
+        name.indexOf('sunflower') > -1 ||
+        name.indexOf('terracotta') > -1 ||
+        name.indexOf('door') > -1) {
+        continue;
+      }
+
+
       byId[id] = name;
+      byName[name] = id;
+      materials[name] = {};
+
+      let r = await fetch(`./assets/minecraft/textures/block/${name}.png`);
+      if (r.ok) {
+        materials[name]['sides'] = '.' + new URL(r.url).pathname;
+        addTexture(materials[name]['sides'], name);
+      }
+
+      r = await fetch(`./assets/minecraft/textures/block/${name}_side.png`);
+      if (r.ok) {
+        materials[name]['side'] = '.' + new URL(r.url).pathname;
+        addTexture(materials[name]['side'], name);
+      }
+
+      r = await fetch(`./assets/minecraft/textures/block/${name}_top.png`);
+      if (r.ok) {
+        materials[name]['top'] = '.' + new URL(r.url).pathname;
+        addTexture(materials[name]['top'], name);
+      }
+
+      r = await fetch(`./assets/minecraft/textures/block/${name}_bottom.png`);
+      if (r.ok) {
+        materials[name]['bottom'] = '.' + new URL(r.url).pathname;
+        addTexture(materials[name]['bottom'], name);
+      }
+
+      r = await fetch(`./assets/minecraft/textures/block/${name}_front.png`);
+      if (r.ok) {
+        materials[name]['front'] = '.' + new URL(r.url).pathname;
+        addTexture(materials[name]['front'], name);
+      }
+
+      r = await fetch(`./assets/minecraft/textures/block/${name}_back.png`);
+      if (r.ok) {
+        materials[name]['back'] = '.' + new URL(r.url).pathname;
+        addTexture(materials[name]['back'], name);
+      }
+
+      if (materials[name]['side']) {
+        materials[name]['sides'] = materials[name]['side'];
+        delete materials[name]['side'];
+      }
+
+      materials[name].id = id;
+      //materials[name].minecraftId = idsMc[i].innerText;
+      materials[name].name = name;
+
+      if (name.indexOf('leaves') > -1) {
+        materials[name].type = 'alphaMap';
+        materials[name].color = 0x00cc00;
+        materials[name].opacity = 0.7;
+        materials[name].transparent = true;
+      } else {
+        materials[name].type = 'map';
+        materials[name].color = 0xc6c6c6;
+        materials[name].opacity = 1.0;
+        materials[name].transparent = false;
+      }
+
+      let textures = [];
+      if (materials[name].sides) {
+        textures.push(materials[name].sides);
+        textures.push(materials[name].sides);
+
+        if (materials[name].top) {
+          textures.push(materials[name].top);
+        } else {
+          textures.push(materials[name].sides);
+        }
+
+        if (materials[name].bottom) {
+          textures.push(materials[name].bottom);
+        } else if (materials[name].top) {
+          textures.push(materials[name].top);
+        } else {
+          textures.push(materials[name].sides);
+        }
+
+        if (materials[name].front) {
+          textures.push(materials[name].front);
+        } else {
+          textures.push(materials[name].sides);
+        }
+
+        if (materials[name].back) {
+          textures.push(materials[name].back);
+        } else {
+          textures.push(materials[name].sides);
+        }
+      }
+
+      materials[name].textures = textures;
+
+      if (i > 0 && textures.length == 0) {
+
+        toFix[i] = {
+          id: id,
+          index: i,
+          name: name
+        };
+
+        delete byId[id];
+        delete byName[name];
+        delete materials[name];
+
+      } else if (i > 0) {
+
+        delete materials[name].sides;
+        delete materials[name].top;
+        delete materials[name].bottom;
+        delete materials[name].front;
+        delete materials[name].back;
+
+        materials[name].gIndex = index;
+        index++;
+      }
+
+      if (dirtBottom.includes(name)) {
+        materials[name].textures[3] = `./assets/minecraft/textures/block/dirt.png`;
+      }
+
+
+      if (i == 0) {
+        materials[name].opacity = 0;
+      }
     }
 
-    pre.innerText = 'const byId = ' + JSON.stringify(byId, null, 4) + ';\r\n\r\n\r\n';
+    alert('found ' + index + ' blocks')
+    const update = () => {
+      pre.innerText = '';
+      pre.innerText += 'const textureMaps = ' + JSON.stringify(materials, null, 4) + ';\r\n\r\n\r\n';
+      pre.innerText += 'const texture = ' + JSON.stringify(texturePaths, null, 4) + ';\r\n\r\n\r\n';
+      pre.innerText += 'const toFix = ' + JSON.stringify(toFix, null, 4) + ';\r\n\r\n\r\n';
+    };
+
+    update();
   </script>
 </body>
 
