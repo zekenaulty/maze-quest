@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Joystick Controls</title>
+  <style>
+    body {
+      font-family: Courier, monospaced;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  Joystick Controls.
+  <hr>
+  <div id="status1" style="color: red;">Joystick 1</div>
+  <div id="status2" style="color: blue;">Joystick 2</div>
+
+  <hr>
+  <div style="width: 128px; position: absolute; left:10px; top:150px; opacity:0.3;">
+    <img src="./images/joystick-base.png" />
+    <div id="stick1" style="position: absolute; left:32px; top:32px;">
+      <img src="./images/joystick-red.png" />
+    </div>
+  </div>
+
+  <div style="width: 128px; position: absolute; right:10px; top:150px; opacity: 0.3;">
+    <img src="./images/joystick-base.png" />
+    <div id="stick2" style="position: absolute; left:32px; top:32px;">
+      <img src="./images/joystick-blue.png" />
+    </div>
+  </div>
+
+  <script type="module">
+    import { Joystick } from './joystick.js';
+    
+    let joystick1 = new Joystick("stick1", 64, 8);
+    let joystick2 = new Joystick("stick2", 64, 8);
+
+    function update()
+    {
+      document.getElementById("status1").innerText = "Joystick 1: " + JSON.stringify(joystick1.value);
+      document.getElementById("status2").innerText = "Joystick 2: " + JSON.stringify(joystick2.value);
+    }
+
+    function loop()
+    {
+      requestAnimationFrame(loop);
+      update();
+    }
+
+    loop();
+  </script>
+
+</body>
+
+</html>

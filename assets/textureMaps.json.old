@@ -1,0 +1,4312 @@
+[
+    {
+        "name": "acacia_planks",
+        "map": {
+            "name": "acacia_planks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "acacia_planks.png"
+        }
+    },
+    {
+        "name": "ancient_debris",
+        "map": [
+            {
+                "name": "ancient_debris_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "ancient_debris_side.png"
+            },
+            {
+                "name": "ancient_debris_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "ancient_debris_side.png"
+            },
+            {
+                "name": "ancient_debris_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "ancient_debris_top.png"
+            },
+            {
+                "name": "ancient_debris_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "ancient_debris_top.png"
+            },
+            {
+                "name": "ancient_debris_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "ancient_debris_side.png"
+            },
+            {
+                "name": "ancient_debris_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "ancient_debris_side.png"
+            }
+        ]
+    },
+    {
+        "name": "andesite",
+        "map": {
+            "name": "andesite",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "andesite.png"
+        }
+    },
+    {
+        "name": "barrel",
+        "map": [
+            {
+                "name": "barrel_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "barrel_side.png"
+            },
+            {
+                "name": "barrel_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "barrel_side.png"
+            },
+            {
+                "name": "barrel_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "barrel_top.png"
+            },
+            {
+                "name": "barrel_bottom",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "barrel_bottom.png"
+            },
+            {
+                "name": "barrel_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "barrel_side.png"
+            },
+            {
+                "name": "barrel_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "barrel_side.png"
+            }
+        ]
+    },
+    {
+        "name": "basalt",
+        "map": [
+            {
+                "name": "basalt_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "basalt_side.png"
+            },
+            {
+                "name": "basalt_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "basalt_side.png"
+            },
+            {
+                "name": "basalt_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "basalt_top.png"
+            },
+            {
+                "name": "basalt_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "basalt_top.png"
+            },
+            {
+                "name": "basalt_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "basalt_side.png"
+            },
+            {
+                "name": "basalt_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "basalt_side.png"
+            }
+        ]
+    },
+    {
+        "name": "bedrock",
+        "map": {
+            "name": "bedrock",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "bedrock.png"
+        }
+    },
+    {
+        "name": "bee_nest",
+        "map": [
+            {
+                "name": "bee_nest_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "bee_nest_side.png"
+            },
+            {
+                "name": "bee_nest_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "bee_nest_side.png"
+            },
+            {
+                "name": "bee_nest_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "bee_nest_top.png"
+            },
+            {
+                "name": "bee_nest_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "bee_nest_top.png"
+            },
+            {
+                "name": "bee_nest_front",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "bee_nest_front.png"
+            },
+            {
+                "name": "bee_nest_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "bee_nest_side.png"
+            }
+        ]
+    },
+    {
+        "name": "beehive",
+        "map": [
+            {
+                "name": "beehive_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "beehive_side.png"
+            },
+            {
+                "name": "beehive_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "beehive_side.png"
+            },
+            {
+                "name": "beehive_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "beehive_side.png"
+            },
+            {
+                "name": "beehive_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "beehive_side.png"
+            },
+            {
+                "name": "beehive_front",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "beehive_front.png"
+            },
+            {
+                "name": "beehive_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "beehive_side.png"
+            }
+        ]
+    },
+    {
+        "name": "birch_log",
+        "map": [
+            {
+                "name": "birch_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "birch_log.png"
+            },
+            {
+                "name": "birch_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "birch_log.png"
+            },
+            {
+                "name": "birch_log_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "birch_log_top.png"
+            },
+            {
+                "name": "birch_log_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "birch_log_top.png"
+            },
+            {
+                "name": "birch_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "birch_log.png"
+            },
+            {
+                "name": "birch_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "birch_log.png"
+            }
+        ]
+    },
+    {
+        "name": "birch_planks",
+        "map": {
+            "name": "birch_planks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "birch_planks.png"
+        }
+    },
+    {
+        "name": "black_concrete",
+        "map": {
+            "name": "black_concrete",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "black_concrete.png"
+        }
+    },
+    {
+        "name": "black_concrete_powder",
+        "map": {
+            "name": "black_concrete_powder",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "black_concrete_powder.png"
+        }
+    },
+    {
+        "name": "black_shulker_box",
+        "map": {
+            "name": "black_shulker_box",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "black_shulker_box.png"
+        }
+    },
+    {
+        "name": "black_wool",
+        "map": {
+            "name": "black_wool",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "black_wool.png"
+        }
+    },
+    {
+        "name": "blackstone",
+        "map": [
+            {
+                "name": "blackstone",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "blackstone.png"
+            },
+            {
+                "name": "blackstone",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "blackstone.png"
+            },
+            {
+                "name": "blackstone_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "blackstone_top.png"
+            },
+            {
+                "name": "blackstone_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "blackstone_top.png"
+            },
+            {
+                "name": "blackstone",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "blackstone.png"
+            },
+            {
+                "name": "blackstone",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "blackstone.png"
+            }
+        ]
+    },
+    {
+        "name": "blast_furnace",
+        "map": [
+            {
+                "name": "blast_furnace_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "blast_furnace_side.png"
+            },
+            {
+                "name": "blast_furnace_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "blast_furnace_side.png"
+            },
+            {
+                "name": "blast_furnace_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "blast_furnace_top.png"
+            },
+            {
+                "name": "blast_furnace_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "blast_furnace_top.png"
+            },
+            {
+                "name": "blast_furnace_front",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "blast_furnace_front.png"
+            },
+            {
+                "name": "blast_furnace_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "blast_furnace_side.png"
+            }
+        ]
+    },
+    {
+        "name": "blue_concrete",
+        "map": {
+            "name": "blue_concrete",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "blue_concrete.png"
+        }
+    },
+    {
+        "name": "blue_concrete_powder",
+        "map": {
+            "name": "blue_concrete_powder",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "blue_concrete_powder.png"
+        }
+    },
+    {
+        "name": "blue_ice",
+        "map": {
+            "name": "blue_ice",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "blue_ice.png"
+        }
+    },
+    {
+        "name": "blue_shulker_box",
+        "map": {
+            "name": "blue_shulker_box",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "blue_shulker_box.png"
+        }
+    },
+    {
+        "name": "blue_wool",
+        "map": {
+            "name": "blue_wool",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "blue_wool.png"
+        }
+    },
+    {
+        "name": "bone_block",
+        "map": [
+            {
+                "name": "bone_block_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "bone_block_side.png"
+            },
+            {
+                "name": "bone_block_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "bone_block_side.png"
+            },
+            {
+                "name": "bone_block_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "bone_block_top.png"
+            },
+            {
+                "name": "bone_block_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "bone_block_top.png"
+            },
+            {
+                "name": "bone_block_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "bone_block_side.png"
+            },
+            {
+                "name": "bone_block_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "bone_block_side.png"
+            }
+        ]
+    },
+    {
+        "name": "bookshelf",
+        "map": {
+            "name": "bookshelf",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "bookshelf.png"
+        }
+    },
+    {
+        "name": "bricks",
+        "map": {
+            "name": "bricks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "bricks.png"
+        }
+    },
+    {
+        "name": "brown_concrete",
+        "map": {
+            "name": "brown_concrete",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "brown_concrete.png"
+        }
+    },
+    {
+        "name": "brown_concrete_powder",
+        "map": {
+            "name": "brown_concrete_powder",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "brown_concrete_powder.png"
+        }
+    },
+    {
+        "name": "brown_shulker_box",
+        "map": {
+            "name": "brown_shulker_box",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "brown_shulker_box.png"
+        }
+    },
+    {
+        "name": "brown_wool",
+        "map": {
+            "name": "brown_wool",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "brown_wool.png"
+        }
+    },
+    {
+        "name": "calcite",
+        "map": {
+            "name": "calcite",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "calcite.png"
+        }
+    },
+    {
+        "name": "chiseled_deepslate",
+        "map": {
+            "name": "chiseled_deepslate",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "chiseled_deepslate.png"
+        }
+    },
+    {
+        "name": "chiseled_nether_bricks",
+        "map": {
+            "name": "chiseled_nether_bricks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "chiseled_nether_bricks.png"
+        }
+    },
+    {
+        "name": "chiseled_polished_blackstone",
+        "map": {
+            "name": "chiseled_polished_blackstone",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "chiseled_polished_blackstone.png"
+        }
+    },
+    {
+        "name": "chiseled_quartz_block",
+        "map": [
+            {
+                "name": "chiseled_quartz_block",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "chiseled_quartz_block.png"
+            },
+            {
+                "name": "chiseled_quartz_block",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "chiseled_quartz_block.png"
+            },
+            {
+                "name": "chiseled_quartz_block_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "chiseled_quartz_block_top.png"
+            },
+            {
+                "name": "chiseled_quartz_block_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "chiseled_quartz_block_top.png"
+            },
+            {
+                "name": "chiseled_quartz_block",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "chiseled_quartz_block.png"
+            },
+            {
+                "name": "chiseled_quartz_block",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "chiseled_quartz_block.png"
+            }
+        ]
+    },
+    {
+        "name": "chiseled_red_sandstone",
+        "map": {
+            "name": "chiseled_red_sandstone",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "chiseled_red_sandstone.png"
+        }
+    },
+    {
+        "name": "chiseled_sandstone",
+        "map": {
+            "name": "chiseled_sandstone",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "chiseled_sandstone.png"
+        }
+    },
+    {
+        "name": "chiseled_stone_bricks",
+        "map": {
+            "name": "chiseled_stone_bricks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "chiseled_stone_bricks.png"
+        }
+    },
+    {
+        "name": "clay",
+        "map": {
+            "name": "clay",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "clay.png"
+        }
+    },
+    {
+        "name": "coal_block",
+        "map": {
+            "name": "coal_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "coal_block.png"
+        }
+    },
+    {
+        "name": "coal_ore",
+        "map": {
+            "name": "coal_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "coal_ore.png"
+        }
+    },
+    {
+        "name": "coarse_dirt",
+        "map": {
+            "name": "coarse_dirt",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "coarse_dirt.png"
+        }
+    },
+    {
+        "name": "cobbled_deepslate",
+        "map": {
+            "name": "cobbled_deepslate",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "cobbled_deepslate.png"
+        }
+    },
+    {
+        "name": "cobblestone",
+        "map": {
+            "name": "cobblestone",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "cobblestone.png"
+        }
+    },
+    {
+        "name": "command_block",
+        "map": [
+            {
+                "name": "command_block_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "command_block_side.png"
+            },
+            {
+                "name": "command_block_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "command_block_side.png"
+            },
+            {
+                "name": "command_block_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "command_block_side.png"
+            },
+            {
+                "name": "command_block_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "command_block_side.png"
+            },
+            {
+                "name": "command_block_front",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "command_block_front.png"
+            },
+            {
+                "name": "command_block_back",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "command_block_back.png"
+            }
+        ]
+    },
+    {
+        "name": "comparator",
+        "map": {
+            "name": "comparator",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "comparator.png"
+        }
+    },
+    {
+        "name": "composter",
+        "map": [
+            {
+                "name": "composter_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "composter_side.png"
+            },
+            {
+                "name": "composter_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "composter_side.png"
+            },
+            {
+                "name": "composter_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "composter_side.png"
+            },
+            {
+                "name": "composter_bottom",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "composter_bottom.png"
+            },
+            {
+                "name": "composter_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "composter_side.png"
+            },
+            {
+                "name": "composter_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "composter_side.png"
+            }
+        ]
+    },
+    {
+        "name": "copper_block",
+        "map": {
+            "name": "copper_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "copper_block.png"
+        }
+    },
+    {
+        "name": "copper_ore",
+        "map": {
+            "name": "copper_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "copper_ore.png"
+        }
+    },
+    {
+        "name": "cracked_deepslate_bricks",
+        "map": {
+            "name": "cracked_deepslate_bricks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "cracked_deepslate_bricks.png"
+        }
+    },
+    {
+        "name": "cracked_deepslate_tiles",
+        "map": {
+            "name": "cracked_deepslate_tiles",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "cracked_deepslate_tiles.png"
+        }
+    },
+    {
+        "name": "cracked_nether_bricks",
+        "map": {
+            "name": "cracked_nether_bricks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "cracked_nether_bricks.png"
+        }
+    },
+    {
+        "name": "cracked_polished_blackstone_bricks",
+        "map": {
+            "name": "cracked_polished_blackstone_bricks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "cracked_polished_blackstone_bricks.png"
+        }
+    },
+    {
+        "name": "cracked_stone_bricks",
+        "map": {
+            "name": "cracked_stone_bricks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "cracked_stone_bricks.png"
+        }
+    },
+    {
+        "name": "crafting_table",
+        "map": [
+            {
+                "name": "crafting_table_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "crafting_table_side.png"
+            },
+            {
+                "name": "crafting_table_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "crafting_table_side.png"
+            },
+            {
+                "name": "crafting_table_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "crafting_table_top.png"
+            },
+            {
+                "name": "oak_planks",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "oak_planks.png"
+            },
+            {
+                "name": "crafting_table_front",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "crafting_table_front.png"
+            },
+            {
+                "name": "crafting_table_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "crafting_table_side.png"
+            }
+        ]
+    },
+    {
+        "name": "crimson_nylium",
+        "map": {
+            "name": "crimson_nylium_side",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "crimson_nylium_side.png"
+        }
+    },
+    {
+        "name": "crimson_planks",
+        "map": {
+            "name": "crimson_planks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "crimson_planks.png"
+        }
+    },
+    {
+        "name": "crimson_stem",
+        "map": [
+            {
+                "name": "crimson_stem",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "crimson_stem.png"
+            },
+            {
+                "name": "crimson_stem",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "crimson_stem.png"
+            },
+            {
+                "name": "crimson_stem_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "crimson_stem_top.png"
+            },
+            {
+                "name": "crimson_stem_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "crimson_stem_top.png"
+            },
+            {
+                "name": "crimson_stem",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "crimson_stem.png"
+            },
+            {
+                "name": "crimson_stem",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "crimson_stem.png"
+            }
+        ]
+    },
+    {
+        "name": "crying_obsidian",
+        "map": {
+            "name": "crying_obsidian",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "crying_obsidian.png"
+        }
+    },
+    {
+        "name": "cut_copper",
+        "map": {
+            "name": "cut_copper",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "cut_copper.png"
+        }
+    },
+    {
+        "name": "cut_red_sandstone",
+        "map": {
+            "name": "cut_red_sandstone",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "cut_red_sandstone.png"
+        }
+    },
+    {
+        "name": "cut_sandstone",
+        "map": {
+            "name": "cut_sandstone",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "cut_sandstone.png"
+        }
+    },
+    {
+        "name": "cyan_concrete",
+        "map": {
+            "name": "cyan_concrete",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "cyan_concrete.png"
+        }
+    },
+    {
+        "name": "cyan_concrete_powder",
+        "map": {
+            "name": "cyan_concrete_powder",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "cyan_concrete_powder.png"
+        }
+    },
+    {
+        "name": "cyan_shulker_box",
+        "map": {
+            "name": "cyan_shulker_box",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "cyan_shulker_box.png"
+        }
+    },
+    {
+        "name": "cyan_wool",
+        "map": {
+            "name": "cyan_wool",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "cyan_wool.png"
+        }
+    },
+    {
+        "name": "dark_oak_log",
+        "map": [
+            {
+                "name": "dark_oak_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "dark_oak_log.png"
+            },
+            {
+                "name": "dark_oak_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "dark_oak_log.png"
+            },
+            {
+                "name": "dark_oak_log_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "dark_oak_log_top.png"
+            },
+            {
+                "name": "dark_oak_log_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "dark_oak_log_top.png"
+            },
+            {
+                "name": "dark_oak_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "dark_oak_log.png"
+            },
+            {
+                "name": "dark_oak_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "dark_oak_log.png"
+            }
+        ]
+    },
+    {
+        "name": "dark_oak_planks",
+        "map": {
+            "name": "dark_oak_planks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "dark_oak_planks.png"
+        }
+    },
+    {
+        "name": "dark_prismarine",
+        "map": {
+            "name": "dark_prismarine",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "dark_prismarine.png"
+        }
+    },
+    {
+        "name": "deepslate",
+        "map": [
+            {
+                "name": "deepslate",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "deepslate.png"
+            },
+            {
+                "name": "deepslate",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "deepslate.png"
+            },
+            {
+                "name": "deepslate_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "deepslate_top.png"
+            },
+            {
+                "name": "deepslate_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "deepslate_top.png"
+            },
+            {
+                "name": "deepslate",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "deepslate.png"
+            },
+            {
+                "name": "deepslate",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "deepslate.png"
+            }
+        ]
+    },
+    {
+        "name": "deepslate_bricks",
+        "map": {
+            "name": "deepslate_bricks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "deepslate_bricks.png"
+        }
+    },
+    {
+        "name": "deepslate_coal_ore",
+        "map": {
+            "name": "deepslate_coal_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "deepslate_coal_ore.png"
+        }
+    },
+    {
+        "name": "deepslate_copper_ore",
+        "map": {
+            "name": "deepslate_copper_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "deepslate_copper_ore.png"
+        }
+    },
+    {
+        "name": "deepslate_diamond_ore",
+        "map": {
+            "name": "deepslate_diamond_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "deepslate_diamond_ore.png"
+        }
+    },
+    {
+        "name": "deepslate_emerald_ore",
+        "map": {
+            "name": "deepslate_emerald_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "deepslate_emerald_ore.png"
+        }
+    },
+    {
+        "name": "deepslate_gold_ore",
+        "map": {
+            "name": "deepslate_gold_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "deepslate_gold_ore.png"
+        }
+    },
+    {
+        "name": "deepslate_iron_ore",
+        "map": {
+            "name": "deepslate_iron_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "deepslate_iron_ore.png"
+        }
+    },
+    {
+        "name": "deepslate_lapis_ore",
+        "map": {
+            "name": "deepslate_lapis_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "deepslate_lapis_ore.png"
+        }
+    },
+    {
+        "name": "deepslate_redstone_ore",
+        "map": {
+            "name": "deepslate_redstone_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "deepslate_redstone_ore.png"
+        }
+    },
+    {
+        "name": "deepslate_tiles",
+        "map": {
+            "name": "deepslate_tiles",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "deepslate_tiles.png"
+        }
+    },
+    {
+        "name": "diamond_block",
+        "map": {
+            "name": "diamond_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "diamond_block.png"
+        }
+    },
+    {
+        "name": "diamond_ore",
+        "map": {
+            "name": "diamond_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "diamond_ore.png"
+        }
+    },
+    {
+        "name": "diorite",
+        "map": {
+            "name": "diorite",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "diorite.png"
+        }
+    },
+    {
+        "name": "dirt",
+        "map": {
+            "name": "dirt",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "dirt.png"
+        }
+    },
+    {
+        "name": "emerald_block",
+        "map": {
+            "name": "emerald_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "emerald_block.png"
+        }
+    },
+    {
+        "name": "emerald_ore",
+        "map": {
+            "name": "emerald_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "emerald_ore.png"
+        }
+    },
+    {
+        "name": "exposed_copper",
+        "map": {
+            "name": "exposed_copper",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "exposed_copper.png"
+        }
+    },
+    {
+        "name": "exposed_cut_copper",
+        "map": {
+            "name": "exposed_cut_copper",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "exposed_cut_copper.png"
+        }
+    },
+    {
+        "name": "farmland",
+        "map": {
+            "name": "farmland",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "farmland.png"
+        }
+    },
+    {
+        "name": "furnace",
+        "map": [
+            {
+                "name": "furnace_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "furnace_side.png"
+            },
+            {
+                "name": "furnace_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "furnace_side.png"
+            },
+            {
+                "name": "furnace_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "furnace_top.png"
+            },
+            {
+                "name": "cobblestone",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "cobblestone.png"
+            },
+            {
+                "name": "furnace_front",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "furnace_front.png"
+            },
+            {
+                "name": "furnace_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "furnace_side.png"
+            }
+        ]
+    },
+    {
+        "name": "gilded_blackstone",
+        "map": {
+            "name": "gilded_blackstone",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "gilded_blackstone.png"
+        }
+    },
+    {
+        "name": "glowstone",
+        "map": {
+            "name": "glowstone",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "glowstone.png"
+        }
+    },
+    {
+        "name": "gold_block",
+        "map": {
+            "name": "gold_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "gold_block.png"
+        }
+    },
+    {
+        "name": "gold_ore",
+        "map": {
+            "name": "gold_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "gold_ore.png"
+        }
+    },
+    {
+        "name": "granite",
+        "map": {
+            "name": "granite",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "granite.png"
+        }
+    },
+    {
+        "name": "gravel",
+        "map": {
+            "name": "gravel",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "gravel.png"
+        }
+    },
+    {
+        "name": "gray_concrete",
+        "map": {
+            "name": "gray_concrete",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "gray_concrete.png"
+        }
+    },
+    {
+        "name": "gray_concrete_powder",
+        "map": {
+            "name": "gray_concrete_powder",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "gray_concrete_powder.png"
+        }
+    },
+    {
+        "name": "gray_shulker_box",
+        "map": {
+            "name": "gray_shulker_box",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "gray_shulker_box.png"
+        }
+    },
+    {
+        "name": "gray_wool",
+        "map": {
+            "name": "gray_wool",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "gray_wool.png"
+        }
+    },
+    {
+        "name": "green_concrete",
+        "map": {
+            "name": "green_concrete",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "green_concrete.png"
+        }
+    },
+    {
+        "name": "green_concrete_powder",
+        "map": {
+            "name": "green_concrete_powder",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "green_concrete_powder.png"
+        }
+    },
+    {
+        "name": "green_shulker_box",
+        "map": {
+            "name": "green_shulker_box",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "green_shulker_box.png"
+        }
+    },
+    {
+        "name": "green_wool",
+        "map": {
+            "name": "green_wool",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "green_wool.png"
+        }
+    },
+    {
+        "name": "hay_block",
+        "map": [
+            {
+                "name": "hay_block_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "hay_block_side.png"
+            },
+            {
+                "name": "hay_block_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "hay_block_side.png"
+            },
+            {
+                "name": "hay_block_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "hay_block_top.png"
+            },
+            {
+                "name": "hay_block_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "hay_block_top.png"
+            },
+            {
+                "name": "hay_block_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "hay_block_side.png"
+            },
+            {
+                "name": "hay_block_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "hay_block_side.png"
+            }
+        ]
+    },
+    {
+        "name": "honey_block",
+        "map": {
+            "name": "honey_block_side",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "honey_block_side.png"
+        }
+    },
+    {
+        "name": "honeycomb_block",
+        "map": {
+            "name": "honeycomb_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "honeycomb_block.png"
+        }
+    },
+    {
+        "name": "ice",
+        "map": {
+            "name": "ice",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "ice.png"
+        }
+    },
+    {
+        "name": "iron_block",
+        "map": {
+            "name": "iron_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "iron_block.png"
+        }
+    },
+    {
+        "name": "iron_ore",
+        "map": {
+            "name": "iron_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "iron_ore.png"
+        }
+    },
+    {
+        "name": "jungle_log",
+        "map": [
+            {
+                "name": "jungle_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "jungle_log.png"
+            },
+            {
+                "name": "jungle_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "jungle_log.png"
+            },
+            {
+                "name": "jungle_log_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "jungle_log_top.png"
+            },
+            {
+                "name": "jungle_log_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "jungle_log_top.png"
+            },
+            {
+                "name": "jungle_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "jungle_log.png"
+            },
+            {
+                "name": "jungle_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "jungle_log.png"
+            }
+        ]
+    },
+    {
+        "name": "jungle_planks",
+        "map": {
+            "name": "jungle_planks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "jungle_planks.png"
+        }
+    },
+    {
+        "name": "lapis_block",
+        "map": {
+            "name": "lapis_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "lapis_block.png"
+        }
+    },
+    {
+        "name": "lapis_ore",
+        "map": {
+            "name": "lapis_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "lapis_ore.png"
+        }
+    },
+    {
+        "name": "light_blue_concrete",
+        "map": {
+            "name": "light_blue_concrete",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "light_blue_concrete.png"
+        }
+    },
+    {
+        "name": "light_blue_concrete_powder",
+        "map": {
+            "name": "light_blue_concrete_powder",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "light_blue_concrete_powder.png"
+        }
+    },
+    {
+        "name": "light_blue_shulker_box",
+        "map": {
+            "name": "light_blue_shulker_box",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "light_blue_shulker_box.png"
+        }
+    },
+    {
+        "name": "light_blue_wool",
+        "map": {
+            "name": "light_blue_wool",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "light_blue_wool.png"
+        }
+    },
+    {
+        "name": "light_gray_concrete",
+        "map": {
+            "name": "light_gray_concrete",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "light_gray_concrete.png"
+        }
+    },
+    {
+        "name": "light_gray_concrete_powder",
+        "map": {
+            "name": "light_gray_concrete_powder",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "light_gray_concrete_powder.png"
+        }
+    },
+    {
+        "name": "light_gray_shulker_box",
+        "map": {
+            "name": "light_gray_shulker_box",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "light_gray_shulker_box.png"
+        }
+    },
+    {
+        "name": "light_gray_wool",
+        "map": {
+            "name": "light_gray_wool",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "light_gray_wool.png"
+        }
+    },
+    {
+        "name": "lime_concrete",
+        "map": {
+            "name": "lime_concrete",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "lime_concrete.png"
+        }
+    },
+    {
+        "name": "lime_concrete_powder",
+        "map": {
+            "name": "lime_concrete_powder",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "lime_concrete_powder.png"
+        }
+    },
+    {
+        "name": "lime_shulker_box",
+        "map": {
+            "name": "lime_shulker_box",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "lime_shulker_box.png"
+        }
+    },
+    {
+        "name": "lime_wool",
+        "map": {
+            "name": "lime_wool",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "lime_wool.png"
+        }
+    },
+    {
+        "name": "lodestone",
+        "map": {
+            "name": "lodestone_side",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "lodestone_side.png"
+        }
+    },
+    {
+        "name": "magenta_concrete",
+        "map": {
+            "name": "magenta_concrete",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "magenta_concrete.png"
+        }
+    },
+    {
+        "name": "magenta_concrete_powder",
+        "map": {
+            "name": "magenta_concrete_powder",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "magenta_concrete_powder.png"
+        }
+    },
+    {
+        "name": "magenta_shulker_box",
+        "map": {
+            "name": "magenta_shulker_box",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "magenta_shulker_box.png"
+        }
+    },
+    {
+        "name": "magenta_wool",
+        "map": {
+            "name": "magenta_wool",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "magenta_wool.png"
+        }
+    },
+    {
+        "name": "moss_block",
+        "map": {
+            "name": "moss_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "moss_block.png"
+        }
+    },
+    {
+        "name": "mossy_cobblestone",
+        "map": {
+            "name": "mossy_cobblestone",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "mossy_cobblestone.png"
+        }
+    },
+    {
+        "name": "mossy_stone_bricks",
+        "map": {
+            "name": "mossy_stone_bricks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "mossy_stone_bricks.png"
+        }
+    },
+    {
+        "name": "nether_bricks",
+        "map": {
+            "name": "nether_bricks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "nether_bricks.png"
+        }
+    },
+    {
+        "name": "nether_gold_ore",
+        "map": {
+            "name": "nether_gold_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "nether_gold_ore.png"
+        }
+    },
+    {
+        "name": "nether_quartz_ore",
+        "map": {
+            "name": "nether_quartz_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "nether_quartz_ore.png"
+        }
+    },
+    {
+        "name": "nether_wart_block",
+        "map": {
+            "name": "nether_wart_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "nether_wart_block.png"
+        }
+    },
+    {
+        "name": "netherite_block",
+        "map": {
+            "name": "netherite_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "netherite_block.png"
+        }
+    },
+    {
+        "name": "netherrack",
+        "map": {
+            "name": "netherrack",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "netherrack.png"
+        }
+    },
+    {
+        "name": "note_block",
+        "map": {
+            "name": "note_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "note_block.png"
+        }
+    },
+    {
+        "name": "oak_log",
+        "map": [
+            {
+                "name": "oak_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "oak_log.png"
+            },
+            {
+                "name": "oak_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "oak_log.png"
+            },
+            {
+                "name": "oak_log_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "oak_log_top.png"
+            },
+            {
+                "name": "oak_log_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "oak_log_top.png"
+            },
+            {
+                "name": "oak_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "oak_log.png"
+            },
+            {
+                "name": "oak_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "oak_log.png"
+            }
+        ]
+    },
+    {
+        "name": "oak_planks",
+        "map": {
+            "name": "oak_planks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "oak_planks.png"
+        }
+    },
+    {
+        "name": "obsidian",
+        "map": {
+            "name": "obsidian",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "obsidian.png"
+        }
+    },
+    {
+        "name": "orange_concrete",
+        "map": {
+            "name": "orange_concrete",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "orange_concrete.png"
+        }
+    },
+    {
+        "name": "orange_concrete_powder",
+        "map": {
+            "name": "orange_concrete_powder",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "orange_concrete_powder.png"
+        }
+    },
+    {
+        "name": "orange_shulker_box",
+        "map": {
+            "name": "orange_shulker_box",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "orange_shulker_box.png"
+        }
+    },
+    {
+        "name": "orange_wool",
+        "map": {
+            "name": "orange_wool",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "orange_wool.png"
+        }
+    },
+    {
+        "name": "oxidized_copper",
+        "map": {
+            "name": "oxidized_copper",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "oxidized_copper.png"
+        }
+    },
+    {
+        "name": "oxidized_cut_copper",
+        "map": {
+            "name": "oxidized_cut_copper",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "oxidized_cut_copper.png"
+        }
+    },
+    {
+        "name": "packed_ice",
+        "map": {
+            "name": "packed_ice",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "packed_ice.png"
+        }
+    },
+    {
+        "name": "pink_concrete",
+        "map": {
+            "name": "pink_concrete",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "pink_concrete.png"
+        }
+    },
+    {
+        "name": "pink_concrete_powder",
+        "map": {
+            "name": "pink_concrete_powder",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "pink_concrete_powder.png"
+        }
+    },
+    {
+        "name": "pink_shulker_box",
+        "map": {
+            "name": "pink_shulker_box",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "pink_shulker_box.png"
+        }
+    },
+    {
+        "name": "pink_wool",
+        "map": {
+            "name": "pink_wool",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "pink_wool.png"
+        }
+    },
+    {
+        "name": "piston",
+        "map": [
+            {
+                "name": "piston_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "piston_side.png"
+            },
+            {
+                "name": "piston_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "piston_side.png"
+            },
+            {
+                "name": "piston_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "piston_top.png"
+            },
+            {
+                "name": "cobblestone",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "cobblestone.png"
+            },
+            {
+                "name": "piston_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "piston_side.png"
+            },
+            {
+                "name": "piston_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "piston_side.png"
+            }
+        ]
+    },
+    {
+        "name": "polished_andesite",
+        "map": {
+            "name": "polished_andesite",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "polished_andesite.png"
+        }
+    },
+    {
+        "name": "polished_basalt",
+        "map": [
+            {
+                "name": "polished_basalt_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "polished_basalt_side.png"
+            },
+            {
+                "name": "polished_basalt_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "polished_basalt_side.png"
+            },
+            {
+                "name": "polished_basalt_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "polished_basalt_top.png"
+            },
+            {
+                "name": "polished_basalt_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "polished_basalt_top.png"
+            },
+            {
+                "name": "polished_basalt_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "polished_basalt_side.png"
+            },
+            {
+                "name": "polished_basalt_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "polished_basalt_side.png"
+            }
+        ]
+    },
+    {
+        "name": "polished_blackstone",
+        "map": {
+            "name": "polished_blackstone",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "polished_blackstone.png"
+        }
+    },
+    {
+        "name": "polished_blackstone_bricks",
+        "map": {
+            "name": "polished_blackstone_bricks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "polished_blackstone_bricks.png"
+        }
+    },
+    {
+        "name": "polished_deepslate",
+        "map": {
+            "name": "polished_deepslate",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "polished_deepslate.png"
+        }
+    },
+    {
+        "name": "polished_diorite",
+        "map": {
+            "name": "polished_diorite",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "polished_diorite.png"
+        }
+    },
+    {
+        "name": "polished_granite",
+        "map": {
+            "name": "polished_granite",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "polished_granite.png"
+        }
+    },
+    {
+        "name": "powder_snow",
+        "map": {
+            "name": "powder_snow",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "powder_snow.png"
+        }
+    },
+    {
+        "name": "prismarine",
+        "map": {
+            "name": "prismarine",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "prismarine.png"
+        }
+    },
+    {
+        "name": "prismarine_bricks",
+        "map": {
+            "name": "prismarine_bricks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "prismarine_bricks.png"
+        }
+    },
+    {
+        "name": "purple_concrete",
+        "map": {
+            "name": "purple_concrete",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "purple_concrete.png"
+        }
+    },
+    {
+        "name": "purple_concrete_powder",
+        "map": {
+            "name": "purple_concrete_powder",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "purple_concrete_powder.png"
+        }
+    },
+    {
+        "name": "purple_shulker_box",
+        "map": {
+            "name": "purple_shulker_box",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "purple_shulker_box.png"
+        }
+    },
+    {
+        "name": "purple_wool",
+        "map": {
+            "name": "purple_wool",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "purple_wool.png"
+        }
+    },
+    {
+        "name": "purpur_block",
+        "map": {
+            "name": "purpur_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "purpur_block.png"
+        }
+    },
+    {
+        "name": "purpur_pillar",
+        "map": [
+            {
+                "name": "purpur_pillar",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "purpur_pillar.png"
+            },
+            {
+                "name": "purpur_pillar",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "purpur_pillar.png"
+            },
+            {
+                "name": "purpur_pillar_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "purpur_pillar_top.png"
+            },
+            {
+                "name": "purpur_pillar_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "purpur_pillar_top.png"
+            },
+            {
+                "name": "purpur_pillar",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "purpur_pillar.png"
+            },
+            {
+                "name": "purpur_pillar",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "purpur_pillar.png"
+            }
+        ]
+    },
+    {
+        "name": "quartz_block",
+        "map": [
+            {
+                "name": "quartz_block_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "quartz_block_side.png"
+            },
+            {
+                "name": "quartz_block_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "quartz_block_side.png"
+            },
+            {
+                "name": "quartz_block_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "quartz_block_top.png"
+            },
+            {
+                "name": "quartz_block_bottom",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "quartz_block_bottom.png"
+            },
+            {
+                "name": "quartz_block_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "quartz_block_side.png"
+            },
+            {
+                "name": "quartz_block_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "quartz_block_side.png"
+            }
+        ]
+    },
+    {
+        "name": "quartz_bricks",
+        "map": {
+            "name": "quartz_bricks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "quartz_bricks.png"
+        }
+    },
+    {
+        "name": "quartz_pillar",
+        "map": [
+            {
+                "name": "quartz_pillar",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "quartz_pillar.png"
+            },
+            {
+                "name": "quartz_pillar",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "quartz_pillar.png"
+            },
+            {
+                "name": "quartz_pillar_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "quartz_pillar_top.png"
+            },
+            {
+                "name": "quartz_pillar_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "quartz_pillar_top.png"
+            },
+            {
+                "name": "quartz_pillar",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "quartz_pillar.png"
+            },
+            {
+                "name": "quartz_pillar",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "quartz_pillar.png"
+            }
+        ]
+    },
+    {
+        "name": "raw_copper_block",
+        "map": {
+            "name": "raw_copper_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "raw_copper_block.png"
+        }
+    },
+    {
+        "name": "raw_gold_block",
+        "map": {
+            "name": "raw_gold_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "raw_gold_block.png"
+        }
+    },
+    {
+        "name": "raw_iron_block",
+        "map": {
+            "name": "raw_iron_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "raw_iron_block.png"
+        }
+    },
+    {
+        "name": "red_concrete",
+        "map": {
+            "name": "red_concrete",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "red_concrete.png"
+        }
+    },
+    {
+        "name": "red_concrete_powder",
+        "map": {
+            "name": "red_concrete_powder",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "red_concrete_powder.png"
+        }
+    },
+    {
+        "name": "red_nether_bricks",
+        "map": {
+            "name": "red_nether_bricks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "red_nether_bricks.png"
+        }
+    },
+    {
+        "name": "red_sand",
+        "map": {
+            "name": "red_sand",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "red_sand.png"
+        }
+    },
+    {
+        "name": "red_sandstone",
+        "map": [
+            {
+                "name": "red_sandstone",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "red_sandstone.png"
+            },
+            {
+                "name": "red_sandstone",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "red_sandstone.png"
+            },
+            {
+                "name": "red_sandstone_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "red_sandstone_top.png"
+            },
+            {
+                "name": "red_sandstone_bottom",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "red_sandstone_bottom.png"
+            },
+            {
+                "name": "red_sandstone",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "red_sandstone.png"
+            },
+            {
+                "name": "red_sandstone",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "red_sandstone.png"
+            }
+        ]
+    },
+    {
+        "name": "red_shulker_box",
+        "map": {
+            "name": "red_shulker_box",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "red_shulker_box.png"
+        }
+    },
+    {
+        "name": "red_wool",
+        "map": {
+            "name": "red_wool",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "red_wool.png"
+        }
+    },
+    {
+        "name": "redstone_block",
+        "map": {
+            "name": "redstone_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "redstone_block.png"
+        }
+    },
+    {
+        "name": "redstone_lamp",
+        "map": {
+            "name": "redstone_lamp",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "redstone_lamp.png"
+        }
+    },
+    {
+        "name": "redstone_ore",
+        "map": {
+            "name": "redstone_ore",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "redstone_ore.png"
+        }
+    },
+    {
+        "name": "repeater",
+        "map": {
+            "name": "repeater",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "repeater.png"
+        }
+    },
+    {
+        "name": "rooted_dirt",
+        "map": {
+            "name": "rooted_dirt",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "rooted_dirt.png"
+        }
+    },
+    {
+        "name": "sand",
+        "map": {
+            "name": "sand",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "sand.png"
+        }
+    },
+    {
+        "name": "sandstone",
+        "map": [
+            {
+                "name": "sandstone",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "sandstone.png"
+            },
+            {
+                "name": "sandstone",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "sandstone.png"
+            },
+            {
+                "name": "sandstone_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "sandstone_top.png"
+            },
+            {
+                "name": "sandstone_bottom",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "sandstone_bottom.png"
+            },
+            {
+                "name": "sandstone",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "sandstone.png"
+            },
+            {
+                "name": "sandstone",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "sandstone.png"
+            }
+        ]
+    },
+    {
+        "name": "shroomlight",
+        "map": {
+            "name": "shroomlight",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "shroomlight.png"
+        }
+    },
+    {
+        "name": "shulker_box",
+        "map": {
+            "name": "shulker_box",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "shulker_box.png"
+        }
+    },
+    {
+        "name": "slime_block",
+        "map": {
+            "name": "slime_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "slime_block.png"
+        }
+    },
+    {
+        "name": "smithing_table",
+        "map": [
+            {
+                "name": "smithing_table_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "smithing_table_side.png"
+            },
+            {
+                "name": "smithing_table_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "smithing_table_side.png"
+            },
+            {
+                "name": "smithing_table_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "smithing_table_top.png"
+            },
+            {
+                "name": "smithing_table_bottom",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "smithing_table_bottom.png"
+            },
+            {
+                "name": "smithing_table_front",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "smithing_table_front.png"
+            },
+            {
+                "name": "smithing_table_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "smithing_table_side.png"
+            }
+        ]
+    },
+    {
+        "name": "smoker",
+        "map": [
+            {
+                "name": "smoker_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "smoker_side.png"
+            },
+            {
+                "name": "smoker_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "smoker_side.png"
+            },
+            {
+                "name": "smoker_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "smoker_top.png"
+            },
+            {
+                "name": "smoker_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "smoker_top.png"
+            },
+            {
+                "name": "smoker_front",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "smoker_front.png"
+            },
+            {
+                "name": "smoker_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "smoker_side.png"
+            }
+        ]
+    },
+    {
+        "name": "smooth_basalt",
+        "map": {
+            "name": "smooth_basalt",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "smooth_basalt.png"
+        }
+    },
+    {
+        "name": "smooth_stone",
+        "map": {
+            "name": "smooth_stone",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "smooth_stone.png"
+        }
+    },
+    {
+        "name": "snow",
+        "map": {
+            "name": "snow",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "snow.png"
+        }
+    },
+    {
+        "name": "soul_sand",
+        "map": {
+            "name": "soul_sand",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "soul_sand.png"
+        }
+    },
+    {
+        "name": "soul_soil",
+        "map": {
+            "name": "soul_soil",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "soul_soil.png"
+        }
+    },
+    {
+        "name": "spawner",
+        "map": {
+            "name": "spawner",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "spawner.png"
+        }
+    },
+    {
+        "name": "sponge",
+        "map": {
+            "name": "sponge",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "sponge.png"
+        }
+    },
+    {
+        "name": "spruce_log",
+        "map": [
+            {
+                "name": "spruce_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "spruce_log.png"
+            },
+            {
+                "name": "spruce_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "spruce_log.png"
+            },
+            {
+                "name": "spruce_log_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "spruce_log_top.png"
+            },
+            {
+                "name": "spruce_log_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "spruce_log_top.png"
+            },
+            {
+                "name": "spruce_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "spruce_log.png"
+            },
+            {
+                "name": "spruce_log",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "spruce_log.png"
+            }
+        ]
+    },
+    {
+        "name": "spruce_planks",
+        "map": {
+            "name": "spruce_planks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "spruce_planks.png"
+        }
+    },
+    {
+        "name": "stone",
+        "map": {
+            "name": "stone",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "stone.png"
+        }
+    },
+    {
+        "name": "stone_bricks",
+        "map": {
+            "name": "stone_bricks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "stone_bricks.png"
+        }
+    },
+    {
+        "name": "target",
+        "map": {
+            "name": "target_side",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "target_side.png"
+        }
+    },
+    {
+        "name": "tnt",
+        "map": [
+            {
+                "name": "tnt_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "tnt_side.png"
+            },
+            {
+                "name": "tnt_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "tnt_side.png"
+            },
+            {
+                "name": "tnt_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "tnt_top.png"
+            },
+            {
+                "name": "tnt_bottom",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "tnt_bottom.png"
+            },
+            {
+                "name": "tnt_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "tnt_side.png"
+            },
+            {
+                "name": "tnt_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "tnt_side.png"
+            }
+        ]
+    },
+    {
+        "name": "tuff",
+        "map": {
+            "name": "tuff",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "tuff.png"
+        }
+    },
+    {
+        "name": "warped_nylium",
+        "map": {
+            "name": "warped_nylium_side",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "warped_nylium_side.png"
+        }
+    },
+    {
+        "name": "warped_planks",
+        "map": {
+            "name": "warped_planks",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "warped_planks.png"
+        }
+    },
+    {
+        "name": "warped_stem",
+        "map": [
+            {
+                "name": "warped_stem",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "warped_stem.png"
+            },
+            {
+                "name": "warped_stem",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "warped_stem.png"
+            },
+            {
+                "name": "warped_stem_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "warped_stem_top.png"
+            },
+            {
+                "name": "warped_stem_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "warped_stem_top.png"
+            },
+            {
+                "name": "warped_stem",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "warped_stem.png"
+            },
+            {
+                "name": "warped_stem",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "warped_stem.png"
+            }
+        ]
+    },
+    {
+        "name": "warped_wart_block",
+        "map": {
+            "name": "warped_wart_block",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "warped_wart_block.png"
+        }
+    },
+    {
+        "name": "weathered_copper",
+        "map": {
+            "name": "weathered_copper",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "weathered_copper.png"
+        }
+    },
+    {
+        "name": "weathered_cut_copper",
+        "map": {
+            "name": "weathered_cut_copper",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "weathered_cut_copper.png"
+        }
+    },
+    {
+        "name": "wet_sponge",
+        "map": {
+            "name": "wet_sponge",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "wet_sponge.png"
+        }
+    },
+    {
+        "name": "white_concrete",
+        "map": {
+            "name": "white_concrete",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "white_concrete.png"
+        }
+    },
+    {
+        "name": "white_concrete_powder",
+        "map": {
+            "name": "white_concrete_powder",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "white_concrete_powder.png"
+        }
+    },
+    {
+        "name": "white_shulker_box",
+        "map": {
+            "name": "white_shulker_box",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "white_shulker_box.png"
+        }
+    },
+    {
+        "name": "white_wool",
+        "map": {
+            "name": "white_wool",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "white_wool.png"
+        }
+    },
+    {
+        "name": "yellow_concrete",
+        "map": {
+            "name": "yellow_concrete",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "yellow_concrete.png"
+        }
+    },
+    {
+        "name": "yellow_concrete_powder",
+        "map": {
+            "name": "yellow_concrete_powder",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "yellow_concrete_powder.png"
+        }
+    },
+    {
+        "name": "yellow_shulker_box",
+        "map": {
+            "name": "yellow_shulker_box",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "yellow_shulker_box.png"
+        }
+    },
+    {
+        "name": "yellow_wool",
+        "map": {
+            "name": "yellow_wool",
+            "type": "map",
+            "color": 13027014,
+            "opacity": 1,
+            "transparent": false,
+            "isAlt": false,
+            "file": "yellow_wool.png"
+        }
+    },
+    {
+        "name": "dropper",
+        "map": [
+            {
+                "name": "furnace_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "furnace_side.png"
+            },
+            {
+                "name": "furnace_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "furnace_side.png"
+            },
+            {
+                "name": "furnace_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "furnace_top.png"
+            },
+            {
+                "name": "cobblestone",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "cobblestone.png"
+            },
+            {
+                "name": "dropper_front",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "dropper_front.png"
+            },
+            {
+                "name": "furnace_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "furnace_side.png"
+            }
+        ]
+    },
+    {
+        "name": "dispenser",
+        "map": [
+            {
+                "name": "furnace_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "furnace_side.png"
+            },
+            {
+                "name": "furnace_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "furnace_side.png"
+            },
+            {
+                "name": "furnace_top",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "furnace_top.png"
+            },
+            {
+                "name": "cobblestone",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "cobblestone.png"
+            },
+            {
+                "name": "dispenser_front",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "dispenser_front.png"
+            },
+            {
+                "name": "furnace_side",
+                "type": "map",
+                "color": 13027014,
+                "opacity": 1,
+                "transparent": false,
+                "isAlt": false,
+                "file": "furnace_side.png"
+            }
+        ]
+    }
+]
