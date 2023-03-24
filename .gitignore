@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs
+/.vscode
+node_modules
+.vscode
+.vs
+.vscode/launch.json
+package-lock.json

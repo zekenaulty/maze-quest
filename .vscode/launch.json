@@ -9,7 +9,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "start",
-            "file": "https://maze-quest/"
+            "file": "http://localhost:8080"
         }
     ]
 }
