@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\maze-quest.props" />
+</Project>
