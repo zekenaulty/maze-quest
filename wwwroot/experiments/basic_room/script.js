@@ -22,9 +22,9 @@ const body_m = new THREE.MeshBasicMaterial();
 const body = new THREE.Mesh(body_g, body_m);
 
 const playerCollider = new Capsule(
-  new THREE.Vector3(8.5, 1, 8.5),
-  new THREE.Vector3(8.5, 2.25, 8.5),
-  0.35
+    new THREE.Vector3(8.5, 1, 8.5),
+    new THREE.Vector3(8.5, 2.25, 8.5),
+    0.35
 );
 
 body.position.copy(playerCollider.start);
@@ -54,96 +54,114 @@ let space = new Space(w * l, 10, d * l, 0, 0, 0);
 let room = new BasicRoom(space);
 
 for (let x = 0; x < l; x++) {
-  for (let z = 0; z < l; z++) {
-    let r = new BasicRoom(
-      space,
-      new RoomBounds(
-        x == 0 ? 0 : x * w - x,
-        0,
-        z == 0 ? 0 : z * d - z,
-        w,
-        h,
-        d,
-        z == 0 ? false : true,
-        x == l - 1 ? false : true,
-        z == l - 1 ? false : true,
-        x == 0 ? false : true
-      ));
-    r.generate();
-  }
+    for (let z = 0; z < l; z++) {
+        let r = new BasicRoom(
+            space,
+            new RoomBounds(
+                x == 0 ? 0 : x * w - x,
+                0,
+                z == 0 ? 0 : z * d - z,
+                w,
+                h,
+                d,
+                z == 0 ? false : true,
+                x == l - 1 ? false : true,
+                z == l - 1 ? false : true,
+                x == 0 ? false : true
+            ));
+        r.generate();
+    }
 }
 
 const meshes = {};
 const turf = new THREE.Group();
 let first = true;
 let last = body.position.clone();
+
 let chunked = () => {
-  if(!first && body.position.distanceTo(last) < 10) {
-    return;
-  }
-  last = body.position.clone();
-  space.blocks.forEach((b) => {
-    let ro = [];
-    let pos = space.positions[b].filter((p, i) => {
-      if (p.x <= body.position.x + 34 && p.x >= body.position.x - 34) {
-        if (p.z <= body.position.z + 34 && p.z >= body.position.z - 34) {
-          ro.push(space.rotations[b][i]);
-          return true;
+    if (!first && body.position.distanceTo(last) < 10) {
+        return;
+    }
+    last = body.position.clone();
+    let x = Math.floor(body.position.x - 32);
+    let y = Math.floor(body.position.y - 32);
+    let z = Math.floor(body.position.z - 32);
+
+    x = x < 0 ? 0 : x;
+    y = y < 0 ? 0 : y;
+    z = z < 0 ? 0 : z;
+
+    let lx = x + 32;
+    let ly = y + 32;
+    let lz = z + 32;
+
+    let pos = {};
+    for (x; x < lx; x++) {
+        for (y; y < ly; y++) {
+            for (z; z < lz; z++) {
+                let b = space.get(x, y, z);
+                if (!count[b]) {
+                    counts[b] = 0;
+                    pos[b] = [];
+                }
+                counts[b]++;
+                pos.push(new THREE.Vector3(x, y, z));
+            }
         }
-      }
-      return false;
-    });
-    let count = pos.length;
-    if(meshes[b]) {
-      turf.remove(meshes[b]);
-      meshes[b].dispose();
-      delete meshes[b];
     }
-    let mesh = blocks.createInstanced[b](count);
-    for (let i = 0; i < count; i++) {
-      let v = pos[i];
-      let r = ro[i];
-      dummy.position.set(v.x, v.y, v.z);
-      dummy.rotation.set(r.x, r.y, r.z);
-      dummy.updateMatrix();
-      mesh.setMatrixAt(i, dummy.matrix);
+
+    for (const b in pos) {
+        let count = pos[b].length;
+        if (meshes[b]) {
+            turf.remove(meshes[b]);
+            meshes[b].dispose();
+            delete meshes[b];
+        }
+        let mesh = blocks.createInstanced[b](count);
+        for (let i = 0; i < count; i++) {
+            let v = pos[i];
+            let r = space.getRotation(v.x,v.y,v.z);
+            dummy.position.set(v.x, v.y, v.z);
+            dummy.rotation.set(r.x, r.y, r.z);
+            dummy.updateMatrix();
+            mesh.setMatrixAt(i, dummy.matrix);
+        }
+        meshes[b] = mesh;
+        turf.add(mesh);
     }
-    meshes[b] = mesh;
-    turf.add(mesh);
-  });
-  first = false;
+    first = false;
 };
 
 const init = () => {
-  camera = new THREE.PerspectiveCamera(
-    60,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    25
-  );
-  camera.rotation.order = 'YXZ';
-  camera.lookAt(0, 0, 0);
-  scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0x000000, 2, 22);
-  renderer = new THREE.WebGLRenderer({ antialias: true });
-  renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  document.body.appendChild(renderer.domElement);
-  stats = new Stats();
-  document.body.appendChild(stats.dom);
-  
-  scene.add(turf);
-  scene.add(body);
-  
+    camera = new THREE.PerspectiveCamera(
+        60,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        25
+    );
+    camera.rotation.order = 'YXZ';
+    camera.lookAt(0, 0, 0);
+    scene = new THREE.Scene();
+    scene.fog = new THREE.Fog(0x000000, 2, 22);
+    renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+    stats = new Stats();
+    document.body.appendChild(stats.dom);
+
+    scene.add(turf);
+    scene.add(body);
+
 }
 
 const animate = () => {
-  requestAnimationFrame(animate);
-  const deltaTime = Math.min(0.05, clock.getDelta()) / STEPS_PER_FRAME;
-  updatePlayer(deltaTime);
-  renderer.render(scene, camera);
-  blocks.animate();
-  stats.update();
+    requestAnimationFrame(animate);
+    const deltaTime = Math.min(0.05, clock.getDelta()) / STEPS_PER_FRAME;
+    updatePlayer(deltaTime);
+    renderer.render(scene, camera);
+    blocks.animate();
+    stats.update();
 }
 
 const rmf = new THREE.Matrix4();
@@ -159,122 +177,122 @@ const ray = new THREE.Raycaster(body.position, new THREE.Vector3(), 0, 1);
 
 const updatePlayer = (deltaTime) => {
 
-  let damping = Math.exp(-4 * deltaTime) - 1;
-  const playerVelocity = new THREE.Vector3();
-  const vf = getForwardVector();
-  const y = dpad.value.y;
-  const x = dpad.value.x;
+    let damping = Math.exp(-4 * deltaTime) - 1;
+    const playerVelocity = new THREE.Vector3();
+    const vf = getForwardVector();
+    const y = dpad.value.y;
+    const x = dpad.value.x;
 
-  let moveY = false;
-  let moveX = false;
+    let moveY = false;
+    let moveX = false;
 
 
-  if (y < 0) {
-    moveY = !blockedForward();
-  } else if (y > 0) {
-    moveY = !blockedBackward();
-  }
+    if (y < 0) {
+        moveY = !blockedForward();
+    } else if (y > 0) {
+        moveY = !blockedBackward();
+    }
 
-  if (x < 0) {
-    moveX = !blockedLeft();
-  } else if (x > 0) {
-    moveX = !blockedRight();
-  }
+    if (x < 0) {
+        moveX = !blockedLeft();
+    } else if (x > 0) {
+        moveX = !blockedRight();
+    }
 
-  if (moveY) {
-    playerVelocity.add(getForwardVector().multiplyScalar(-y * speed));
-  }
+    if (moveY) {
+        playerVelocity.add(getForwardVector().multiplyScalar(-y * speed));
+    }
 
-  if (moveX) {
-    playerVelocity.add(getSideVector().multiplyScalar(x * speed));
-  }
+    if (moveX) {
+        playerVelocity.add(getSideVector().multiplyScalar(x * speed));
+    }
 
-  let cv = cpad.value;
-  camera.rotation.y += -cv.x / 32;
-  camera.rotation.x += -cv.y / 32;
-  if (camera.rotation.x > 0.5) {
-    camera.rotation.x = 0.5;
-  }
-  if (camera.rotation.x < -0.5) {
-    camera.rotation.x = -0.5;
-  }
-  playerVelocity.addScaledVector(playerVelocity, damping);
+    let cv = cpad.value;
+    camera.rotation.y += -cv.x / 32;
+    camera.rotation.x += -cv.y / 32;
+    if (camera.rotation.x > 0.5) {
+        camera.rotation.x = 0.5;
+    }
+    if (camera.rotation.x < -0.5) {
+        camera.rotation.x = -0.5;
+    }
+    playerVelocity.addScaledVector(playerVelocity, damping);
 
-  const deltaPosition = playerVelocity.clone().multiplyScalar(deltaTime);
-  playerCollider.translate(deltaPosition);
+    const deltaPosition = playerVelocity.clone().multiplyScalar(deltaTime);
+    playerCollider.translate(deltaPosition);
 
-  camera.position.copy(playerCollider.end);
-  body.position.copy(playerCollider.start);
-  
-  chunked();
+    camera.position.copy(playerCollider.end);
+    body.position.copy(playerCollider.start);
+
+    chunked();
 
 };
 
 const blockedForward = () => {
-  const v = getForwardVector();
-  const p = body.position.clone();
-  
-  ray.set(p,v);
-  return ray.intersectObjects(scene.children, true).any();
+    const v = getForwardVector();
+    const p = body.position.clone();
+
+    ray.set(p, v);
+    return ray.intersectObjects(scene.children, true).any();
 };
 
 const blockedBackward = () => {
-  const v = getBackwardVector();
-  const p = body.position.clone();
-  
-  ray.set(p,v);
-  return ray.intersectObjects(scene.children, true).any();
+    const v = getBackwardVector();
+    const p = body.position.clone();
+
+    ray.set(p, v);
+    return ray.intersectObjects(scene.children, true).any();
 };
 
 const blockedLeft = () => {
-  const v = getLeftVector();
-  const p = body.position.clone();
-  
-  ray.set(p,v);
-  return ray.intersectObjects(scene.children, true).any();
+    const v = getLeftVector();
+    const p = body.position.clone();
+
+    ray.set(p, v);
+    return ray.intersectObjects(scene.children, true).any();
 };
 
 const blockedRight = () => {
-  const v = getRightVector();
-  const p = body.position.clone();
-  
-  ray.set(p,v);
-  return ray.intersectObjects(scene.children, true).any();
+    const v = getRightVector();
+    const p = body.position.clone();
+
+    ray.set(p, v);
+    return ray.intersectObjects(scene.children, true).any();
 };
 
 const getForwardVector = () => {
-  const v = new THREE.Vector3();
-  camera.getWorldDirection(v);
-  v.y = 0;
-  v.normalize();
-  return v;
+    const v = new THREE.Vector3();
+    camera.getWorldDirection(v);
+    v.y = 0;
+    v.normalize();
+    return v;
 };
 
 const getSideVector = () => {
-  const v = new THREE.Vector3();
-  camera.getWorldDirection(v);
-  v.y = 0;
-  v.normalize();
-  v.cross(camera.up);
-  return v;
+    const v = new THREE.Vector3();
+    camera.getWorldDirection(v);
+    v.y = 0;
+    v.normalize();
+    v.cross(camera.up);
+    return v;
 };
 
 const getBackwardVector = () => {
-  const v = getForwardVector();
-  v.applyMatrix4(rmb);
-  return v;
+    const v = getForwardVector();
+    v.applyMatrix4(rmb);
+    return v;
 };
 
 const getLeftVector = () => {
-  const v = getForwardVector();
-  v.applyMatrix4(rml);
-  return v;
+    const v = getForwardVector();
+    v.applyMatrix4(rml);
+    return v;
 };
 
 const getRightVector = () => {
-  const v = getLeftVector();
-  v.applyMatrix4(rmr);
-  return v;
+    const v = getLeftVector();
+    v.applyMatrix4(rmr);
+    return v;
 };
 
 init();
