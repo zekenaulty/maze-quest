@@ -406,7 +406,7 @@ document.addEventListener('keyup', (e) => {
             break;
     }
 });
-if (!isMobile()) {
+if (!mobile) {
     document.querySelector('#joy1').style.display = 'none';
     document.querySelector('#joy2').style.display = 'none';
 }
