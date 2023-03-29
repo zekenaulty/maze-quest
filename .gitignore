@@ -9,3 +9,7 @@ node_modules
 .vs
 .vscode/launch.json
 package-lock.json
+/bin
+/obj
+bin
+obj

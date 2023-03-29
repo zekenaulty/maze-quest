@@ -1,8 +1,5 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { FirstPersonControls } from 'three/addons/controls/FirstPersonControls.js';
 import Stats from 'three/addons/libs/stats.module.js';
-import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 import { Space } from '../../world/space.js';
 import { BasicRoom } from '../../world/rooms/basicRoom.js';
 import { RoomBounds } from '../../world/rooms/roomBounds.js';
@@ -10,11 +7,13 @@ import { BlockBuilder } from '../../assets/blockBuilder.js';
 import { Capsule } from 'three/addons/math/Capsule.js';
 import { Joystick } from '../../res/joysticks/joystick.js';
 import '../../core/array.js';
+import '../../core/isMobile.js';
 
-let camera, scene, renderer, stats, mesh;
+let camera, scene, renderer, stats;
+const mobile = isMobile();
+
 const dummy = new THREE.Object3D();
 const blocks = new BlockBuilder('../../');
-let playerVector = new THREE.Vector3();
 const clock = new THREE.Clock();
 
 const body_g = new THREE.BoxGeometry(1, 2.5, 1);
@@ -29,8 +28,6 @@ const playerCollider = new Capsule(
 
 body.position.copy(playerCollider.start);
 
-const GRAVITY = 30;
-const SPHERE_RADIUS = 0.2;
 const STEPS_PER_FRAME = 5;
 
 let speed = 25;
@@ -40,10 +37,6 @@ let cpad = new Joystick("stick2", 64, 8);
 
 await blocks.load();
 
-const names = blocks.names;
-const block = names[Math.floor(Math.random() * names.length)];
-
-
 let w = 17;
 let h = 9;
 let d = 17;
@@ -51,85 +44,94 @@ let l = 11;
 let wd = w * l;
 let c = wd * 0.5;
 let space = new Space(w * l, 10, d * l, 0, 0, 0);
-let room = new BasicRoom(space);
 
-for (let x = 0; x < l; x++) {
-    for (let z = 0; z < l; z++) {
-        let r = new BasicRoom(
-            space,
-            new RoomBounds(
-                x == 0 ? 0 : x * w - x,
-                0,
-                z == 0 ? 0 : z * d - z,
-                w,
-                h,
-                d,
-                z == 0 ? false : true,
-                x == l - 1 ? false : true,
-                z == l - 1 ? false : true,
-                x == 0 ? false : true
-            ));
-        r.generate();
+const rooms = () => {
+    for (let x = 0; x < l; x++) {
+        for (let z = 0; z < l; z++) {
+            let r = new BasicRoom(
+                space,
+                new RoomBounds(
+                    x == 0 ? 0 : x * w - x,
+                    0,
+                    z == 0 ? 0 : z * d - z,
+                    w,
+                    h,
+                    d,
+                    z == 0 ? false : true,
+                    x == l - 1 ? false : true,
+                    z == l - 1 ? false : true,
+                    x == 0 ? false : true
+                ));
+            r.generate();
+        }
     }
-}
+};
+rooms();
 
 const meshes = {};
 const turf = new THREE.Group();
 let first = true;
 let last = body.position.clone();
 
-let chunked = () => {
-    if (!first && body.position.distanceTo(last) < 10) {
+const chunked = () => {
+    if (!first && body.position.distanceTo(last) < 8) {
         return;
     }
-    last = body.position.clone();
+
+    console.log(`${body.position.x}, ${body.position.y}, ${body.position.z}`);
     let x = Math.floor(body.position.x - 32);
     let y = Math.floor(body.position.y - 32);
     let z = Math.floor(body.position.z - 32);
 
+    console.log(`${x}, ${y}, ${z}`);
     x = x < 0 ? 0 : x;
     y = y < 0 ? 0 : y;
     z = z < 0 ? 0 : z;
 
-    let lx = x + 32;
-    let ly = y + 32;
-    let lz = z + 32;
+    let lx = x + 64;
+    let ly = d;
+    let lz = z + 64;
 
     let pos = {};
-    for (x; x < lx; x++) {
-        for (y; y < ly; y++) {
-            for (z; z < lz; z++) {
-                let b = space.get(x, y, z);
-                if (!count[b]) {
-                    counts[b] = 0;
+    console.log(`${x}, ${y}, ${z}`);
+    for (let xi = x; xi < lx; xi++) {
+        for (let yi = y; yi < ly; yi++) {
+            for (let zi = z; zi < lz; zi++) {
+                const b = space.get(xi, yi, zi);
+                if (b === 'air' || b === undefined) {
+                    continue;
+                }
+                if (pos[b] === undefined) {
                     pos[b] = [];
                 }
-                counts[b]++;
-                pos.push(new THREE.Vector3(x, y, z));
+                pos[b].push(new THREE.Vector3(xi, yi, zi));
             }
         }
     }
 
     for (const b in pos) {
-        let count = pos[b].length;
-        if (meshes[b]) {
-            turf.remove(meshes[b]);
+        const count = pos[b].length;
+        if (meshes[b] !== undefined) {
+            console.log(`removing ${b}`);
+            scene.remove(meshes[b]);
             meshes[b].dispose();
-            delete meshes[b];
         }
-        let mesh = blocks.createInstanced[b](count);
+        const mesh = blocks.createInstanced[b](count);
         for (let i = 0; i < count; i++) {
-            let v = pos[i];
-            let r = space.getRotation(v.x,v.y,v.z);
+            let v = pos[b][i];
+            let r = space.getRotation(v.x, v.y, v.z);
             dummy.position.set(v.x, v.y, v.z);
             dummy.rotation.set(r.x, r.y, r.z);
             dummy.updateMatrix();
             mesh.setMatrixAt(i, dummy.matrix);
         }
         meshes[b] = mesh;
-        turf.add(mesh);
+        scene.add(mesh);
+        console.log(`added ${b} with ${count} blocks`);
     }
     first = false;
+    last = body.position.clone();
+
 };
 
 const init = () => {
@@ -175,28 +177,55 @@ rmr.makeRotationY((360 - 90) * Math.PI / 180);
 
 const ray = new THREE.Raycaster(body.position, new THREE.Vector3(), 0, 1);
 
+const move = {
+    forward: false,
+    backward: false,
+    left: false,
+    right: false
+};
+
+const look = {
+    up: false,
+    down: false,
+    left: false,
+    right: false
+};
+
 const updatePlayer = (deltaTime) => {
 
     let damping = Math.exp(-4 * deltaTime) - 1;
     const playerVelocity = new THREE.Vector3();
     const vf = getForwardVector();
-    const y = dpad.value.y;
-    const x = dpad.value.x;
+    let y = dpad.value.y;
+    let x = dpad.value.x;
 
     let moveY = false;
     let moveX = false;
 
+    const keySpeed = 1.7;
 
-    if (y < 0) {
+    if (y < 0 || move.forward) {
         moveY = !blockedForward();
-    } else if (y > 0) {
+        if (y == 0) {
+            y = -keySpeed;
+        }
+    } else if (y > 0 || move.backward) {
         moveY = !blockedBackward();
+        if (y == 0) {
+            y = keySpeed;
+        }
     }
 
-    if (x < 0) {
+    if (x < 0 || move.left) {
         moveX = !blockedLeft();
-    } else if (x > 0) {
+        if (x == 0) {
+            x = -keySpeed;
+        }
+    } else if (x > 0 || move.right) {
         moveX = !blockedRight();
+        if (x == 0) {
+            x = keySpeed;
+        }
     }
 
     if (moveY) {
@@ -208,19 +237,39 @@ const updatePlayer = (deltaTime) => {
     }
 
     let cv = cpad.value;
-    camera.rotation.y += -cv.x / 32;
-    camera.rotation.x += -cv.y / 32;
-    if (camera.rotation.x > 0.5) {
-        camera.rotation.x = 0.5;
-    }
-    if (camera.rotation.x < -0.5) {
-        camera.rotation.x = -0.5;
-    }
-    playerVelocity.addScaledVector(playerVelocity, damping);
+    if (!mobile) {
+        if (look.up) {
+            cv.y = -keySpeed / 3;
+        } else if (look.down) {
+            cv.y = keySpeed / 3;
+        } else if (look.left) {
+            cv.x = -keySpeed / 1.2;
+        } else if (look.right) {
+            cv.x = keySpeed / 1.2;
+        }
 
+        if (!look.up && !look.down) { cv.y = 0; }
+        if (!look.left && !look.right) { cv.x = 0; }
+    }
+
+    if (cv.x != 0) {
+        camera.rotation.y += -cv.x / 32;
+    }
+
+    if (cv.y != 0) {
+
+        camera.rotation.x += -cv.y / 32;
+        if (camera.rotation.x > 0.5) {
+            camera.rotation.x = 0.5;
+        }
+        if (camera.rotation.x < -0.5) {
+            camera.rotation.x = -0.5;
+        }
+    }
+
+    playerVelocity.addScaledVector(playerVelocity, damping);
     const deltaPosition = playerVelocity.clone().multiplyScalar(deltaTime);
     playerCollider.translate(deltaPosition);
-
     camera.position.copy(playerCollider.end);
     body.position.copy(playerCollider.start);
 
@@ -297,3 +346,67 @@ const getRightVector = () => {
 
 init();
 animate();
+
+document.addEventListener('keydown', (e) => {
+    console.log(e);
+    switch (e.key) {
+        case 'w':
+            move.forward = true;
+            break;
+        case 'a':
+            move.left = true;
+            break;
+        case 's':
+            move.backward = true;
+            break;
+        case 'd':
+            move.right = true;
+            break;
+        case 'ArrowUp':
+            look.up = true;
+            break;
+        case 'ArrowDown':
+            look.down = true;
+            break;
+        case 'ArrowLeft':
+            look.left = true;
+            break;
+        case 'ArrowRight':
+            look.right = true;
+            break;
+    }
+});
+
+document.addEventListener('keyup', (e) => {
+    console.log(e);
+    switch (e.key) {
+        case 'w':
+            move.forward = false;
+            break;
+        case 'a':
+            move.left = false;
+            break;
+        case 's':
+            move.backward = false;
+            break;
+        case 'd':
+            move.right = false;
+            break;
+        case 'ArrowUp':
+            look.up = false;
+            break;
+        case 'ArrowDown':
+            look.down = false;
+            break;
+        case 'ArrowLeft':
+            look.left = false;
+            break;
+        case 'ArrowRight':
+            look.right = false;
+            break;
+    }
+});
+if (!isMobile()) {
+    document.querySelector('#joy1').style.display = 'none';
+    document.querySelector('#joy2').style.display = 'none';
+}

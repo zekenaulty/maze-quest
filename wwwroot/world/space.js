@@ -116,6 +116,7 @@ export class Space extends EventTarget {
     }
 
     getRotation(x, y, z) {
+        let vm = this;
         let r = vm.#rotations[`${x}_${y}_${z}`];
         if (!r) {
             r = new THREE.Vector3(0, 0, 0);
