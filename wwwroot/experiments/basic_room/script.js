@@ -12,7 +12,9 @@ import '../../core/array.js';
 import '../../core/isMobile.js';
 
 const compass = document.querySelector('.compass');
+const location = document.querySelector('.location');
 const compassSize = 256;
+const locationWidth = 256;
 
 const lookSpeed = 2.5;
 let lon = 0;
@@ -162,9 +164,12 @@ const init = () => {
         25
     );
     compass.style.top = `${window.innerHeight - compassSize - 16}px`;
-    //compass.style.right = `${window.innerWidth / 2 - (compassSize / 2)}px`;
     compass.style.width = `${compassSize}px`;
     compass.style.height = `${compassSize}px`;
+
+    location.style.top = `${window.innerHeight - 19}px`;
+    location.style.width = `${locationWidth}px`;
+    
     camera.rotation.order = 'YXZ';
     camera.lookAt(0, 0, 0);
     scene = new THREE.Scene();
@@ -323,6 +328,7 @@ const updatePlayer = (deltaTime) => {
     camera.position.copy(playerCollider.end);
     body.position.copy(playerCollider.start);
 
+    location.innerText = `x: ${Math.floor(body.position.x)}, y: ${Math.floor(body.position.y)}, z: ${Math.floor(body.position.z)}`;
     chunked();
 
 };
