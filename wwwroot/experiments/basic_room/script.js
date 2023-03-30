@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import Stats from 'three/addons/libs/stats.module.js';
 import { Space } from '../../world/space.js';
 import { BasicRoom } from '../../world/rooms/basicRoom.js';
+import { Library } from '../../world/rooms/library.js';
 import { RoomBounds } from '../../world/rooms/roomBounds.js';
 import { BlockBuilder } from '../../assets/blockBuilder.js';
 import { Capsule } from 'three/addons/math/Capsule.js';
@@ -9,14 +10,26 @@ import { Joystick } from '../../res/joysticks/joystick.js';
 import '../../core/array.js';
 import '../../core/isMobile.js';
 
-let camera, scene, renderer, stats;
-const mobile = isMobile();
 
+const lookSpeed = 1.9;
+let lon = 0;
+let lat = 0;
+let pointerX = 0;
+let pointerY = 0;
+
+let viewHalfX = innerWidth / 2;
+let viewHalfY = innerHeight / 2;
+
+let verticalMin = 1.1;
+let verticalMax = 2.1;
+let mouseLook = false;
+
+let camera, scene, renderer, stats;
 const dummy = new THREE.Object3D();
 const blocks = new BlockBuilder('../../');
 const clock = new THREE.Clock();
 
-const body_g = new THREE.BoxGeometry(1, 2.5, 1);
+const body_g = new THREE.BoxGeometry(0.5, 2.5, 0.5);
 const body_m = new THREE.MeshBasicMaterial();
 const body = new THREE.Mesh(body_g, body_m);
 
@@ -31,7 +44,6 @@ body.position.copy(playerCollider.start);
 const STEPS_PER_FRAME = 5;
 
 let speed = 25;
-
 let dpad = new Joystick("stick1", 64, 8);
 let cpad = new Joystick("stick2", 64, 8);
 
@@ -42,13 +54,18 @@ let h = 9;
 let d = 17;
 let l = 11;
 let wd = w * l;
-let c = wd * 0.5;
 let space = new Space(w * l, 10, d * l, 0, 0, 0);
+
+let roomz = [
+    BasicRoom,
+    Library
+];
 
 const rooms = () => {
     for (let x = 0; x < l; x++) {
         for (let z = 0; z < l; z++) {
-            let r = new BasicRoom(
+            let rc = roomz.sample();
+            let r = new rc(
                 space,
                 new RoomBounds(
                     x == 0 ? 0 : x * w - x,
@@ -78,22 +95,23 @@ const chunked = () => {
         return;
     }
 
-    console.log(`${body.position.x}, ${body.position.y}, ${body.position.z}`);
     let x = Math.floor(body.position.x - 32);
     let y = Math.floor(body.position.y - 32);
     let z = Math.floor(body.position.z - 32);
 
-    console.log(`${x}, ${y}, ${z}`);
     x = x < 0 ? 0 : x;
     y = y < 0 ? 0 : y;
     z = z < 0 ? 0 : z;
 
-    let lx = x + 64;
-    let ly = d;
-    let lz = z + 64;
+    /*
+    would like to get this constrained to a fixed radius of 32, 
+    but it is twitch when the positive x,z distance is less than 64 
+    */
+    const lx = x + 64;
+    const ly = d;
+    const lz = z + 64;
 
     let pos = {};
-    console.log(`${x}, ${y}, ${z}`);
     for (let xi = x; xi < lx; xi++) {
         for (let yi = y; yi < ly; yi++) {
             for (let zi = z; zi < lz; zi++) {
@@ -101,7 +119,7 @@ const chunked = () => {
                 if (b === 'air' || b === undefined) {
                     continue;
                 }
-                if (pos[b] === undefined) {
+                if (!pos[b]) {
                     pos[b] = [];
                 }
                 pos[b].push(new THREE.Vector3(xi, yi, zi));
@@ -112,7 +130,6 @@ const chunked = () => {
     for (const b in pos) {
         const count = pos[b].length;
         if (meshes[b] !== undefined) {
-            console.log(`removing ${b}`);
             scene.remove(meshes[b]);
             meshes[b].dispose();
         }
@@ -127,7 +144,6 @@ const chunked = () => {
         }
         meshes[b] = mesh;
         scene.add(mesh);
-        console.log(`added ${b} with ${count} blocks`);
     }
     first = false;
     last = body.position.clone();
@@ -169,13 +185,13 @@ const animate = () => {
 const rmf = new THREE.Matrix4();
 rmf.makeRotationY(0);
 const rmb = new THREE.Matrix4();
-rmb.makeRotationY(180 * Math.PI / 180);
+rmb.makeRotationY(3.141);
 const rml = new THREE.Matrix4();
-rml.makeRotationY(90 * Math.PI / 180);
+rml.makeRotationY(1.57);
 const rmr = new THREE.Matrix4();
-rmr.makeRotationY((360 - 90) * Math.PI / 180);
+rmr.makeRotationY(4.71);
 
-const ray = new THREE.Raycaster(body.position, new THREE.Vector3(), 0, 1);
+const ray = new THREE.Raycaster(body.position, new THREE.Vector3(), 0.2, 1.2);
 
 const move = {
     forward: false,
@@ -191,6 +207,26 @@ const look = {
     right: false
 };
 
+const followPointer = (deltaTime) => {
+    let actualLookSpeed = deltaTime * lookSpeed;
+
+    let verticalLookRatio = 1;
+    verticalLookRatio = Math.PI / (verticalMax - verticalMin);
+
+    lon -= pointerX * actualLookSpeed;
+    lat -= pointerY * actualLookSpeed * verticalLookRatio;
+    lat = Math.max(- 85, Math.min(85, lat));
+
+    let phi = THREE.MathUtils.degToRad(90 - lat);
+    const theta = THREE.MathUtils.degToRad(lon);
+    phi = THREE.MathUtils.mapLinear(phi, 0, Math.PI, verticalMin, verticalMax);
+
+    const position = camera.position;
+    const targetPosition = new THREE.Vector3();
+    targetPosition.setFromSphericalCoords(1, phi, theta).add(position);
+    camera.lookAt(targetPosition);
+};
+
 const updatePlayer = (deltaTime) => {
 
     let damping = Math.exp(-4 * deltaTime) - 1;
@@ -202,7 +238,7 @@ const updatePlayer = (deltaTime) => {
     let moveY = false;
     let moveX = false;
 
-    const keySpeed = 1.7;
+    const keySpeed = 1.3;
 
     if (y < 0 || move.forward) {
         moveY = !blockedForward();
@@ -265,6 +301,10 @@ const updatePlayer = (deltaTime) => {
         if (camera.rotation.x < -0.5) {
             camera.rotation.x = -0.5;
         }
+    }
+
+    if (mouseLook) {
+        followPointer(deltaTime);
     }
 
     playerVelocity.addScaledVector(playerVelocity, damping);
@@ -345,10 +385,10 @@ const getRightVector = () => {
 };
 
 init();
+followPointer(new Date().getTime());
 animate();
 
 document.addEventListener('keydown', (e) => {
-    console.log(e);
     switch (e.key) {
         case 'w':
             move.forward = true;
@@ -378,7 +418,6 @@ document.addEventListener('keydown', (e) => {
 });
 
 document.addEventListener('keyup', (e) => {
-    console.log(e);
     switch (e.key) {
         case 'w':
             move.forward = false;
@@ -406,7 +445,27 @@ document.addEventListener('keyup', (e) => {
             break;
     }
 });
-if (!mobile) {
-    document.querySelector('#joy1').style.display = 'none';
-    document.querySelector('#joy2').style.display = 'none';
+
+if (mobile) {
+    document.querySelector('#joy1').style.display = '';
+    document.querySelector('#joy2').style.display = '';
 }
+
+document.addEventListener('pointerdown', (e) => {
+    if (e.button === 2) {
+        mouseLook = true;
+    }
+});
+
+document.addEventListener('pointerup', (e) => {
+    if (e.button === 2) {
+        mouseLook = false;
+    }
+});
+
+document.addEventListener('pointermove', (e) => {
+
+    pointerX = e.pageX - viewHalfX;
+    pointerY = e.pageY - viewHalfY;
+
+});

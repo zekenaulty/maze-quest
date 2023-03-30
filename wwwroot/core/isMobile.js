@@ -6,3 +6,5 @@ window.isMobile = () => {
   })(navigator.userAgent||navigator.vendor||window.opera);
   return check;
 };
+
+window.mobile = window.isMobile();

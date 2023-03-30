@@ -4,356 +4,379 @@ import { Rectangle } from '../shapes/rectangle.js';
 import '../../core/array.js';
 
 export class BasicRoom {
-  #space;
-  #bounds;
-  #rect;
-  #line;
+    space;
+    bounds;
+    rect;
+    line;
 
-  floorBlock = 'cobblestone_alt';
-  wallBlock = 'stone_bricks_alt';
-  doorFrameBlock = 'chiseled_stone_bricks_alt';
-  cornerPostBlock = 'oak_log';
-  raftersBlock = 'oak_planks';
-  roofBlock = 'oak_planks_alt';
+    booksBlock = 'bookshelf';
 
-  constructor(space, bounds) {
-    let vm = this;
-    vm.#space = space;
-    vm.#bounds = bounds;
-    vm.#rect = new Rectangle(space);
-    vm.#line = new Line(space);
-  }
+    floorBlock = 'cobblestone_alt';
+    wallBlock = 'stone_bricks_alt';
+    doorFrameBlock = 'oak_planks'; //'chiseled_stone_bricks_alt';
+    cornerPostBlock = 'oak_log';
+    raftersBlock = 'oak_planks';
+    roofBlock = 'oak_planks_alt';
 
-  wallNorth() {
-    let vm = this;
-
-    let x = vm.#bounds.x;
-    let y = vm.#bounds.y + 1;
-    let z = vm.#bounds.z;
-    let h = vm.#bounds.height - 2;
-    let w = vm.#bounds.width;
-
-    vm.#rect.x_to_x(x, y, z, w, h, vm.wallBlock);
-    if (vm.#bounds.northDoor) {
-      let dfx = Math.floor(vm.#bounds.centerX - 2);
-      let dwx = dfx + 1;
-      vm.#rect.x_to_x(dfx, y, z, 5, 4, vm.doorFrameBlock);
-      vm.#rect.x_to_x(dwx, y, z, 3, 3, 'air');
+    constructor(space, bounds) {
+        let vm = this;
+        vm.space = space;
+        vm.bounds = bounds;
+        vm.rect = new Rectangle(space);
+        vm.line = new Line(space);
     }
-  }
 
-  wallWest() {
-    let vm = this;
+    wallNorth() {
+        let vm = this;
 
-    let x = vm.#bounds.x;
-    let y = vm.#bounds.y + 1;
-    let z = vm.#bounds.z;
-    let h = vm.#bounds.height - 2;
-    let d = vm.#bounds.depth;
+        let x = vm.bounds.x;
+        let y = vm.bounds.y + 1;
+        let z = vm.bounds.z;
+        let h = vm.bounds.height - 2;
+        let w = vm.bounds.width;
 
-    vm.#rect.z_to_z(x, y, z, d, h, vm.wallBlock);
-    if (vm.#bounds.westDoor) {
-      let dfz = Math.floor(vm.#bounds.centerZ - 2);
-      let dwz = dfz + 1;
-      vm.#rect.z_to_z(x, y, dfz, 5, 4, vm.doorFrameBlock);
-      vm.#rect.z_to_z(x, y, dwz, 3, 3, 'air');
+        vm.rect.x_to_x(x, y, z, w, h, vm.wallBlock);
+        if (vm.bounds.northDoor) {
+            let dfx = Math.floor(vm.bounds.centerX - 2);
+            let dwx = dfx + 1;
+            vm.rect.x_to_x(dfx, y, z, 5, 4, vm.doorFrameBlock);
+            vm.rect.x_to_x(dwx, y, z, 3, 3, 'air');
+            vm.rect.x_to_x(dfx, y, z + 1, 5, 4, vm.doorFrameBlock);
+            vm.rect.x_to_x(dwx, y, z + 1, 3, 3, 'air');
+        }
     }
-  }
 
+    wallWest() {
+        let vm = this;
 
-  wallSouth() {
-    let vm = this;
+        let x = vm.bounds.x;
+        let y = vm.bounds.y + 1;
+        let z = vm.bounds.z;
+        let h = vm.bounds.height - 2;
+        let d = vm.bounds.depth;
 
-    let x = vm.#bounds.x;
-    let y = vm.#bounds.y + 1;
-    let z = vm.#bounds.z + vm.#bounds.depth - 1;
-    let h = vm.#bounds.height - 2;
-    let w = vm.#bounds.width;
-
-    vm.#rect.x_to_x(x, y, z, w, h, vm.wallBlock);
-    if (vm.#bounds.southDoor) {
-      let dfx = Math.floor(vm.#bounds.centerX - 2);
-      let dwx = dfx + 1;
-      vm.#rect.x_to_x(dfx, y, z, 5, 4, vm.doorFrameBlock);
-      vm.#rect.x_to_x(dwx, y, z, 3, 3, 'air');
+        vm.rect.z_to_z(x, y, z, d, h, vm.wallBlock);
+        if (vm.bounds.westDoor) {
+            let dfz = Math.floor(vm.bounds.centerZ - 2);
+            let dwz = dfz + 1;
+            vm.rect.z_to_z(x, y, dfz, 5, 4, vm.doorFrameBlock);
+            vm.rect.z_to_z(x, y, dwz, 3, 3, 'air');
+            vm.rect.z_to_z(x + 1, y, dfz, 5, 4, vm.doorFrameBlock);
+            vm.rect.z_to_z(x + 1, y, dwz, 3, 3, 'air');
+        }
     }
-  }
 
-  wallEast() {
-    let vm = this;
 
-    let x = vm.#bounds.x + vm.#bounds.width - 1;
-    let y = vm.#bounds.y + 1;
-    let z = vm.#bounds.z;
-    let h = vm.#bounds.height - 2;
-    let d = vm.#bounds.depth;
+    wallSouth() {
+        let vm = this;
 
-    vm.#rect.z_to_z(x, y, z, d, h, vm.wallBlock);
-    if (vm.#bounds.eastDoor) {
-      let dfz = Math.floor(vm.#bounds.centerZ - 2);
-      let dwz = dfz + 1;
-      vm.#rect.z_to_z(x, y, dfz, 5, 4, vm.doorFrameBlock);
-      vm.#rect.z_to_z(x, y, dwz, 3, 3, 'air');
+        let x = vm.bounds.x;
+        let y = vm.bounds.y + 1;
+        let z = vm.bounds.z + vm.bounds.depth - 1;
+        let h = vm.bounds.height - 2;
+        let w = vm.bounds.width;
+
+        vm.rect.x_to_x(x, y, z, w, h, vm.wallBlock);
+        if (vm.bounds.southDoor) {
+            let dfx = Math.floor(vm.bounds.centerX - 2);
+            let dwx = dfx + 1;
+            vm.rect.x_to_x(dfx, y, z, 5, 4, vm.doorFrameBlock);
+            vm.rect.x_to_x(dwx, y, z, 3, 3, 'air');
+            vm.rect.x_to_x(dfx, y, z - 1, 5, 4, vm.doorFrameBlock);
+            vm.rect.x_to_x(dwx, y, z - 1, 3, 3, 'air');
+        }
     }
-  }
 
-  floor() {
-    let vm = this;
-    vm.#rect.flat(
-      vm.#bounds.x,
-      vm.#bounds.y,
-      vm.#bounds.z,
-      vm.#bounds.width,
-      vm.#bounds.depth,
-      vm.floorBlock
-    );
-  }
+    wallEast() {
+        let vm = this;
 
-  roof() {
-    let vm = this;
-    vm.#rect.flat(
-      vm.#bounds.x,
-      vm.#bounds.height - 1,
-      vm.#bounds.z,
-      vm.#bounds.width,
-      vm.#bounds.depth,
-      vm.roofBlock
-    );
-  }
+        let x = vm.bounds.x + vm.bounds.width - 1;
+        let y = vm.bounds.y + 1;
+        let z = vm.bounds.z;
+        let h = vm.bounds.height - 2;
+        let d = vm.bounds.depth;
 
-  trim() {
-    let vm = this;
+        vm.rect.z_to_z(x, y, z, d, h, vm.wallBlock);
+        if (vm.bounds.eastDoor) {
+            let dfz = Math.floor(vm.bounds.centerZ - 2);
+            let dwz = dfz + 1;
+            vm.rect.z_to_z(x, y, dfz, 5, 4, vm.doorFrameBlock);
+            vm.rect.z_to_z(x, y, dwz, 3, 3, 'air');
+            vm.rect.z_to_z(x - 1, y, dfz, 5, 4, vm.doorFrameBlock);
+            vm.rect.z_to_z(x - 1, y, dwz, 3, 3, 'air');
+        }
+    }
 
-    /* ne */
-    vm.#line.plot(
-      vm.#bounds.x + 1,
-      vm.#bounds.y,
-      vm.#bounds.z + 1,
-      vm.#bounds.x + 1,
-      vm.#bounds.y + vm.#bounds.height - 2,
-      vm.#bounds.z + 1,
-      vm.cornerPostBlock
-    );
-
-    /* nw */
-    vm.#line.plot(
-      vm.#bounds.x + vm.#bounds.width - 2,
-      vm.#bounds.y,
-      vm.#bounds.z + 1,
-      vm.#bounds.x + vm.#bounds.width - 2,
-      vm.#bounds.y + vm.#bounds.height - 2,
-      vm.#bounds.z + 1,
-      vm.cornerPostBlock
-    );
-
-    /* se */
-    vm.#line.plot(
-      vm.#bounds.x + 1,
-      vm.#bounds.y,
-      vm.#bounds.z + vm.#bounds.depth - 2,
-      vm.#bounds.x + 1,
-      vm.#bounds.y + vm.#bounds.height - 2,
-      vm.#bounds.z + vm.#bounds.depth - 2,
-      vm.cornerPostBlock
-    );
-
-    /* sw */
-    vm.#line.plot(
-      vm.#bounds.x + vm.#bounds.width - 2,
-      vm.#bounds.y,
-      vm.#bounds.z + vm.#bounds.depth - 2,
-      vm.#bounds.x + vm.#bounds.width - 2,
-      vm.#bounds.y + vm.#bounds.height - 2,
-      vm.#bounds.z + vm.#bounds.depth - 2,
-      vm.cornerPostBlock
-    );
-
-
-  }
-
-  roofTrim() {
-    let vm = this;
-    vm.#rect.flatHallow(
-      vm.#bounds.x + 1,
-      vm.#bounds.y + vm.#bounds.height - 2,
-      vm.#bounds.z + 1,
-      vm.#bounds.width - 3,
-      vm.#bounds.depth - 3,
-      vm.raftersBlock
-    );
-  }
-
-  roofCross() {
-    let vm = this;
-    let x = vm.#bounds.x;
-    let cx = Math.floor(vm.#bounds.centerX);
-    let y = vm.#bounds.height - 2;
-    let z = vm.#bounds.z;
-    let cz = Math.floor(vm.#bounds.centerZ);
-    let w = vm.#bounds.width;
-    let d = vm.#bounds.depth;
-
-    vm.#line.plot(
-      cx,
-      y,
-      z + 1,
-      cx,
-      y,
-      z + d - 2,
-      vm.raftersBlock
-    );
-
-    vm.#line.plot(
-      x + 1,
-      y,
-      cz,
-      x + w - 2,
-      y,
-      cz,
-      vm.raftersBlock
-    );
-
-    vm.#space.set(cx, y, cz, 'glowstone');
-
-  }
-
-  northStuff() {
-    let vm = this;
-    let x = vm.#bounds.x + 2;
-    let y = 1;
-    let z = vm.#bounds.z + 1;
-    let w = x + vm.#bounds.width - 4;
-    let dxs = Math.floor(vm.#bounds.centerX - 2);
-    let dxe = dxs + 4;
-    for (x; x < w; x++) {
-      if (!vm.#bounds.northDoor || (x < dxs || x > dxe)) {
-        let b = vm.decor.sample();
-        let r = b == 'crafting_table' ? { x: 0, y: Math.PI, z: 0 } : { x: 0, y: 0, z: 0 };
-        vm.#space.set(
-          x,
-          y,
-          z,
-          b,
-          r.x,
-          r.y,
-          r.x
+    floorTrim() {
+        let vm = this;
+        vm.rect.flatHallow(
+            vm.bounds.x + 1,
+            1,
+            vm.bounds.z + 1,
+            vm.bounds.width - 3,
+            vm.bounds.depth - 3,
+            vm.raftersBlock
         );
-      }
     }
-  }
 
-  westStuff() {
-    let vm = this;
-    let x = vm.#bounds.x + 1;
-    let y = 1;
-    let z = vm.#bounds.z + 2;
-    let d = z + vm.#bounds.depth - 4;
-    let dzs = Math.floor(vm.#bounds.centerZ - 2);
-    let dze = dzs + 4;
-    for (z; z < d; z++) {
-      if (!vm.#bounds.westDoor || (z < dzs || z > dze)) {
-        let b = vm.decor.sample();
-        let r = b == 'crafting_table' ? { x: 0, y: 0, z: 0 } : { x: 0, y: Math.PI, z: 0 };
-        vm.#space.set(
-          x,
-          y,
-          z,
-          b,
-          r.x,
-          r.y,
-          r.x
+    floor() {
+        let vm = this;
+        vm.rect.flat(
+            vm.bounds.x,
+            vm.bounds.y,
+            vm.bounds.z,
+            vm.bounds.width,
+            vm.bounds.depth,
+            vm.floorBlock
         );
-      }
     }
-  }
 
-  southStuff() {
-    let vm = this;
-    let x = vm.#bounds.x + 2;
-    let y = 1;
-    let z = vm.#bounds.z + vm.#bounds.depth - 2;
-    let w = x + vm.#bounds.width - 4;
-    let dxs = Math.floor(vm.#bounds.centerX - 2);
-    let dxe = dxs + 4
-    for (x; x < w; x++) {
-      if (!vm.#bounds.southDoor || (x < dxs || x > dxe)) {
-        let b = vm.decor.sample();
-        let r = b == 'crafting_table' ? { x: 0, y: 0, z: 0 } : { x: 0, y: Math.PI / 2, z: 0 };
-        vm.#space.set(
-          x,
-          y,
-          z,
-          b,
-          r.x,
-          r.y,
-          r.z
+    roof() {
+        let vm = this;
+        vm.rect.flat(
+            vm.bounds.x,
+            vm.bounds.height - 1,
+            vm.bounds.z,
+            vm.bounds.width,
+            vm.bounds.depth,
+            vm.roofBlock
         );
-      }
     }
-  }
 
-  eastStuff() {
-    let vm = this;
-    let x = vm.#bounds.x + vm.#bounds.width - 2;
-    let y = 1;
-    let z = vm.#bounds.z + 2;
-    let d = z + vm.#bounds.depth - 3;
-    let dzs = Math.floor(vm.#bounds.centerZ - 2);
-    let dze = dzs + 4;
-    for (z; z < d; z++) {
-      if (!vm.#bounds.eastDoor || (z < dzs || z > dze)) {
-        let b = vm.decor.sample();
-        let r = b == 'crafting_table' ? { x: 0, y: 0, z: 0 } : { x: 0, y: Math.PI, z: 0 };
-        vm.#space.set(
-          x,
-          y,
-          z,
-          b,
-          r.x,
-          r.y,
-          r.x
+    trim() {
+        let vm = this;
+
+        /* ne */
+        vm.line.plot(
+            vm.bounds.x + 1,
+            vm.bounds.y,
+            vm.bounds.z + 1,
+            vm.bounds.x + 1,
+            vm.bounds.y + vm.bounds.height - 2,
+            vm.bounds.z + 1,
+            vm.cornerPostBlock
         );
-      }
+
+        /* nw */
+        vm.line.plot(
+            vm.bounds.x + vm.bounds.width - 2,
+            vm.bounds.y,
+            vm.bounds.z + 1,
+            vm.bounds.x + vm.bounds.width - 2,
+            vm.bounds.y + vm.bounds.height - 2,
+            vm.bounds.z + 1,
+            vm.cornerPostBlock
+        );
+
+        /* se */
+        vm.line.plot(
+            vm.bounds.x + 1,
+            vm.bounds.y,
+            vm.bounds.z + vm.bounds.depth - 2,
+            vm.bounds.x + 1,
+            vm.bounds.y + vm.bounds.height - 2,
+            vm.bounds.z + vm.bounds.depth - 2,
+            vm.cornerPostBlock
+        );
+
+        /* sw */
+        vm.line.plot(
+            vm.bounds.x + vm.bounds.width - 2,
+            vm.bounds.y,
+            vm.bounds.z + vm.bounds.depth - 2,
+            vm.bounds.x + vm.bounds.width - 2,
+            vm.bounds.y + vm.bounds.height - 2,
+            vm.bounds.z + vm.bounds.depth - 2,
+            vm.cornerPostBlock
+        );
+
+
     }
-  }
 
-  decor = [
-    //'furnace',
-    'crafting_table',
-    //'blast_furnace',
-    //'smithing_table',
-    //'smoker',
-    //'dispenser',
-    'barrel',
-    'composter',
-    //'dispenser',
-    //'dropper',
-    //'oak_planks',
-  ];
+    roofTrim() {
+        let vm = this;
+        vm.rect.flatHallow(
+            vm.bounds.x + 1,
+            vm.bounds.y + vm.bounds.height - 2,
+            vm.bounds.z + 1,
+            vm.bounds.width - 3,
+            vm.bounds.depth - 3,
+            vm.raftersBlock
+        );
+    }
 
-  generate = () => {
-    let vm = this;
+    roofCross() {
+        let vm = this;
+        let x = vm.bounds.x;
+        let cx = Math.floor(vm.bounds.centerX);
+        let y = vm.bounds.height - 2;
+        let z = vm.bounds.z;
+        let cz = Math.floor(vm.bounds.centerZ);
+        let w = vm.bounds.width;
+        let d = vm.bounds.depth;
 
-    /* floor */
-    vm.floor();
+        vm.line.plot(
+            cx,
+            y,
+            z + 1,
+            cx,
+            y,
+            z + d - 2,
+            vm.raftersBlock
+        );
 
-    /* walls */
-    vm.wallNorth();
-    vm.wallEast();
-    vm.wallSouth();
-    vm.wallWest();
+        vm.line.plot(
+            x + 1,
+            y,
+            cz,
+            x + w - 2,
+            y,
+            cz,
+            vm.raftersBlock
+        );
 
-    /* trim */
-    vm.trim();
-    vm.roofTrim();
-    vm.roofCross();
+        vm.space.set(cx, y, cz, 'glowstone');
 
-    /* extras */
-    vm.northStuff();
-    vm.southStuff();
-    vm.eastStuff();
-    vm.westStuff();
-    
-    vm.roof();
-  };
+    }
+
+    northStuff() {
+        let vm = this;
+        let x = vm.bounds.x + 2;
+        let y = 2;
+        let z = vm.bounds.z + 1;
+        let w = x + vm.bounds.width - 4;
+        let dxs = Math.floor(vm.bounds.centerX - 2);
+        let dxe = dxs + 4;
+        for (x; x < w; x++) {
+            if (!vm.bounds.northDoor || (x < dxs || x > dxe)) {
+                let b = vm.decor.sample();
+                let r = b == 'crafting_table' ? { x: 0, y: Math.PI, z: 0 } : { x: 0, y: 0, z: 0 };
+                vm.space.set(
+                    x,
+                    y,
+                    z,
+                    b,
+                    r.x,
+                    r.y,
+                    r.x
+                );
+            }
+        }
+    }
+
+    westStuff() {
+        let vm = this;
+        let x = vm.bounds.x + 1;
+        let y = 2;
+        let z = vm.bounds.z + 2;
+        let d = z + vm.bounds.depth - 4;
+        let dzs = Math.floor(vm.bounds.centerZ - 2);
+        let dze = dzs + 4;
+        for (z; z < d; z++) {
+            if (!vm.bounds.westDoor || (z < dzs || z > dze)) {
+                let b = vm.decor.sample();
+                let r = b == 'crafting_table' ? { x: 0, y: 0, z: 0 } : { x: 0, y: Math.PI, z: 0 };
+                vm.space.set(
+                    x,
+                    y,
+                    z,
+                    b,
+                    r.x,
+                    r.y,
+                    r.x
+                );
+            }
+        }
+    }
+
+    southStuff() {
+        let vm = this;
+        let x = vm.bounds.x + 2;
+        let y = 2;
+        let z = vm.bounds.z + vm.bounds.depth - 2;
+        let w = x + vm.bounds.width - 4;
+        let dxs = Math.floor(vm.bounds.centerX - 2);
+        let dxe = dxs + 4
+        for (x; x < w; x++) {
+            if (!vm.bounds.southDoor || (x < dxs || x > dxe)) {
+                let b = vm.decor.sample();
+                let r = b == 'crafting_table' ? { x: 0, y: 0, z: 0 } : { x: 0, y: Math.PI / 2, z: 0 };
+                vm.space.set(
+                    x,
+                    y,
+                    z,
+                    b,
+                    r.x,
+                    r.y,
+                    r.z
+                );
+            }
+        }
+    }
+
+    eastStuff() {
+        let vm = this;
+        let x = vm.bounds.x + vm.bounds.width - 2;
+        let y = 2;
+        let z = vm.bounds.z + 2;
+        let d = z + vm.bounds.depth - 3;
+        let dzs = Math.floor(vm.bounds.centerZ - 2);
+        let dze = dzs + 4;
+        for (z; z < d; z++) {
+            if (!vm.bounds.eastDoor || (z < dzs || z > dze)) {
+                let b = vm.decor.sample();
+                let r = b == 'crafting_table' ? { x: 0, y: 0, z: 0 } : { x: 0, y: Math.PI, z: 0 };
+                vm.space.set(
+                    x,
+                    y,
+                    z,
+                    b,
+                    r.x,
+                    r.y,
+                    r.x
+                );
+            }
+        }
+    }
+
+    decor = [
+        //'furnace',
+        'crafting_table',
+        //'blast_furnace',
+        //'smithing_table',
+        //'smoker',
+        //'dispenser',
+        'barrel',
+        'composter',
+        //'dispenser',
+        //'dropper',
+        //'oak_planks',
+    ];
+
+    generate = () => {
+        let vm = this;
+
+        /* floor */
+        vm.floor();
+        vm.floorTrim();
+
+        /* walls */
+        vm.wallNorth();
+        vm.wallEast();
+        vm.wallSouth();
+        vm.wallWest();
+
+        /* trim */
+        vm.trim();
+        vm.roofTrim();
+        vm.roofCross();
+
+        /* extras */
+        vm.northStuff();
+        vm.southStuff();
+        vm.eastStuff();
+        vm.westStuff();
+
+        vm.roof();
+    };
 }
