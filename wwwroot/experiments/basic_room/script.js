@@ -11,6 +11,8 @@ import { Joystick } from '../../res/joysticks/joystick.js';
 import '../../core/array.js';
 import '../../core/isMobile.js';
 
+const compass = document.querySelector('.compass');
+const compassSize = 256;
 
 const lookSpeed = 2.5;
 let lon = 0;
@@ -159,6 +161,10 @@ const init = () => {
         0.1,
         25
     );
+    compass.style.top = `${window.innerHeight - compassSize - 16}px`;
+    //compass.style.right = `${window.innerWidth / 2 - (compassSize / 2)}px`;
+    compass.style.width = `${compassSize}px`;
+    compass.style.height = `${compassSize}px`;
     camera.rotation.order = 'YXZ';
     camera.lookAt(0, 0, 0);
     scene = new THREE.Scene();
@@ -309,6 +315,8 @@ const updatePlayer = (deltaTime) => {
         followPointer(deltaTime);
     }
 
+    compass.style.transform = `rotate(${camera.rotation.y}rad)`;
+
     playerVelocity.addScaledVector(playerVelocity, damping);
     const deltaPosition = playerVelocity.clone().multiplyScalar(deltaTime);
     playerCollider.translate(deltaPosition);
@@ -381,7 +389,7 @@ const getLeftVector = () => {
 };
 
 const getRightVector = () => {
-    const v = getLeftVector();
+    const v = getForwardVector();
     v.applyMatrix4(rmr);
     return v;
 };
@@ -411,11 +419,11 @@ document.addEventListener('keydown', (e) => {
             look.down = true;
             break;
         case 'ArrowLeft':
-        //case 'q':
+            //case 'q':
             look.left = true;
             break;
         case 'ArrowRight':
-        //case 'e':
+            //case 'e':
             look.right = true;
             break;
     }
@@ -442,11 +450,11 @@ document.addEventListener('keyup', (e) => {
             look.down = false;
             break;
         case 'ArrowLeft':
-        //case 'q':
+            //case 'q':
             look.left = false;
             break;
         case 'ArrowRight':
-        //case 'e':
+            //case 'e':
             look.right = false;
             break;
     }
