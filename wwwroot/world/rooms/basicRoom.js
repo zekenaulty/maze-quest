@@ -193,14 +193,14 @@ export class BasicRoom {
 
     }
 
-    roofTrim() {
+    roofTrim(o = 0) {
         let vm = this;
         vm.rect.flatHallow(
-            vm.bounds.x + 1,
+            vm.bounds.x + 1 + o,
             vm.bounds.y + vm.bounds.height - 2,
-            vm.bounds.z + 1,
-            vm.bounds.width - 3,
-            vm.bounds.depth - 3,
+            vm.bounds.z + 1 + o,
+            vm.bounds.width - 3 - (o * 2),
+            vm.bounds.depth - 3 - (o * 2),
             vm.raftersBlock
         );
     }

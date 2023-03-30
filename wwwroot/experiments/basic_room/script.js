@@ -11,7 +11,7 @@ import '../../core/array.js';
 import '../../core/isMobile.js';
 
 
-const lookSpeed = 1.9;
+const lookSpeed = 2.5;
 let lon = 0;
 let lat = 0;
 let pointerX = 0;
@@ -409,9 +409,11 @@ document.addEventListener('keydown', (e) => {
             look.down = true;
             break;
         case 'ArrowLeft':
+        case 'q':
             look.left = true;
             break;
         case 'ArrowRight':
+        case 'e':
             look.right = true;
             break;
     }
@@ -438,9 +440,11 @@ document.addEventListener('keyup', (e) => {
             look.down = false;
             break;
         case 'ArrowLeft':
+        case 'q':
             look.left = false;
             break;
         case 'ArrowRight':
+        case 'e':
             look.right = false;
             break;
     }

@@ -78,6 +78,10 @@ export class Library extends BasicRoom {
 
 
     bookPillarNE() {
+        let wr = Math.floor(Math.random() * 10);
+        if (wr < 5) {
+            return;
+        }
         let vm = this;
         let x = vm.bounds.x + 10;
         let z = vm.bounds.z + 5;
@@ -113,6 +117,10 @@ export class Library extends BasicRoom {
     }
 
     bookPillarNW() {
+        let wr = Math.floor(Math.random() * 10);
+        if (wr < 5) {
+            return;
+        }
         let vm = this;
         let x = vm.bounds.x + 5;
         let z = vm.bounds.z + 5;
@@ -148,6 +156,10 @@ export class Library extends BasicRoom {
     }
 
     bookWallN() {
+        let wr = Math.floor(Math.random() * 10);
+        if (wr < 5) {
+            return;
+        }
         let vm = this;
         let x = vm.bounds.x + 5;
         let z = vm.bounds.z + 5;
@@ -184,9 +196,13 @@ export class Library extends BasicRoom {
     }
 
     bookPillarSE() {
+        let wr = Math.floor(Math.random() * 10);
+        if (wr < 5) {
+            return;
+        }
         let vm = this;
         let x = vm.bounds.x + 10;
-        let z = vm.bounds.z + 10;
+        let z = vm.bounds.z + vm.bounds.depth - 7;
         vm.rect.flatHallow(
             x,
             vm.bounds.y + 1,
@@ -219,9 +235,13 @@ export class Library extends BasicRoom {
     }
 
     bookPillarSW() {
+        let wr = Math.floor(Math.random() * 10);
+        if (wr < 5) {
+            return;
+        }
         let vm = this;
         let x = vm.bounds.x + 5;
-        let z = vm.bounds.z + 10;
+        let z = vm.bounds.z + vm.bounds.depth - 7;
         vm.rect.flatHallow(
             x,
             vm.bounds.y + 1,
@@ -254,9 +274,13 @@ export class Library extends BasicRoom {
     }
 
     bookWallS() {
+        let wr = Math.floor(Math.random() * 10);
+        if (wr < 5) {
+            return;
+        }
         let vm = this;
         let x = vm.bounds.x + 5;
-        let z = vm.bounds.z + 10;
+        let z = vm.bounds.z + vm.bounds.depth - 7;
         let w = vm.bounds.width - 11
         vm.rect.flatHallow(
             x,
@@ -289,6 +313,87 @@ export class Library extends BasicRoom {
         );
     }
 
+    bookWallW() {
+        let wr = Math.floor(Math.random() * 10);
+        if (wr < 5) {
+            return;
+        }
+        let vm = this;
+        let x = vm.bounds.x + 5;
+        let z = vm.bounds.z + 5;
+        let d = vm.bounds.depth - 11
+        vm.rect.flatHallow(
+            x,
+            vm.bounds.y + 1,
+            z,
+            1,
+            d,
+            vm.raftersBlock
+        );
+
+        let ly = vm.bounds.height - 2;
+        for (let y = vm.bounds.y + 2; y < ly; y++) {
+            vm.rect.flatHallow(
+                x,
+                y,
+                z,
+                1,
+                d,
+                vm.booksBlock
+            );
+        }
+
+        vm.rect.flatHallow(
+            x,
+            ly,
+            z,
+            1,
+            d,
+            vm.raftersBlock
+        );
+    }
+
+
+    bookWallE() {
+        let wr = Math.floor(Math.random() * 10);
+        if (wr < 5) {
+            return;
+        }
+        let vm = this;
+        let x = vm.bounds.x + vm.bounds.width - 7;
+        let z = vm.bounds.z + 5;
+        let d = vm.bounds.depth - 11
+        vm.rect.flatHallow(
+            x,
+            vm.bounds.y + 1,
+            z,
+            1,
+            d,
+            vm.raftersBlock
+        );
+
+        let ly = vm.bounds.height - 2;
+        for (let y = vm.bounds.y + 2; y < ly; y++) {
+            vm.rect.flatHallow(
+                x,
+                y,
+                z,
+                1,
+                d,
+                vm.booksBlock
+            );
+        }
+
+        vm.rect.flatHallow(
+            x,
+            ly,
+            z,
+            1,
+            d,
+            vm.raftersBlock
+        );
+    }
+
     generate = () => {
         let vm = this;
 
@@ -304,8 +409,7 @@ export class Library extends BasicRoom {
 
         /* trim */
         vm.trim();
-        vm.roofTrim();
-        vm.roofCross();
+        //vm.roofCross();
 
         /* extras */
         vm.booksNorth();
@@ -327,7 +431,21 @@ export class Library extends BasicRoom {
             vm.bookWallS();
         }
 
+        if (!vm.bounds.westDoor) {
+            vm.bookWallW();
+        }
+
+        if (!vm.bounds.eastDoor) {
+            vm.bookWallE();
+        }
+
         vm.roof();
+        vm.roofTrim(1);
+        vm.space.set(Math.floor(vm.bounds.centerX), vm.bounds.height - 1, Math.floor(vm.bounds.centerZ), 'glowstone');
+        vm.space.set(Math.floor(vm.bounds.centerX) + 1, vm.bounds.height - 1, Math.floor(vm.bounds.centerZ), vm.raftersBlock);
+        vm.space.set(Math.floor(vm.bounds.centerX) - 1, vm.bounds.height - 1, Math.floor(vm.bounds.centerZ), vm.raftersBlock);
+        vm.space.set(Math.floor(vm.bounds.centerX), vm.bounds.height - 1, Math.floor(vm.bounds.centerZ) + 1, vm.raftersBlock);
+        vm.space.set(Math.floor(vm.bounds.centerX), vm.bounds.height - 1, Math.floor(vm.bounds.centerZ) - 1, vm.raftersBlock);
     };
 
 }
