@@ -13,7 +13,7 @@ export class BasicRoom {
 
     floorBlock = 'cobblestone_alt';
     wallBlock = 'stone_bricks_alt';
-    doorFrameBlock = 'oak_planks'; //'chiseled_stone_bricks_alt';
+    doorFrameBlock = 'chiseled_stone_bricks_alt';
     cornerPostBlock = 'oak_log';
     raftersBlock = 'oak_planks';
     roofBlock = 'oak_planks_alt';
@@ -41,8 +41,6 @@ export class BasicRoom {
             let dwx = dfx + 1;
             vm.rect.x_to_x(dfx, y, z, 5, 4, vm.doorFrameBlock);
             vm.rect.x_to_x(dwx, y, z, 3, 3, 'air');
-            vm.rect.x_to_x(dfx, y, z + 1, 5, 4, vm.doorFrameBlock);
-            vm.rect.x_to_x(dwx, y, z + 1, 3, 3, 'air');
         }
     }
 
@@ -61,8 +59,6 @@ export class BasicRoom {
             let dwz = dfz + 1;
             vm.rect.z_to_z(x, y, dfz, 5, 4, vm.doorFrameBlock);
             vm.rect.z_to_z(x, y, dwz, 3, 3, 'air');
-            vm.rect.z_to_z(x + 1, y, dfz, 5, 4, vm.doorFrameBlock);
-            vm.rect.z_to_z(x + 1, y, dwz, 3, 3, 'air');
         }
     }
 
@@ -82,8 +78,6 @@ export class BasicRoom {
             let dwx = dfx + 1;
             vm.rect.x_to_x(dfx, y, z, 5, 4, vm.doorFrameBlock);
             vm.rect.x_to_x(dwx, y, z, 3, 3, 'air');
-            vm.rect.x_to_x(dfx, y, z - 1, 5, 4, vm.doorFrameBlock);
-            vm.rect.x_to_x(dwx, y, z - 1, 3, 3, 'air');
         }
     }
 
@@ -102,8 +96,6 @@ export class BasicRoom {
             let dwz = dfz + 1;
             vm.rect.z_to_z(x, y, dfz, 5, 4, vm.doorFrameBlock);
             vm.rect.z_to_z(x, y, dwz, 3, 3, 'air');
-            vm.rect.z_to_z(x - 1, y, dfz, 5, 4, vm.doorFrameBlock);
-            vm.rect.z_to_z(x - 1, y, dwz, 3, 3, 'air');
         }
     }
 
@@ -242,7 +234,7 @@ export class BasicRoom {
     northStuff() {
         let vm = this;
         let x = vm.bounds.x + 2;
-        let y = 2;
+        let y = 1;
         let z = vm.bounds.z + 1;
         let w = x + vm.bounds.width - 4;
         let dxs = Math.floor(vm.bounds.centerX - 2);
@@ -267,7 +259,7 @@ export class BasicRoom {
     westStuff() {
         let vm = this;
         let x = vm.bounds.x + 1;
-        let y = 2;
+        let y = 1;
         let z = vm.bounds.z + 2;
         let d = z + vm.bounds.depth - 4;
         let dzs = Math.floor(vm.bounds.centerZ - 2);
@@ -292,7 +284,7 @@ export class BasicRoom {
     southStuff() {
         let vm = this;
         let x = vm.bounds.x + 2;
-        let y = 2;
+        let y = 1;
         let z = vm.bounds.z + vm.bounds.depth - 2;
         let w = x + vm.bounds.width - 4;
         let dxs = Math.floor(vm.bounds.centerX - 2);
@@ -317,7 +309,7 @@ export class BasicRoom {
     eastStuff() {
         let vm = this;
         let x = vm.bounds.x + vm.bounds.width - 2;
-        let y = 2;
+        let y = 1;
         let z = vm.bounds.z + 2;
         let d = z + vm.bounds.depth - 3;
         let dzs = Math.floor(vm.bounds.centerZ - 2);
@@ -358,7 +350,7 @@ export class BasicRoom {
 
         /* floor */
         vm.floor();
-        vm.floorTrim();
+        //vm.floorTrim();
 
         /* walls */
         vm.wallNorth();

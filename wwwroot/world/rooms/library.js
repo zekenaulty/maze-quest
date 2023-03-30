@@ -15,7 +15,7 @@ export class Library extends BasicRoom {
         if (vm.bounds.northDoor) {
             let dfx = Math.floor(vm.bounds.centerX - 2);
             let dwx = dfx + 1;
-            vm.rect.x_to_x(dfx, y - 1, z, 5, 4, vm.doorFrameBlock);
+            vm.rect.x_to_x(dfx, y - 1, z, 5, 4, vm.raftersBlock);
             vm.rect.x_to_x(dwx, y - 1, z, 3, 3, 'air');
         }
     }
@@ -33,7 +33,7 @@ export class Library extends BasicRoom {
         if (vm.bounds.westDoor) {
             let dfz = Math.floor(vm.bounds.centerZ - 2);
             let dwz = dfz + 1;
-            vm.rect.z_to_z(x, y - 1, dfz, 5, 4, vm.doorFrameBlock);
+            vm.rect.z_to_z(x, y - 1, dfz, 5, 4, vm.raftersBlock);
             vm.rect.z_to_z(x, y - 1, dwz, 3, 3, 'air');
         }
     }
@@ -52,7 +52,7 @@ export class Library extends BasicRoom {
         if (vm.bounds.southDoor) {
             let dfx = Math.floor(vm.bounds.centerX - 2);
             let dwx = dfx + 1;
-            vm.rect.x_to_x(dfx, y - 1, z, 5, 4, vm.doorFrameBlock);
+            vm.rect.x_to_x(dfx, y - 1, z, 5, 4, vm.raftersBlock);
             vm.rect.x_to_x(dwx, y - 1, z, 3, 3, 'air');
         }
     }
@@ -70,7 +70,7 @@ export class Library extends BasicRoom {
         if (vm.bounds.eastDoor) {
             let dfz = Math.floor(vm.bounds.centerZ - 2);
             let dwz = dfz + 1;
-            vm.rect.z_to_z(x, y - 1, dfz, 5, 4, vm.doorFrameBlock);
+            vm.rect.z_to_z(x, y - 1, dfz, 5, 4, vm.raftersBlock);
             vm.rect.z_to_z(x, y - 1, dwz, 3, 3, 'air');
         }
     }

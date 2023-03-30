@@ -3,6 +3,7 @@ import Stats from 'three/addons/libs/stats.module.js';
 import { Space } from '../../world/space.js';
 import { BasicRoom } from '../../world/rooms/basicRoom.js';
 import { Library } from '../../world/rooms/library.js';
+import { Passage } from '../../world/rooms/passage.js';
 import { RoomBounds } from '../../world/rooms/roomBounds.js';
 import { BlockBuilder } from '../../assets/blockBuilder.js';
 import { Capsule } from 'three/addons/math/Capsule.js';
@@ -34,8 +35,8 @@ const body_m = new THREE.MeshBasicMaterial();
 const body = new THREE.Mesh(body_g, body_m);
 
 const playerCollider = new Capsule(
-    new THREE.Vector3(8.5, 1, 8.5),
-    new THREE.Vector3(8.5, 2.25, 8.5),
+    new THREE.Vector3(8, 1, 8),
+    new THREE.Vector3(8, 2.25, 8),
     0.35
 );
 
@@ -58,7 +59,8 @@ let space = new Space(w * l, 10, d * l, 0, 0, 0);
 
 let roomz = [
     BasicRoom,
-    Library
+    Library,
+    Passage
 ];
 
 const rooms = () => {
