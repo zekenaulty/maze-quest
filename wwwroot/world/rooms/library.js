@@ -9,7 +9,7 @@ export class Library extends BasicRoom {
         let y = vm.bounds.y + 2;
         let z = vm.bounds.z + 1;
         let h = vm.bounds.height - 4;
-        let w = vm.bounds.width;
+        let w = vm.bounds.width - 2;
 
         vm.rect.x_to_x(x, y, z, w, h, vm.booksBlock);
         if (vm.bounds.northDoor) {
@@ -27,7 +27,7 @@ export class Library extends BasicRoom {
         let y = vm.bounds.y + 2;
         let z = vm.bounds.z + 1;
         let h = vm.bounds.height - 4;
-        let d = vm.bounds.depth;
+        let d = vm.bounds.depth - 2;
 
         vm.rect.z_to_z(x, y, z, d, h, vm.booksBlock);
         if (vm.bounds.westDoor) {
@@ -42,11 +42,11 @@ export class Library extends BasicRoom {
     booksSouth() {
         let vm = this;
 
-        let x = vm.bounds.x;
+        let x = vm.bounds.x + 1;
         let y = vm.bounds.y + 2;
         let z = vm.bounds.z + vm.bounds.depth - 2;
         let h = vm.bounds.height - 4;
-        let w = vm.bounds.width;
+        let w = vm.bounds.width - 2;
 
         vm.rect.x_to_x(x, y, z, w, h, vm.booksBlock);
         if (vm.bounds.southDoor) {
@@ -62,9 +62,9 @@ export class Library extends BasicRoom {
 
         let x = vm.bounds.x + vm.bounds.width - 2;
         let y = vm.bounds.y + 2;
-        let z = vm.bounds.z;
+        let z = vm.bounds.z + 1;
         let h = vm.bounds.height - 4;
-        let d = vm.bounds.depth;
+        let d = vm.bounds.depth - 2;
 
         vm.rect.z_to_z(x, y, z, d, h, vm.booksBlock);
         if (vm.bounds.eastDoor) {
@@ -74,8 +74,6 @@ export class Library extends BasicRoom {
             vm.rect.z_to_z(x, y - 1, dwz, 3, 3, 'air');
         }
     }
-
-
 
     bookPillarNE() {
         let wr = Math.floor(Math.random() * 10);

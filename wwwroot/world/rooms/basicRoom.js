@@ -345,6 +345,162 @@ export class BasicRoom {
         //'oak_planks',
     ];
 
+    pillarNE(random = false) {
+        let wr = Math.floor(Math.random() * 10);
+        if (wr < 5 && random) {
+            return;
+        }
+        let vm = this;
+        let x = vm.bounds.x + 10;
+        let z = vm.bounds.z + 5;
+        vm.rect.flatHallow(
+            x,
+            vm.bounds.y + 1,
+            z,
+            1,
+            1,
+            vm.doorFrameBlock
+        );
+
+        let ly = vm.bounds.height - 2;
+        for (let y = vm.bounds.y + 2; y < ly; y++) {
+            vm.rect.flatHallow(
+                x,
+                y,
+                z,
+                1,
+                1,
+                vm.wallBlock
+            );
+        }
+
+        vm.rect.flatHallow(
+            x,
+            ly,
+            z,
+            1,
+            1,
+            vm.doorFrameBlock
+        );
+    }
+
+    pillarNW(random = false) {
+        let wr = Math.floor(Math.random() * 10);
+        if (wr < 5 && random) {
+            return;
+        }
+        let vm = this;
+        let x = vm.bounds.x + 5;
+        let z = vm.bounds.z + 5;
+        vm.rect.flatHallow(
+            x,
+            vm.bounds.y + 1,
+            z,
+            1,
+            1,
+            vm.doorFrameBlock
+        );
+
+        let ly = vm.bounds.height - 2;
+        for (let y = vm.bounds.y + 2; y < ly; y++) {
+            vm.rect.flatHallow(
+                x,
+                y,
+                z,
+                1,
+                1,
+                vm.wallBlock
+            );
+        }
+
+        vm.rect.flatHallow(
+            x,
+            ly,
+            z,
+            1,
+            1,
+            vm.doorFrameBlock
+        );
+    }
+
+    pillarSE(random = false) {
+        let wr = Math.floor(Math.random() * 10);
+        if (wr < 5 && random) {
+            return;
+        }
+        let vm = this;
+        let x = vm.bounds.x + 10;
+        let z = vm.bounds.z + vm.bounds.depth - 7;
+        vm.rect.flatHallow(
+            x,
+            vm.bounds.y + 1,
+            z,
+            1,
+            1,
+            vm.doorFrameBlock
+        );
+
+        let ly = vm.bounds.height - 2;
+        for (let y = vm.bounds.y + 2; y < ly; y++) {
+            vm.rect.flatHallow(
+                x,
+                y,
+                z,
+                1,
+                1,
+                vm.wallBlock
+            );
+        }
+
+        vm.rect.flatHallow(
+            x,
+            ly,
+            z,
+            1,
+            1,
+            vm.doorFrameBlock
+        );
+    }
+
+    pillarSW(random = false) {
+        let wr = Math.floor(Math.random() * 10);
+        if (wr < 5 && random) {
+            return;
+        }
+        let vm = this;
+        let x = vm.bounds.x + 5;
+        let z = vm.bounds.z + vm.bounds.depth - 7;
+        vm.rect.flatHallow(
+            x,
+            vm.bounds.y + 1,
+            z,
+            1,
+            1,
+            vm.doorFrameBlock
+        );
+
+        let ly = vm.bounds.height - 2;
+        for (let y = vm.bounds.y + 2; y < ly; y++) {
+            vm.rect.flatHallow(
+                x,
+                y,
+                z,
+                1,
+                1,
+                vm.wallBlock
+            );
+        }
+
+        vm.rect.flatHallow(
+            x,
+            ly,
+            z,
+            1,
+            1,
+            vm.doorFrameBlock
+        );
+    }
+
     generate = () => {
         let vm = this;
 
@@ -358,16 +514,23 @@ export class BasicRoom {
         vm.wallSouth();
         vm.wallWest();
 
-        /* trim */
+        vm.pillarNW();
+        vm.pillarNE();
+        vm.pillarSW();
+        vm.pillarSE();
+
+        /* trim 
         vm.trim();
+        */
         vm.roofTrim();
         vm.roofCross();
 
-        /* extras */
+        /* extras 
         vm.northStuff();
         vm.southStuff();
         vm.eastStuff();
         vm.westStuff();
+        */
 
         vm.roof();
     };
