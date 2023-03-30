@@ -411,11 +411,11 @@ document.addEventListener('keydown', (e) => {
             look.down = true;
             break;
         case 'ArrowLeft':
-        case 'q':
+        //case 'q':
             look.left = true;
             break;
         case 'ArrowRight':
-        case 'e':
+        //case 'e':
             look.right = true;
             break;
     }
@@ -442,11 +442,11 @@ document.addEventListener('keyup', (e) => {
             look.down = false;
             break;
         case 'ArrowLeft':
-        case 'q':
+        //case 'q':
             look.left = false;
             break;
         case 'ArrowRight':
-        case 'e':
+        //case 'e':
             look.right = false;
             break;
     }
