@@ -15,7 +15,7 @@ export class CanvasRectangleScaler {
     cells;
     size;
 
-    constructor(width, height, rooms = 3000, toTiny = 17) {
+    constructor(width, height, rooms = 289, toTiny = 6) {
         let vm = this;
 
         vm.stageWidth = width;

@@ -8,13 +8,53 @@ import { RoomBounds } from '../../world/rooms/roomBounds.js';
 import { BlockBuilder } from '../../assets/blockBuilder.js';
 import { Capsule } from 'three/addons/math/Capsule.js';
 import { Joystick } from '../../res/joysticks/joystick.js';
+import { Maze } from '../../maze/maze.js';
+import { RecursiveBacktracker } from '../../maze/generators/recursiveBacktracker.js';
+import { MazeToText } from '../../maze/renderers/mazeToText.js';
+import { CanvasRectangle } from '../../maze/renderers/canvasRectangle.js';
+import { CanvasRectangleScaler } from '../../maze/renderers/canvasRectangleScaler.js';
 import '../../core/array.js';
 import '../../core/isMobile.js';
 
 const compass = document.querySelector('.compass');
 const location = document.querySelector('.location');
+const mazeCanvas = new OffscreenCanvas(256, 256);// document.querySelector('.maze-back-buffer');
+const mazeContext = mazeCanvas.getContext("2d");
+
+const compassMap = document.querySelector('.compass-map');
+const mapContext = compassMap.getContext("2d");
+
+const STEPS_PER_FRAME = 5;
+
+let speed = 25;
+let dpad = new Joystick("stick1", 64, 8);
+let cpad = new Joystick("stick2", 64, 8);
+
+let w = 17;
+let h = 9;
+let d = 17;
+let l = 16;
+
 const compassSize = 256;
 const locationWidth = 256;
+
+compassMap.width = '256';
+compassMap.height = '256';
+
+
+const scaler = new CanvasRectangleScaler(256, 256, 257);
+const maze = new Maze(scaler.rows, scaler.columns);
+const mazeRenderer = new CanvasRectangle(maze, scaler, mazeContext);
+const toText = new MazeToText(maze);
+const mazeText = document.querySelector('.maze-text');
+
+const gen = new RecursiveBacktracker(maze);
+gen.generate();
+
+mazeText.innerText = toText.render();
+
+let centerMap = 128;
+let cellSize = scaler.size;
 
 const lookSpeed = 2.5;
 let lon = 0;
@@ -38,28 +78,6 @@ const body_g = new THREE.BoxGeometry(0.5, 2.5, 0.5);
 const body_m = new THREE.MeshBasicMaterial();
 const body = new THREE.Mesh(body_g, body_m);
 
-const playerCollider = new Capsule(
-    new THREE.Vector3(8, 1, 8),
-    new THREE.Vector3(8, 2.25, 8),
-    0.35
-);
-
-body.position.copy(playerCollider.start);
-
-const STEPS_PER_FRAME = 5;
-
-let speed = 25;
-let dpad = new Joystick("stick1", 64, 8);
-let cpad = new Joystick("stick2", 64, 8);
-
-await blocks.load();
-
-let w = 17;
-let h = 9;
-let d = 17;
-let l = 11;
-let wd = w * l;
-let space = new Space(w * l, 10, d * l, 0, 0, 0);
 
 let roomz = [
     BasicRoom,
@@ -67,29 +85,46 @@ let roomz = [
     Passage
 ];
 
+await blocks.load();
+let space = new Space(w * maze.columns, 10, d * maze.rows, 0, 0, 0);
+
 const rooms = () => {
-    for (let x = 0; x < l; x++) {
-        for (let z = 0; z < l; z++) {
+    for (let row = 0; row < maze.rows; row++) {
+        for (let col = 0; col < maze.rows; col++) {
+            let cell = maze.cell(row, col);
+            let x = col;
+            let z = row;
             let rc = roomz.sample();
-            let r = new rc(
+            cell.bounds = new RoomBounds(
+                x == 0 ? 0 : x * w - x,
+                0,
+                z == 0 ? 0 : z * d - z,
+                w,
+                h,
+                d,
+                cell.links.linked(cell.north),
+                cell.links.linked(cell.east),
+                cell.links.linked(cell.south),
+                cell.links.linked(cell.west)
+            );
+            cell.room = new rc(
                 space,
-                new RoomBounds(
-                    x == 0 ? 0 : x * w - x,
-                    0,
-                    z == 0 ? 0 : z * d - z,
-                    w,
-                    h,
-                    d,
-                    z == 0 ? false : true,
-                    x == l - 1 ? false : true,
-                    z == l - 1 ? false : true,
-                    x == 0 ? false : true
-                ));
-            r.generate();
+                cell.bounds);
+            cell.room.generate();
         }
     }
 };
 rooms();
+
+let sx = maze.start.bounds.x + 8;
+let sz = maze.start.bounds.z + 8;
+const playerCollider = new Capsule(
+    new THREE.Vector3(sx, 1, sz),
+    new THREE.Vector3(sx, 2.25, sz),
+    0.35
+);
+
+body.position.copy(playerCollider.start);
 
 const meshes = {};
 const turf = new THREE.Group();
@@ -166,6 +201,9 @@ const init = () => {
     compass.style.top = `${window.innerHeight - compassSize - 16}px`;
     compass.style.width = `${compassSize}px`;
     compass.style.height = `${compassSize}px`;
+    compassMap.style.top = `${window.innerHeight - compassSize - 14.5}px`;
+    compassMap.style.width = `${compassSize}px`;
+    compassMap.style.height = `${compassSize}px`;
 
     location.style.top = `${window.innerHeight - 19}px`;
     location.style.width = `${locationWidth}px`;
@@ -180,7 +218,10 @@ const init = () => {
     document.body.appendChild(renderer.domElement);
     stats = new Stats();
     document.body.appendChild(stats.dom);
-
+    stats.domElement.style.position = 'fixed';
+    stats.domElement.style.top = '16px';
+    stats.domElement.style.left = '';
+    stats.domElement.style.right = '16px';
     scene.add(turf);
     scene.add(body);
 
@@ -193,6 +234,32 @@ const animate = () => {
     renderer.render(scene, camera);
     blocks.animate();
     stats.update();
+    mazeRenderer.draw();
+
+    mapContext.save();
+    mapContext.beginPath();
+    mapContext.clearRect(0, 0, compassMap.width, compassMap.height);
+    mapContext.arc(centerMap, centerMap, 77, 0, 2 * Math.PI, false);
+    mapContext.clip();
+    mapContext.fillStyle = 'white';
+    mapContext.fillRect(0, 0, compassMap.width, compassMap.height);
+    let dx = 128 - (maze.active.column * cellSize + (cellSize/2));
+    let dy = 128 - (maze.active.row * cellSize + (cellSize / 2));
+    console.log(dx);
+    console.log(dy);
+    mapContext.drawImage(
+        mazeCanvas,
+        0,
+        0,
+        256,
+        256,
+        dx,
+        dy,
+        256,
+        256
+    );
+    mapContext.restore();
+
 }
 
 const rmf = new THREE.Matrix4();
@@ -321,6 +388,7 @@ const updatePlayer = (deltaTime) => {
     }
 
     compass.style.transform = `rotate(${camera.rotation.y}rad)`;
+    compassMap.style.transform = `rotate(${camera.rotation.y}rad)`;
 
     playerVelocity.addScaledVector(playerVelocity, damping);
     const deltaPosition = playerVelocity.clone().multiplyScalar(deltaTime);
@@ -329,6 +397,19 @@ const updatePlayer = (deltaTime) => {
     body.position.copy(playerCollider.start);
 
     location.innerText = `x: ${Math.floor(body.position.x)}, y: ${Math.floor(body.position.y)}, z: ${Math.floor(body.position.z)}`;
+
+    mazeText.innerText = toText.render();
+
+    if (maze.active.bounds.outOfBoundsWest(body.position.x)) {
+        maze.active = maze.active.west;
+    } else if (maze.active.bounds.outOfBoundsEast(body.position.x)) {
+        maze.active = maze.active.east;
+    } else if (maze.active.bounds.outOfBoundsNorth(body.position.z)) {
+        maze.active = maze.active.north;
+    } else if (maze.active.bounds.outOfBoundsSouth(body.position.z)) {
+        maze.active = maze.active.south;
+    }
+
     chunked();
 
 };

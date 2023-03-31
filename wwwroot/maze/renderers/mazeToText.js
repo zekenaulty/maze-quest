@@ -40,6 +40,8 @@ export class MazeToText {
         vm.#output += bottom + '\r\n';
       }
     });
+
+      return vm.#output;
   }
   
   get text() {

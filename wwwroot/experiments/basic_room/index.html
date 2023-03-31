@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Rooms Testing</title>
     <script type="importmap">
         {
           "imports": {
@@ -190,6 +190,32 @@
             font: bolder 0.85em arial;
         }
 
+        .maze-text {
+            position: fixed;
+            z-index: 10;
+            top: 16px;
+            left: 16px;
+            opacity: 0.5;
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            border-radius: 13px 13px 13px 13px;
+            font: bolder 0.85em monospace;
+            padding: 6px 6px 6px 6px;
+            display: none;
+        }
+
+        .compass-map {
+            position: fixed;
+            z-index: 15;
+            top: 16px;
+            right: 15.5px;
+            color: black;
+            width: 256px;
+            height: 256px;
+            opacity: 0.85;
+        }
+
     </style>
     <link rel="stylesheet" href="../../res/fa/all.min.css" />
     <link rel="stylesheet" href="../../res/cyborg.css" id="theme" />
@@ -216,7 +242,8 @@
 
     <img src="../../assets/sprites/compass_bg.png" class="compass" />
     <div class="location"></div>
-
+    <pre class="maze-text"></pre>
+    <canvas class="compass-map"></canvas>
     <script type="module" src="./script.js"></script>
 </body>
 

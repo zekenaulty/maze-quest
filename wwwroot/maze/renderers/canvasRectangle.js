@@ -6,19 +6,19 @@ export class CanvasRectangle {
     #scaler;
     #gfx;
 
-    bgColor = 'black';
-    wallColor = 'orange';
-    floorColor = 'black';
+    bgColor = 'white';
+    wallColor = 'black';
+    floorColor = 'white';
     startColor = 'cornflowerblue';
     endColor = 'green'; //'#D2042D';
     //pathColor = '#7F00FF';
-    activeColor = 'silver'; //'#800080';
+    activeColor = 'blue'; //'#800080';
     solveColor = 'teal';
 
     showSolution = false;
     showHistogram = false;
 
-    constructor(game, maze, scaler, gfx) {
+    constructor(maze, scaler, gfx) {
         let vm = this;
 
         vm.#maze = maze;

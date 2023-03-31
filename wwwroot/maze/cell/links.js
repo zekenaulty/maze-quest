@@ -2,81 +2,81 @@ import '../../core/array.js';
 
 export class Links {
 
-  items = new Array();
-  cell;
+    items = new Array();
+    cell;
 
-  saveState() {
-    let vm = this;
-    let r = {
-      row: vm.cell.row,
-      column: vm.cell.column,
-      items: new Array()
-    };
+    saveState() {
+        let vm = this;
+        let r = {
+            row: vm.cell.row,
+            column: vm.cell.column,
+            items: new Array()
+        };
 
-    for (let i = 0; i < vm.items.length; i++) {
-      r.items.push({
-        row: vm.items[i].row,
-        column: vm.items[i].column
-      });
+        for (let i = 0; i < vm.items.length; i++) {
+            r.items.push({
+                row: vm.items[i].row,
+                column: vm.items[i].column
+            });
+        }
+
+        return r;
     }
 
-    return r;
-  }
-
-  loadState(maze, state) {
-    let vm = this;
-    vm.cell = maze.cell(state.row, state.column);
-    for (let i = 0; i < state.items.length; i++) {
-      vm.items.push(maze.cell(
-        state.items[i].row,
-        state.items[i].column
-      ));
-    }
-  }
-
-  constructor(cell) {
-    let vm = this;
-
-    vm.cell = cell;
-  }
-
-  connect(cell, link = true, both = true) {
-    let vm = this;
-
-    if (!cell) {
-      return false;
+    loadState(maze, state) {
+        let vm = this;
+        vm.cell = maze.cell(state.row, state.column);
+        for (let i = 0; i < state.items.length; i++) {
+            vm.items.push(maze.cell(
+                state.items[i].row,
+                state.items[i].column
+            ));
+        }
     }
 
-    if (link) {
-      if (!vm.linked(cell)) {
-        vm.items.push(cell);
-      }
-    } else {
-      vm.items.delete(cell);
+    constructor(cell) {
+        let vm = this;
+
+        vm.cell = cell;
     }
 
-    if (both) {
-      cell.links.connect(vm.cell, link, false);
+    connect(cell, link = true, both = true) {
+        let vm = this;
+
+        if (!cell) {
+            return false;
+        }
+
+        if (link) {
+            if (!vm.linked(cell)) {
+                vm.items.push(cell);
+            }
+        } else {
+            vm.items.delete(cell);
+        }
+
+        if (both) {
+            cell.links.connect(vm.cell, link, false);
+        }
+
+        return true;
     }
 
-    return true;
-  }
-
-  linked(cell) {
-    let vm = this;
-    if (cell === undefined) {
-      return false;
+    linked(cell) {
+        let vm = this;
+        if (cell === undefined) {
+            return false;
+        }
+        return vm.items.includes(cell);
     }
-    return vm.items.includes(cell);
-  }
 
-  empty() {
-    let vm = this;
-    return vm.items.length === 0;
-  }
+    empty() {
+        let vm = this;
+        return vm.items.length === 0;
+    }
 
-  any() {
-    let vm = this;
-    return vm.items.length > 0;
-  }
+    any() {
+        let vm = this;
+        return vm.items.length > 0;
+    }
 }

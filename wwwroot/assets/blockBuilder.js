@@ -140,9 +140,29 @@ export class BlockBuilder extends EventTarget {
                 color: b.map.color,
                 map: vm.#textures[b.map.name]
             });
-            vm.#materials[b.name] = n;
+
+            if (b.map.transparent) {
+                n.transparent = true;
+                n.opacity = b.map.opacity;
+            }
+
+            vm.#materials[b.name] = [
+                n.clone(),
+                n.clone(),
+                n.clone(),
+                n.clone(),
+                n.clone(),
+                n.clone()
+            ];
+
+            vm.#materials[b.name][0].map = n.map.clone();
+            vm.#materials[b.name][1].map = n.map.clone();
+            vm.#materials[b.name][2].map = n.map.clone();
+            vm.#materials[b.name][3].map = n.map.clone();
+            vm.#materials[b.name][4].map = n.map.clone();
+            vm.#materials[b.name][5].map = n.map.clone();
+
             if (b.meta) {
-                //console.log(b.meta);
                 let offset = b.map.width / b.map.height;
                 n.map.offset.set(0, 0);
                 n.map.repeat.set(1, offset);
@@ -216,10 +236,24 @@ export class BlockBuilder extends EventTarget {
         let vm = this;
         for (let p in vm.#animate) {
             let a = vm.#animate[p];
-            let t = vm.#materials[p].map;
 
-            t.repeat.set(1, a.offset);
-            t.offset.set(0, 0);
+            vm.#materials[p][0].map.repeat.set(1, a.offset);
+            vm.#materials[p][0].map.offset.set(0, 0);
+
+            vm.#materials[p][1].map.repeat.set(1, a.offset);
+            vm.#materials[p][1].map.offset.set(0, 0);
+
+            vm.#materials[p][2].map.repeat.set(1, a.offset);
+            vm.#materials[p][2].map.offset.set(0, 0);
+
+            vm.#materials[p][3].map.repeat.set(1, a.offset);
+            vm.#materials[p][3].map.offset.set(0, 0);
+
+            vm.#materials[p][4].map.repeat.set(1, a.offset);
+            vm.#materials[p][4].map.offset.set(0, 0);
+
+            vm.#materials[p][5].map.repeat.set(1, a.offset);
+            vm.#materials[p][5].map.offset.set(0, 0);
         }
     }
 
@@ -229,9 +263,25 @@ export class BlockBuilder extends EventTarget {
             let a = vm.#animate[p];
             a.ticks++;
             if (a.ticks >= a.frametime * 2) {
-                let t = vm.#materials[p].map;
-                t.offset.set(0, a.offset * a.frame);
-                t.needsUpdate = true;
+
+                vm.#materials[p][0].map.offset.set(0, a.offset * a.frame);
+                vm.#materials[p][0].map.needsUpdate = true;
+
+                vm.#materials[p][1].map.offset.set(0, a.offset * a.frame);
+                vm.#materials[p][1].map.needsUpdate = true;
+
+                vm.#materials[p][2].map.offset.set(0, a.offset * a.frame);
+                vm.#materials[p][2].map.needsUpdate = true;
+
+                vm.#materials[p][3].map.offset.set(0, a.offset * a.frame);
+                vm.#materials[p][3].map.needsUpdate = true;
+
+                vm.#materials[p][4].map.offset.set(0, a.offset * a.frame);
+                vm.#materials[p][4].map.needsUpdate = true;
+
+                vm.#materials[p][5].map.offset.set(0, a.offset * a.frame);
+                vm.#materials[p][5].map.needsUpdate = true;
+
                 a.frame++;
                 if (a.frame >= a.frameCount) {
                     a.frame = 0;
