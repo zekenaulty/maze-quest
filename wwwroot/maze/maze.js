@@ -16,7 +16,7 @@ export class Maze {
     solution;
 
     saveState() {
-        let vm = this;
+        const vm = this;
         let r = {
             rows: vm.rows,
             columns: vm.columns,
@@ -39,7 +39,7 @@ export class Maze {
     }
 
     loadState(state) {
-        let vm = this;
+        const vm = this;
         vm.resize(state.rows, state.columns);
         vm.initialize();
 
@@ -59,18 +59,18 @@ export class Maze {
     }
 
     constructor(rows, columns) {
-        let vm = this;
+        const vm = this;
         vm.resize(rows, columns);
     }
 
     resize(rows, columns) {
-        let vm = this;
+        const vm = this;
         vm.rows = rows;
         vm.columns = columns;
     }
 
     initialize() {
-        let vm = this;
+        const vm = this;
 
         vm.grid = new Array();
         vm.cells = new Array();
@@ -90,7 +90,7 @@ export class Maze {
     }
 
     populate() {
-        let vm = this;
+        const vm = this;
         let all = new Array();
         let grid = new Array();
 
@@ -110,7 +110,7 @@ export class Maze {
     }
 
     configureCells() {
-        let vm = this;
+        const vm = this;
         vm.eachCell((cell) => {
             cell.north = vm.cell(cell.row - 1, cell.column);
             cell.east = vm.cell(cell.row, cell.column + 1);
@@ -125,7 +125,7 @@ export class Maze {
     }
 
     cell(row, column) {
-        let vm = this;
+        const vm = this;
         if (row < 0 || column < 0 || row >= vm.rows || column >= vm.columns) {
             return undefined;
         }
@@ -134,21 +134,21 @@ export class Maze {
     }
 
     eachRow(action) {
-        let vm = this;
+        const vm = this;
         for (let r = 0; r < vm.rows; r++) {
             action(vm.grid[r]);
         }
     }
 
     eachCell(action) {
-        let vm = this;
+        const vm = this;
         for (let i = 0; i < vm.cells.length; i++) {
             action(vm.cells[i]);
         }
     }
 
     walkGrid(action) {
-        let vm = this;
+        const vm = this;
         for (let r = 0; r < vm.rows; r++) {
             for (let c = 0; c < vm.columns; c++) {
                 action(r, c);
@@ -157,17 +157,17 @@ export class Maze {
     }
 
     randomCell() {
-        let vm = this;
+        const vm = this;
         return vm.grid.sample().sample();
     }
 
     get size() {
-        let vm = this;
+        const vm = this;
         return vm.rows * vm.columns;
     }
 
     setup() {
-        let vm = this;
+        const vm = this;
         vm.braid();
         vm.start = vm.deadends.sample();
         if (!vm.start) {
@@ -184,7 +184,7 @@ export class Maze {
     }
 
     findDeadends() {
-        let vm = this;
+        const vm = this;
         let r = new Array();
         vm.eachCell((c) => {
             if (c.links.items.length === 1) {
@@ -195,12 +195,12 @@ export class Maze {
     }
 
     solve() {
-        let vm = this;
+        const vm = this;
         vm.solution = vm.distances.pathTo(vm.end);
     }
 
     move(direction) {
-        let vm = this;
+        const vm = this;
         let d = direction.toLowerCase();
         let c = vm.active;
 
@@ -222,7 +222,7 @@ export class Maze {
     }
 
     braid(p = 0.3) {
-        let vm = this;
+        const vm = this;
         vm.deadends = vm.findDeadends();
         for (let i = 0; i < vm.deadends.length; i++) {
             let cell = vm.deadends[i];
@@ -240,7 +240,7 @@ export class Maze {
     }
 
     clearWalls() {
-        let vm = this;
+        const vm = this;
         vm.eachCell((c) => {
             c.neighbors.items.forEach((n) => {
                 c.links.connect(n, true, false);

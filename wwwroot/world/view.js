@@ -7,7 +7,7 @@ export class View {
   #active;
   
   constructor(width, depth, active = 3) {
-    let vm = this;
+    const vm = this;
     vm.#width = width;
     vm.#height = height;
     vm.#active = active;

@@ -6,7 +6,7 @@ export class Links {
     cell;
 
     saveState() {
-        let vm = this;
+        const vm = this;
         let r = {
             row: vm.cell.row,
             column: vm.cell.column,
@@ -24,7 +24,7 @@ export class Links {
     }
 
     loadState(maze, state) {
-        let vm = this;
+        const vm = this;
         vm.cell = maze.cell(state.row, state.column);
         for (let i = 0; i < state.items.length; i++) {
             vm.items.push(maze.cell(
@@ -35,13 +35,13 @@ export class Links {
     }
 
     constructor(cell) {
-        let vm = this;
+        const vm = this;
 
         vm.cell = cell;
     }
 
     connect(cell, link = true, both = true) {
-        let vm = this;
+        const vm = this;
 
         if (!cell) {
             return false;
@@ -63,7 +63,7 @@ export class Links {
     }
 
     linked(cell) {
-        let vm = this;
+        const vm = this;
         if (cell === undefined) {
             return false;
         }
@@ -71,12 +71,12 @@ export class Links {
     }
 
     empty() {
-        let vm = this;
+        const vm = this;
         return vm.items.length === 0;
     }
 
     any() {
-        let vm = this;
+        const vm = this;
         return vm.items.length > 0;
     }
 }

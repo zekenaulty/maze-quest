@@ -15,6 +15,11 @@ export class Space extends EventTarget {
     #positions = {};
     #rotations = {};
 
+    #dummy = new THREE.Object3D();
+    #lastPosition = new THREE.Vector3(0, 0, 0);
+    #zero = new THREE.Vector3(0, 0, 0);
+    #renderBoundery = 8;
+
     constructor(
         w = 17,
         h = 128,
@@ -25,7 +30,7 @@ export class Space extends EventTarget {
     ) {
         super();
 
-        let vm = this;
+        const vm = this;
 
         vm.#width = w;
         vm.#height = h;
@@ -35,11 +40,11 @@ export class Space extends EventTarget {
         vm.z = z;
 
         vm.#data = new Array(w);
-        for (let ix = 0; ix < w; ix++) {
+        for (const ix = 0; ix < w; ix++) {
             vm.#data[ix] = new Array(h);
-            for (let iy = 0; iy < h; iy++) {
+            for (const iy = 0; iy < h; iy++) {
                 vm.#data[ix][iy] = new Array(d);
-                for (let iz = 0; iz < d; iz++) {
+                for (const iz = 0; iz < d; iz++) {
                     vm.#data[ix][iy][iz] = 'air';
                 }
             }
@@ -47,22 +52,22 @@ export class Space extends EventTarget {
     }
 
     get blocks() {
-        let vm = this;
+        const vm = this;
         return Object.keys(vm.#positions);
     }
 
     get positions() {
-        let vm = this;
+        const vm = this;
         return vm.#positions;
     }
 
     get rotations() {
-        let vm = this;
+        const vm = this;
         return vm.#rotations;
     }
 
     get(x, y, z) {
-        let vm = this;
+        const vm = this;
         if (x < vm.#data.length &&
             y < vm.#data[x].length &&
             z < vm.#data[x][y].length
@@ -73,7 +78,7 @@ export class Space extends EventTarget {
     }
 
     clean(x, y, z, v) {
-        let vm = this;
+        const vm = this;
         let p = vm.#data[x][y][z];
         if (p != 'air' && p != v) {
             let pi = vm.#positions[p] ? vm.#positions[p].findIndex(n => n.x == x && n.y == y && n.z == z) : -1;
@@ -96,7 +101,7 @@ export class Space extends EventTarget {
         ry = 0,
         rz = 0
     ) {
-        let vm = this;
+        const vm = this;
         if (x < vm.#data.length &&
             y < vm.#data[x].length &&
             z < vm.#data[x][y].length
@@ -116,7 +121,7 @@ export class Space extends EventTarget {
     }
 
     getRotation(x, y, z) {
-        let vm = this;
+        const vm = this;
         let r = vm.#rotations[`${x}_${y}_${z}`];
         if (!r) {
             r = new THREE.Vector3(0, 0, 0);
@@ -124,9 +129,16 @@ export class Space extends EventTarget {
         return r;
     }
 
+    isSolid(x, y, z) {
+        const vm = this;
+        const block = vm.get(x, y, z);
+
+        return block !== undefined && block !== 'air'; //will need to use an array and includes eventually
+    }
+
     /*
       copyTo(space, dx = 0, dy = 0, dz = 0) {
-        let vm = this;
+        const vm = this;
         for (let x = 0; x < vm.#width; x++) {
           for (let y = 0; x < vm.#height; y++) {
             for (let z = 0; x < vm.#depth; z++) {
@@ -136,4 +148,65 @@ export class Space extends EventTarget {
         }
       }
     */
+
+    chunked(v, meshes, scene) {
+        const vm = this;
+
+        if (!vm.#lastPosition.equals(vm.#zero) && v.distanceTo(vm.#lastPosition) < vm.#renderBoundery) {
+            return;
+        }
+
+        let x = Math.floor(v.x - 32);
+        let y = Math.floor(v.y - 32);
+        let z = Math.floor(v.z - 32);
+
+        x = x < 0 ? 0 : x;
+        y = y < 0 ? 0 : y;
+        z = z < 0 ? 0 : z;
+
+        /*
+            would like to get this constrained to a fixed radius of 32, 
+            but it is twitchy when the positive x,z distance is less than 64 
+        */
+        const lx = x + 64;
+        const ly = d;
+        const lz = z + 64;
+
+        let pos = {};
+        for (const xi = x; xi < lx; xi++) {
+            for (const yi = y; yi < ly; yi++) {
+                for (const zi = z; zi < lz; zi++) {
+                    const b = vm.get(xi, yi, zi);
+                    if (b === 'air' || b === undefined) {
+                        continue;
+                    }
+                    if (!pos[b]) {
+                        pos[b] = [];
+                    }
+                    pos[b].push(new THREE.Vector3(xi, yi, zi));
+                }
+            }
+        }
+
+        for (const b in pos) {
+            const count = pos[b].length;
+            if (meshes[b] !== undefined) {
+                scene.remove(meshes[b]);
+                meshes[b].dispose();
+            }
+            const mesh = blocks.createInstanced[b](count);
+            for (const i = 0; i < count; i++) {
+                const v = pos[b][i];
+                const r = vm.getRotation(v.x, v.y, v.z);
+                vm.#dummy.position.set(v.x, v.y, v.z);
+                vm.#dummy.rotation.set(r.x, r.y, r.z);
+                vm.#dummy.updateMatrix();
+                mesh.setMatrixAt(i, vm.#dummy.matrix);
+            }
+            meshes[b] = mesh;
+            scene.add(mesh);
+        }
+        vm.#lastPosition = v.clone();
+    }
+
 }

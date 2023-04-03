@@ -13,7 +13,7 @@ export class Cell {
     column = 0;
 
     saveState() {
-        let vm = this;
+        const vm = this;
         return {
             row: vm.row,
             column: vm.column,
@@ -23,25 +23,25 @@ export class Cell {
     }
 
     loadState(maze, state) {
-        let vm = this;
+        const vm = this;
         vm.links.loadState(maze, state.links);
         vm.neighbors.loadState(maze, state.neighbors);
     }
 
     constructor(row, column) {
-        let vm = this;
+        const vm = this;
 
         vm.row = row;
         vm.column = column;
     }
 
     get key() {
-        let vm = this;
+        const vm = this;
         return vm.row + ',' + vm.column;
     }
 
     get gridPosition() {
-        let vm = this;
+        const vm = this;
         return {
             row: vm.row,
             column: vm.column
@@ -49,7 +49,7 @@ export class Cell {
     }
 
     distances() {
-        let vm = this;
+        const vm = this;
         let result = new Distance(vm);
         let frontier = new Array();
         frontier.push(vm);

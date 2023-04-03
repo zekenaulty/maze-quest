@@ -1,5 +1,5 @@
 Array.prototype.sample = function() {
-  let vm = this;
+  const vm = this;
   if (vm.length === 1) return vm[0];
   if (vm.length === 0) return undefined;
 
@@ -7,7 +7,7 @@ Array.prototype.sample = function() {
 }
 
 Array.prototype.delete = function(item) {
-  let vm = this;
+  const vm = this;
   if (vm.length === 0) return;
   let idx = vm.indexOf(item);
   if (idx < 0) return;
@@ -15,11 +15,11 @@ Array.prototype.delete = function(item) {
 }
 
 Array.prototype.empty = function() {
-  let vm = this;
+  const vm = this;
   return vm.length === 0;
 }
 
 Array.prototype.any = function() {
-  let vm = this;
+  const vm = this;
   return vm.length > 0;
 }

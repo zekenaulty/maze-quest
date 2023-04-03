@@ -16,7 +16,7 @@ export class CanvasRectangleScaler {
     size;
 
     constructor(width, height, rooms = 289, toTiny = 6) {
-        let vm = this;
+        const vm = this;
 
         vm.stageWidth = width;
         vm.stageHeight = height;
@@ -26,13 +26,13 @@ export class CanvasRectangleScaler {
     }
 
     setScaleBounds(maxCells, minSize) {
-        let vm = this;
+        const vm = this;
         vm.#maxCells = maxCells;
         vm.#size = minSize;
     }
 
     calc() {
-        let vm = this;
+        const vm = this;
         let scale = vm.#scale();
         vm.columns = Math.floor(vm.stageWidth / scale);
         vm.width = vm.columns * scale;
@@ -45,7 +45,7 @@ export class CanvasRectangleScaler {
     }
 
     #scale() {
-        let vm = this;
+        const vm = this;
         let n = vm.#maxCells;
         let w = vm.stageWidth;
         let h = vm.stageHeight;
@@ -74,12 +74,12 @@ export class CanvasRectangleScaler {
     }
 
     y(r) {
-        let vm = this;
+        const vm = this;
         return r * vm.size + vm.offsetY;
     }
 
     x(c) {
-        let vm = this;
+        const vm = this;
         return c * vm.size + vm.offsetX;
     }
 }

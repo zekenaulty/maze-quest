@@ -19,7 +19,7 @@ export class BasicRoom {
     roofBlock = 'oak_planks_alt';
 
     constructor(space, bounds) {
-        let vm = this;
+        const vm = this;
         vm.space = space;
         vm.bounds = bounds;
         vm.rect = new Rectangle(space);
@@ -27,7 +27,7 @@ export class BasicRoom {
     }
 
     wallNorth() {
-        let vm = this;
+        const vm = this;
 
         let x = vm.bounds.x;
         let y = vm.bounds.y + 1;
@@ -45,7 +45,7 @@ export class BasicRoom {
     }
 
     wallWest() {
-        let vm = this;
+        const vm = this;
 
         let x = vm.bounds.x;
         let y = vm.bounds.y + 1;
@@ -64,7 +64,7 @@ export class BasicRoom {
 
 
     wallSouth() {
-        let vm = this;
+        const vm = this;
 
         let x = vm.bounds.x;
         let y = vm.bounds.y + 1;
@@ -82,7 +82,7 @@ export class BasicRoom {
     }
 
     wallEast() {
-        let vm = this;
+        const vm = this;
 
         let x = vm.bounds.x + vm.bounds.width - 1;
         let y = vm.bounds.y + 1;
@@ -100,7 +100,7 @@ export class BasicRoom {
     }
 
     floorTrim() {
-        let vm = this;
+        const vm = this;
         vm.rect.flatHallow(
             vm.bounds.x + 1,
             1,
@@ -112,7 +112,7 @@ export class BasicRoom {
     }
 
     floor() {
-        let vm = this;
+        const vm = this;
         vm.rect.flat(
             vm.bounds.x,
             vm.bounds.y,
@@ -124,7 +124,7 @@ export class BasicRoom {
     }
 
     roof() {
-        let vm = this;
+        const vm = this;
         vm.rect.flat(
             vm.bounds.x,
             vm.bounds.height - 1,
@@ -136,7 +136,7 @@ export class BasicRoom {
     }
 
     trim() {
-        let vm = this;
+        const vm = this;
 
         /* ne */
         vm.line.plot(
@@ -186,7 +186,7 @@ export class BasicRoom {
     }
 
     roofTrim(o = 0) {
-        let vm = this;
+        const vm = this;
         vm.rect.flatHallow(
             vm.bounds.x + 1 + o,
             vm.bounds.y + vm.bounds.height - 2,
@@ -198,7 +198,7 @@ export class BasicRoom {
     }
 
     roofCross() {
-        let vm = this;
+        const vm = this;
         let x = vm.bounds.x;
         let cx = Math.floor(vm.bounds.centerX);
         let y = vm.bounds.height - 2;
@@ -232,7 +232,7 @@ export class BasicRoom {
     }
 
     northStuff() {
-        let vm = this;
+        const vm = this;
         let x = vm.bounds.x + 2;
         let y = 1;
         let z = vm.bounds.z + 1;
@@ -257,7 +257,7 @@ export class BasicRoom {
     }
 
     westStuff() {
-        let vm = this;
+        const vm = this;
         let x = vm.bounds.x + 1;
         let y = 1;
         let z = vm.bounds.z + 2;
@@ -282,7 +282,7 @@ export class BasicRoom {
     }
 
     southStuff() {
-        let vm = this;
+        const vm = this;
         let x = vm.bounds.x + 2;
         let y = 1;
         let z = vm.bounds.z + vm.bounds.depth - 2;
@@ -307,7 +307,7 @@ export class BasicRoom {
     }
 
     eastStuff() {
-        let vm = this;
+        const vm = this;
         let x = vm.bounds.x + vm.bounds.width - 2;
         let y = 1;
         let z = vm.bounds.z + 2;
@@ -350,7 +350,7 @@ export class BasicRoom {
         if (wr < 5 && random) {
             return;
         }
-        let vm = this;
+        const vm = this;
         let x = vm.bounds.x + 10;
         let z = vm.bounds.z + 5;
         vm.rect.flatHallow(
@@ -389,7 +389,7 @@ export class BasicRoom {
         if (wr < 5 && random) {
             return;
         }
-        let vm = this;
+        const vm = this;
         let x = vm.bounds.x + 5;
         let z = vm.bounds.z + 5;
         vm.rect.flatHallow(
@@ -428,7 +428,7 @@ export class BasicRoom {
         if (wr < 5 && random) {
             return;
         }
-        let vm = this;
+        const vm = this;
         let x = vm.bounds.x + 10;
         let z = vm.bounds.z + vm.bounds.depth - 7;
         vm.rect.flatHallow(
@@ -467,7 +467,7 @@ export class BasicRoom {
         if (wr < 5 && random) {
             return;
         }
-        let vm = this;
+        const vm = this;
         let x = vm.bounds.x + 5;
         let z = vm.bounds.z + vm.bounds.depth - 7;
         vm.rect.flatHallow(
@@ -502,7 +502,7 @@ export class BasicRoom {
     }
 
     generate = () => {
-        let vm = this;
+        const vm = this;
 
         /* floor */
         vm.floor();

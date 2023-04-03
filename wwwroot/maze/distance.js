@@ -7,7 +7,7 @@ export class Distance {
   items = new Array();
 
   constructor(start) {
-    let vm = this;
+    const vm = this;
 
     vm.root = start;
     vm.distances[vm.root.key] = 0;
@@ -16,18 +16,18 @@ export class Distance {
   }
 
   collect(cell, distance) {
-    let vm = this;
+    const vm = this;
     vm.distances[cell.key] = distance;
     vm.items.push(cell);
   }
 
   distance(cell) {
-    let vm = this;
+    const vm = this;
     return vm.distances[cell.key];
   }
 
   pathTo(cell) {
-    let vm = this;
+    const vm = this;
     let current = cell;
     let breadcrumbs = new Distance(vm.root);
     while (current !== vm.root) {
@@ -44,7 +44,7 @@ export class Distance {
   }
 
   max() {
-    let vm = this;
+    const vm = this;
     let maxDistance = 0;
     let maxCell = vm.root;
     for (let i = 0; i < vm.items.length; i++) {

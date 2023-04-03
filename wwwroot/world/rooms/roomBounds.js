@@ -29,7 +29,7 @@ export class RoomBounds {
         ds = false,
         dw = false
     ) {
-        let vm = this;
+        const vm = this;
 
         vm.#x = x;
         vm.#y = y;
@@ -50,87 +50,87 @@ export class RoomBounds {
     }
 
     get width() {
-        let vm = this;
+        const vm = this;
         return vm.#width;
     }
 
     get height() {
-        let vm = this;
+        const vm = this;
         return vm.#height;
     }
 
     get depth() {
-        let vm = this;
+        const vm = this;
         return vm.#depth;
     }
 
     get x() {
-        let vm = this;
+        const vm = this;
         return vm.#x;
     }
 
     get y() {
-        let vm = this;
+        const vm = this;
         return vm.#y;
     }
 
     get z() {
-        let vm = this;
+        const vm = this;
         return vm.#z;
     }
 
     get centerX() {
-        let vm = this;
+        const vm = this;
         return vm.#centerX;
     }
 
     get centerY() {
-        let vm = this;
+        const vm = this;
         return vm.#centerY;
     }
 
     get centerZ() {
-        let vm = this;
+        const vm = this;
         return vm.#centerZ;
     }
 
     get northDoor() {
-        let vm = this;
+        const vm = this;
         return vm.#northDoor;
     }
 
     get eastDoor() {
-        let vm = this;
+        const vm = this;
         return vm.#eastDoor;
     }
 
     get southDoor() {
-        let vm = this;
+        const vm = this;
         return vm.#southDoor;
     }
 
     get westDoor() {
-        let vm = this;
+        const vm = this;
         return vm.#westDoor;
     }
 
     get top() {
-        let vm = this;
+        const vm = this;
         return vm.y + vm.height;
     }
 
     get right() {
-        let vm = this;
+        const vm = this;
         return vm.x + vm.width;
     }
 
     get bottom() {
-        let vm = this;
+        const vm = this;
         return vm.z + vm.depth;
     }
 
     inBoundsX(x) {
-        let vm = this;
+        const vm = this;
         if (x >= vm.x && x <= vm.right) {
             return true;
         }
@@ -138,7 +138,7 @@ export class RoomBounds {
     }
 
     inBoundsY(y) {
-        let vm = this;
+        const vm = this;
         if (y >= vm.y && y <= vm.top) {
             return true;
         }
@@ -146,7 +146,7 @@ export class RoomBounds {
     }
 
     inBoundsZ(z) {
-        let vm = this;
+        const vm = this;
         if (z >= vm.z && z <= vm.bottom) {
             return true;
         }
@@ -154,12 +154,12 @@ export class RoomBounds {
     }
 
     inBounds(x, y, z) {
-        let vm = this;
+        const vm = this;
         return vm.inBoundsX(x) && vm.inBoundsY(y) && vm.inBoundsZ(z);
     }
 
     outOfBoundsWest(x) {
-        let vm = this;
+        const vm = this;
         if (x < vm.x) {
             return true;
         }
@@ -167,7 +167,7 @@ export class RoomBounds {
     }
 
     outOfBoundsEast(x) {
-        let vm = this;
+        const vm = this;
         if (x > vm.right) {
             return true;
         }
@@ -175,7 +175,7 @@ export class RoomBounds {
     }
 
     outOfBoundsNorth(z) {
-        let vm = this;
+        const vm = this;
         if (z < vm.z) { 
             return true;
         }
@@ -183,7 +183,7 @@ export class RoomBounds {
     }
 
     outOfBoundsSouth(z) {
-        let vm = this;
+        const vm = this;
         if (z > vm.bottom) {
             return true;
         }

@@ -18,7 +18,7 @@ export class Stage extends EventTarget {
   constructor() {
     super();
 
-    let vm = this;
+    const vm = this;
 
     vm.#scene = new THREE.Scene();
     vm.#scene.background = new THREE.Color(0x000000);
@@ -38,19 +38,19 @@ export class Stage extends EventTarget {
   }
 
   get scene() {
-    let vm = this;
+    const vm = this;
     return vm.#scene;
   }
 
   set scene(scene) {
-    let vm = this;
+    const vm = this;
     if (scene) {
       vm.#scene = scene;
     }
   }
 
   clock() {
-    let vm = this;
+    const vm = this;
     return new THREE.Clock();
   }
 
@@ -59,29 +59,29 @@ export class Stage extends EventTarget {
   }
 
   get camera() {
-    let vm = this;
+    const vm = this;
     return vm.#camera;
   }
 
   get renderer() {
-    let vm = this;
+    const vm = this;
     return vm.#renderer;
   }
 
   add(o) {
-    let vm = this;
+    const vm = this;
     vm.#scene.add(o);
   }
 
   begin() {
-    let vm = this;
+    const vm = this;
     requestAnimationFrame((t) => {
       vm.#frameLoop(t);
     });
   }
 
   #frameLoop(ticks) {
-    let vm = this;
+    const vm = this;
     requestAnimationFrame((t) => {
       vm.#frameLoop(t);
     });

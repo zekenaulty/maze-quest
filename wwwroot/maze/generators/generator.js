@@ -6,13 +6,13 @@ export class Generator {
   summary = ``;
 
   constructor(maze) {
-    let vm = this;
+    const vm = this;
     
     vm.maze = maze;
   }
 
   generate() {
-    let vm = this;
+    const vm = this;
   }
 
 }

@@ -6,7 +6,7 @@ export class Line {
   #gfx = undefined;
 
   constructor(x1, y1, x2, y2, gfx) {
-    let vm = this;
+    const vm = this;
     vm.x1 = x1;
     vm.y1 = y1;
     vm.x2 = x2;
@@ -15,7 +15,7 @@ export class Line {
   }
 
   draw(style) {
-    let vm = this;
+    const vm = this;
     let exec = () => {
       vm.#gfx.beginPath();
       vm.#gfx.moveTo(vm.x1, vm.y1);
@@ -38,7 +38,7 @@ export class Rectangle {
 
 
   constructor(x, y, width, height, gfx) {
-    let vm = this;
+    const vm = this;
     vm.x = x;
     vm.y = y;
     vm.width = width;
@@ -47,7 +47,7 @@ export class Rectangle {
   }
 
   fill(style) {
-    let vm = this;
+    const vm = this;
     vm.#gfx.fillStyle = style;
     vm.#gfx.beginPath();
     vm.#gfx.rect(
@@ -60,7 +60,7 @@ export class Rectangle {
   }
   
   stroke(style) {
-    let vm = this;
+    const vm = this;
     vm.#gfx.strokeStyle = style;
     vm.#gfx.beginPath();
     vm.#gfx.rect(

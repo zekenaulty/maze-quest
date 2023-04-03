@@ -3,7 +3,7 @@ import { BasicRoom } from './basicRoom.js';
 export class Library extends BasicRoom {
 
     booksNorth() {
-        let vm = this;
+        const vm = this;
 
         let x = vm.bounds.x + 1;
         let y = vm.bounds.y + 2;
@@ -21,7 +21,7 @@ export class Library extends BasicRoom {
     }
 
     booksWest() {
-        let vm = this;
+        const vm = this;
 
         let x = vm.bounds.x + 1;
         let y = vm.bounds.y + 2;
@@ -40,7 +40,7 @@ export class Library extends BasicRoom {
 
 
     booksSouth() {
-        let vm = this;
+        const vm = this;
 
         let x = vm.bounds.x + 1;
         let y = vm.bounds.y + 2;
@@ -58,7 +58,7 @@ export class Library extends BasicRoom {
     }
 
     booksEast() {
-        let vm = this;
+        const vm = this;
 
         let x = vm.bounds.x + vm.bounds.width - 2;
         let y = vm.bounds.y + 2;
@@ -80,7 +80,7 @@ export class Library extends BasicRoom {
         if (wr < 5) {
             return;
         }
-        let vm = this;
+        const vm = this;
         let x = vm.bounds.x + 10;
         let z = vm.bounds.z + 5;
         vm.rect.flatHallow(
@@ -119,7 +119,7 @@ export class Library extends BasicRoom {
         if (wr < 5) {
             return;
         }
-        let vm = this;
+        const vm = this;
         let x = vm.bounds.x + 5;
         let z = vm.bounds.z + 5;
         vm.rect.flatHallow(
@@ -158,7 +158,7 @@ export class Library extends BasicRoom {
         if (wr < 5) {
             return;
         }
-        let vm = this;
+        const vm = this;
         let x = vm.bounds.x + 5;
         let z = vm.bounds.z + 5;
         let w = vm.bounds.width - 11
@@ -198,7 +198,7 @@ export class Library extends BasicRoom {
         if (wr < 5) {
             return;
         }
-        let vm = this;
+        const vm = this;
         let x = vm.bounds.x + 10;
         let z = vm.bounds.z + vm.bounds.depth - 7;
         vm.rect.flatHallow(
@@ -237,7 +237,7 @@ export class Library extends BasicRoom {
         if (wr < 5) {
             return;
         }
-        let vm = this;
+        const vm = this;
         let x = vm.bounds.x + 5;
         let z = vm.bounds.z + vm.bounds.depth - 7;
         vm.rect.flatHallow(
@@ -276,7 +276,7 @@ export class Library extends BasicRoom {
         if (wr < 5) {
             return;
         }
-        let vm = this;
+        const vm = this;
         let x = vm.bounds.x + 5;
         let z = vm.bounds.z + vm.bounds.depth - 7;
         let w = vm.bounds.width - 11
@@ -316,7 +316,7 @@ export class Library extends BasicRoom {
         if (wr < 5) {
             return;
         }
-        let vm = this;
+        const vm = this;
         let x = vm.bounds.x + 5;
         let z = vm.bounds.z + 5;
         let d = vm.bounds.depth - 11
@@ -357,7 +357,7 @@ export class Library extends BasicRoom {
         if (wr < 5) {
             return;
         }
-        let vm = this;
+        const vm = this;
         let x = vm.bounds.x + vm.bounds.width - 7;
         let z = vm.bounds.z + 5;
         let d = vm.bounds.depth - 11
@@ -393,7 +393,7 @@ export class Library extends BasicRoom {
     }
 
     generate = () => {
-        let vm = this;
+        const vm = this;
 
         /* floor */
         vm.floor();

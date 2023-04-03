@@ -4,7 +4,7 @@ import { Generator } from './generator.js';
 export class Sidewinder extends Generator {
 
   generate() {
-    let vm = this;
+    const vm = this;
     vm.maze.initialize();
 
     let run;

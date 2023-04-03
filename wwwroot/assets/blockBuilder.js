@@ -22,45 +22,45 @@ export class BlockBuilder extends EventTarget {
 
         THREE.Cache.enabled = true;
 
-        let vm = this;
+        const vm = this;
         vm.#base = basePath;
         vm.#loader = new THREE.TextureLoader();
 
     }
 
     get loaded() {
-        let vm = this;
+        const vm = this;
 
         return vm.#loaded;
     }
 
     get names() {
-        let vm = this;
+        const vm = this;
         return vm.#blocks;
     }
 
     get create() {
-        let vm = this;
+        const vm = this;
         return vm.#standard;
     }
 
     get createInstanced() {
-        let vm = this;
+        const vm = this;
         return vm.#instanced;
     }
 
     random() {
-        let vm = this;
+        const vm = this;
         return vm.names[Math.floor(Math.random() * vm.names.length)];
     }
 
     path(file, alt = false) {
-        let vm = this;
+        const vm = this;
         return `${vm.#base}${vm.#folder}${vm.#pack}${alt ? 'block_alt/' : 'block/'}${file}`;
     }
 
     async #loadJson(name) {
-        let vm = this;
+        const vm = this;
         let path = `${vm.#base}assets/${name}.json`;
         let begin = new CustomEvent('loading');
         let complete = new CustomEvent('loaded');
@@ -88,7 +88,7 @@ export class BlockBuilder extends EventTarget {
 
 
     async #loadTexture(name, file, alt = false, w = 16, h = 16) {
-        let vm = this;
+        const vm = this;
         let begin = new CustomEvent('loading');
         let complete = new CustomEvent('loaded');
         let path = vm.path(file, alt);
@@ -106,7 +106,7 @@ export class BlockBuilder extends EventTarget {
     }
 
     #build(b) {
-        let vm = this;
+        const vm = this;
         let m;
 
         if (Array.isArray(b.map)) {
@@ -185,7 +185,7 @@ export class BlockBuilder extends EventTarget {
     }
 
     #block(name) {
-        let vm = this;
+        const vm = this;
 
         vm.#standard[name] = () => {
             let geometry = new THREE.BoxGeometry(1, 1, 1);
@@ -201,7 +201,7 @@ export class BlockBuilder extends EventTarget {
     }
 
     async load() {
-        let vm = this;
+        const vm = this;
 
         await vm.#loadJson('textureMaps');
         await vm.#loadJson('textureMapsAlt');
@@ -233,7 +233,7 @@ export class BlockBuilder extends EventTarget {
     }
 
     fix() {
-        let vm = this;
+        const vm = this;
         for (let p in vm.#animate) {
             let a = vm.#animate[p];
 
@@ -258,7 +258,7 @@ export class BlockBuilder extends EventTarget {
     }
 
     animate() {
-        let vm = this;
+        const vm = this;
         for (let p in vm.#animate) {
             let a = vm.#animate[p];
             a.ticks++;

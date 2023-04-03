@@ -5,13 +5,13 @@ export class Rectangle {
   #line;
 
   constructor(space) {
-    let vm = this;
+    const vm = this;
     vm.#space = space;
     vm.#line = new Line(space);
   }
 
   flat(x, y, z, w, d, block = 'stone_bticks_alt') {
-    let vm = this;
+    const vm = this;
     let space = vm.#space;
     let nw = x + w;
     let nd = z + d;
@@ -23,7 +23,7 @@ export class Rectangle {
   }
 
   flatHallow(x, y, z, w, d, block) {
-    let vm = this;
+    const vm = this;
     vm.#line.plot(x, y, z, x + w, y, z, block);
     vm.#line.plot(x + w, y, z, x + w, y, z + d, block);
     vm.#line.plot(x + w, y, z + d, x, y, z + d, block);
@@ -32,7 +32,7 @@ export class Rectangle {
 
 
   x_to_x(x, y, z, w, h, block = 'stone_bticks_alt') {
-    let vm = this;
+    const vm = this;
     let space = vm.#space;
     let nw = x + w;
     let nh = y + h;
@@ -44,7 +44,7 @@ export class Rectangle {
   }
 
   z_to_z(x, y, z, d, h, block = 'stone_bticks_alt') {
-    let vm = this;
+    const vm = this;
     let space = vm.#space;
     let nd = z + d;
     let nh = y + h;

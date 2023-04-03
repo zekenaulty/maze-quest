@@ -13,7 +13,7 @@ export class SquareCell extends Cell {
     }
 
     directionOf(cell) {
-        let vm = this;
+        const vm = this;
         if (vm.north && vm.north.key === cell.key) {
             return 'north';
         }

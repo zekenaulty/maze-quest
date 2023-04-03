@@ -19,7 +19,7 @@ export class CanvasRectangle {
     showHistogram = false;
 
     constructor(maze, scaler, gfx) {
-        let vm = this;
+        const vm = this;
 
         vm.#maze = maze;
         vm.#scaler = scaler;
@@ -28,7 +28,7 @@ export class CanvasRectangle {
     }
 
     drawMove(from, $maze) {
-        let vm = this;
+        const vm = this;
         vm.eraseFloor(from.row, from.column);
         vm.drawSolutionFloor(from.row, from.column);
 
@@ -44,7 +44,7 @@ export class CanvasRectangle {
     }
 
     scaleLock(n, min = 0) {
-        let vm = this;
+        const vm = this;
         if (vm.#scaler.size > 22) {
             return n;
         }
@@ -52,7 +52,7 @@ export class CanvasRectangle {
     }
 
     #drawCircle(cell, color, offsetFactor = 0.75, fill = true) {
-        let vm = this;
+        const vm = this;
         if (offsetFactor >= 1) {
             offsetFactor = 0.9;
         }
@@ -86,7 +86,7 @@ export class CanvasRectangle {
     }
 
     #drawRectangle(cell, color, offsetFactor = 0.75) {
-        let vm = this;
+        const vm = this;
         let offset = Math.floor(vm.#scaler.size - (vm.#scaler.size * offsetFactor));
         new Rectangle(
             vm.#scaler.x(cell.column) + vm.scaleLock(offset, 1.5),
@@ -99,7 +99,7 @@ export class CanvasRectangle {
     }
 
     #drawNorthEdge(r, c, color) {
-        let vm = this;
+        const vm = this;
         let x = vm.#scaler.x(c);
         let y = vm.#scaler.y(r);
         let scale = vm.#scaler.size;
@@ -114,7 +114,7 @@ export class CanvasRectangle {
     }
 
     #drawEastEdge(r, c, color) {
-        let vm = this;
+        const vm = this;
         let x = vm.#scaler.x(c);
         let y = vm.#scaler.y(r);
         let scale = vm.#scaler.size;
@@ -128,7 +128,7 @@ export class CanvasRectangle {
     }
 
     #drawSouthEdge(r, c, color) {
-        let vm = this;
+        const vm = this;
         let x = vm.#scaler.x(c);
         let y = vm.#scaler.y(r);
         let scale = vm.#scaler.size;
@@ -143,7 +143,7 @@ export class CanvasRectangle {
     }
 
     #drawWestEdge(r, c, color) {
-        let vm = this;
+        const vm = this;
         let x = vm.#scaler.x(c);
         let y = vm.#scaler.y(r);
         let scale = vm.#scaler.size;
@@ -158,7 +158,7 @@ export class CanvasRectangle {
     }
 
     fillBg() {
-        let vm = this;
+        const vm = this;
         new Rectangle(
             0,
             0,
@@ -174,7 +174,7 @@ export class CanvasRectangle {
     }
 
     draw() {
-        let vm = this;
+        const vm = this;
         vm.fillBg();
 
         vm.#maze.walkGrid((r, c) => {
@@ -195,7 +195,7 @@ export class CanvasRectangle {
     }
 
     drawBorder() {
-        let vm = this;
+        const vm = this;
         new Rectangle(
             vm.#scaler.x(0),
             vm.#scaler.y(0),
@@ -206,7 +206,7 @@ export class CanvasRectangle {
     }
 
     revealSolution() {
-        let vm = this;
+        const vm = this;
         vm.showSolution = true;
         vm.#maze.solve();
         vm.drawSolution();
@@ -217,7 +217,7 @@ export class CanvasRectangle {
 
 
     hideSolution() {
-        let vm = this;
+        const vm = this;
         vm.drawSolution(vm.floorColor, false);
         vm.drawStart();
         vm.drawEnd();
@@ -226,7 +226,7 @@ export class CanvasRectangle {
     }
 
     drawSolution(color, show = true) {
-        let vm = this;
+        const vm = this;
         if (!vm.showSolution || !vm.#maze.solution) {
             return;
         }
@@ -250,7 +250,7 @@ export class CanvasRectangle {
     }
 
     drawSolutionFloor(r, c, color) {
-        let vm = this;
+        const vm = this;
         if (!vm.showSolution || !vm.#maze.solution || !vm.#maze.solution.items.includes(vm.#maze.cell(r, c))) {
             return;
         }
@@ -263,7 +263,7 @@ export class CanvasRectangle {
     }
 
     eraseFloor(r, c) {
-        let vm = this;
+        const vm = this;
         let color = vm.floorColor;
         let floor = new Rectangle(
             vm.#scaler.x(c) + 1,
@@ -287,7 +287,7 @@ export class CanvasRectangle {
 
 
     drawFloorEdges(r, c) {
-        let vm = this;
+        const vm = this;
         let cell = vm.#maze.cell(r, c);
         let color = vm.floorColor;
         let draw = (color) => {
@@ -320,7 +320,7 @@ export class CanvasRectangle {
     }
 
     drawFloor(r, c) {
-        let vm = this;
+        const vm = this;
         let color = vm.floorColor;
         let floor = new Rectangle(
             vm.#scaler.x(c),
@@ -342,7 +342,7 @@ export class CanvasRectangle {
     }
 
     drawWalls(r, c) {
-        let vm = this;
+        const vm = this;
         let cell = vm.#maze.cell(r, c);
         if (!cell) {
             return;
@@ -362,7 +362,7 @@ export class CanvasRectangle {
     }
 
     drawStart() {
-        let vm = this;
+        const vm = this;
         if (!vm.#maze.start) {
             vm.#maze.start = vm.#maze.cell(0, 0);
         }
@@ -371,7 +371,7 @@ export class CanvasRectangle {
     }
 
     drawEnd() {
-        let vm = this;
+        const vm = this;
         if (!vm.#maze.end) {
             vm.#maze.end = vm.#maze.cell(vm.#maze.rows - 1, vm.#maze.columns - 1);
         }
@@ -380,7 +380,7 @@ export class CanvasRectangle {
     }
 
     drawActive() {
-        let vm = this;
+        const vm = this;
         if (!vm.#maze.active) {
             vm.#maze.active = vm.#maze.cell(0, 0);
         }
@@ -389,7 +389,7 @@ export class CanvasRectangle {
     }
 
     histogram() {
-        let vm = this;
+        const vm = this;
         vm.showHistogram = !vm.showHistogram;
         vm.draw();
     }

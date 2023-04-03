@@ -4,13 +4,13 @@ export class MazeToText {
   #output;
   
   constructor(maze) {
-    let vm = this;
+    const vm = this;
     
     vm.#maze = maze;
   }
   
   render(){
-    let vm = this;
+    const vm = this;
     vm.#output = '+';
     for(let y = 0; y < vm.#maze.columns; y++) {
       vm.#output += '---+';
@@ -45,7 +45,7 @@ export class MazeToText {
   }
   
   get text() {
-    let vm = this;
+    const vm = this;
     vm.render();
     return vm.#output;
   }

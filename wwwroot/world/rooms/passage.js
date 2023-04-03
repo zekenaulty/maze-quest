@@ -3,7 +3,7 @@ import { BasicRoom } from './basicRoom.js';
 export class Passage extends BasicRoom {
 
     hallNS() {
-        let vm = this;
+        const vm = this;
 
         let x = vm.bounds.x + 6;
         let y = vm.bounds.y + 1;
@@ -29,7 +29,7 @@ export class Passage extends BasicRoom {
 
     hallEW() {
 
-        let vm = this;
+        const vm = this;
 
         let x = vm.bounds.x + 1;
         let y = vm.bounds.y + 1;
@@ -54,7 +54,7 @@ export class Passage extends BasicRoom {
     }
 
     generate = () => {
-        let vm = this;
+        const vm = this;
 
         vm.floor();
         vm.roof();

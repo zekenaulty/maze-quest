@@ -6,7 +6,7 @@ export class Neighbors {
     cell;
 
     saveState() {
-        let vm = this;
+        const vm = this;
         let r = {
             row: vm.cell.row,
             column: vm.cell.column,
@@ -24,7 +24,7 @@ export class Neighbors {
     }
 
     loadState(maze, state) {
-        let vm = this;
+        const vm = this;
         vm.cell = maze.cell(state.row, state.column);
         for (let i = 0; i < state.items.length; i++) {
             vm.items.push(maze.cell(
@@ -35,23 +35,23 @@ export class Neighbors {
     }
 
     constructor(cell) {
-        let vm = this;
+        const vm = this;
 
         vm.cell = cell;
     }
 
     empty() {
-        let vm = this;
+        const vm = this;
         return vm.items.length === 0;
     }
 
     any() {
-        let vm = this;
+        const vm = this;
         return vm.items.length > 0;
     }
 
     unlinked() {
-        let vm = this;
+        const vm = this;
         let result = new Array();
         for (let i = 0; i < vm.items.length; i++) {
             if (vm.items[i].links.empty()) {
@@ -62,7 +62,7 @@ export class Neighbors {
     }
 
     linked() {
-        let vm = this;
+        const vm = this;
         let result = new Array();
         for (let i = 0; i < vm.items.length; i++) {
             if (vm.items[i].links.any()) {
@@ -73,7 +73,7 @@ export class Neighbors {
     }
 
     linkedTo(cell) {
-        let vm = this;
+        const vm = this;
         if (!cell) {
             cell = vm.cell;
         }
@@ -88,7 +88,7 @@ export class Neighbors {
     }
 
     notLinkedTo(cell) {
-        let vm = this;
+        const vm = this;
         if (!cell) {
             cell = vm.cell;
         }
@@ -103,7 +103,7 @@ export class Neighbors {
     }
 
     deadends() {
-        let vm = this;
+        const vm = this;
         let result = new Array();
         for (let i = 0; i < vm.items.length; i++) {
             if (vm.items[i].links.items.length === 1) {
