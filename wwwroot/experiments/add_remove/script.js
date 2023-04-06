@@ -36,8 +36,6 @@ animate();
 
 let glowstone = blocks.create.glowstone();
 
-console.log(glowstone);
-
 scene.add(glowstone);
 
 setTimeout(() => {

@@ -31,7 +31,6 @@ const animate = () => {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
   stats.update();
-  //console.log(camera.position);
 }
 
 init();
@@ -66,6 +65,3 @@ setInterval(() => {
 scene.add(b);
 
 window.b = b;
-
-console.log(b);
-console.log(b.material.map.source.data);

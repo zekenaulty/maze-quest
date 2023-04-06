@@ -191,9 +191,6 @@ const mergeTextures = (name) => {
     return;
   }
 
-  //console.log(name);
-  //console.log(JSON.stringify(materials[name + suffix], null, 4));
-
   let textures = [];
   if (materials[name + suffix].sides) {
     textures.push(materials[name + suffix].sides);
@@ -254,7 +251,6 @@ const mergeTextures = (name) => {
 
 const mapMaterial = (name) => {
   if (!materials[name + suffix]) {
-    console.log(name + suffix);
     return;
   }
 

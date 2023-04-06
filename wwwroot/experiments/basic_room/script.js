@@ -42,6 +42,21 @@ compassMap.width = '256';
 compassMap.height = '256';
 
 
+const newMap = document.createElement('canvas');
+const ctx = newMap.getContext('2d');
+const mapWidth = maze.columns * w * 16;
+const mapHeight = maze.rows * d * 16;
+newMap.width = mapWidth;
+newMap.height = mapHeight;
+newMap.style.width = 768 + 'px';
+newMap.style.height = 768 + 'px';
+newMap.style.top = '10px';
+newMap.style.left = '10px';
+newMap.style.position = 'fixed';
+newMap.style.zIndex = '50';
+newMap.style.display = 'none';
+document.body.appendChild(newMap);
+
 const scaler = new CanvasRectangleScaler(256, 256, 257);
 const maze = new Maze(scaler.rows, scaler.columns);
 const mazeRenderer = new CanvasRectangle(maze, scaler, mazeContext);
@@ -90,7 +105,7 @@ let space = new Space(w * maze.columns, 10, d * maze.rows, 0, 0, 0);
 
 const rooms = () => {
     for (let row = 0; row < maze.rows; row++) {
-        for (let col = 0; col < maze.rows; col++) {
+        for (let col = 0; col < maze.columns; col++) {
             let cell = maze.cell(row, col);
             let x = col;
             let z = row;
@@ -115,6 +130,7 @@ const rooms = () => {
     }
 };
 rooms();
+
 
 let sx = maze.start.bounds.x + 8;
 let sz = maze.start.bounds.z + 8;
@@ -207,7 +223,7 @@ const init = () => {
 
     location.style.top = `${window.innerHeight - 19}px`;
     location.style.width = `${locationWidth}px`;
-    
+
     camera.rotation.order = 'YXZ';
     camera.lookAt(0, 0, 0);
     scene = new THREE.Scene();
@@ -243,10 +259,9 @@ const animate = () => {
     mapContext.clip();
     mapContext.fillStyle = 'white';
     mapContext.fillRect(0, 0, compassMap.width, compassMap.height);
-    let dx = 128 - (maze.active.column * cellSize + (cellSize/2));
+    let dx = 128 - (maze.active.column * cellSize + (cellSize / 2));
     let dy = 128 - (maze.active.row * cellSize + (cellSize / 2));
-    console.log(dx);
-    console.log(dy);
+
     mapContext.drawImage(
         mazeCanvas,
         0,
@@ -311,7 +326,6 @@ const updatePlayer = (deltaTime) => {
 
     let damping = Math.exp(-4 * deltaTime) - 1;
     const playerVelocity = new THREE.Vector3();
-    const vf = getForwardVector();
     let y = dpad.value.y;
     let x = dpad.value.x;
 
@@ -352,6 +366,12 @@ const updatePlayer = (deltaTime) => {
         playerVelocity.add(getSideVector().multiplyScalar(x * speed));
     }
 
+    playerVelocity.addScaledVector(playerVelocity, damping);
+    const deltaPosition = playerVelocity.clone().multiplyScalar(deltaTime);
+    playerCollider.translate(deltaPosition);
+    camera.position.copy(playerCollider.end);
+    body.position.copy(playerCollider.start);
+
     let cv = cpad.value;
     if (!mobile) {
         if (look.up) {
@@ -390,11 +410,6 @@ const updatePlayer = (deltaTime) => {
     compass.style.transform = `rotate(${camera.rotation.y}rad)`;
     compassMap.style.transform = `rotate(${camera.rotation.y}rad)`;
 
-    playerVelocity.addScaledVector(playerVelocity, damping);
-    const deltaPosition = playerVelocity.clone().multiplyScalar(deltaTime);
-    playerCollider.translate(deltaPosition);
-    camera.position.copy(playerCollider.end);
-    body.position.copy(playerCollider.start);
 
     location.innerText = `x: ${Math.floor(body.position.x)}, y: ${Math.floor(body.position.y)}, z: ${Math.floor(body.position.z)}`;
 
@@ -544,6 +559,13 @@ document.addEventListener('keyup', (e) => {
             //case 'e':
             look.right = false;
             break;
+        case 'm':
+            if (newMap.style.display == '') {
+                newMap.style.display = 'none';
+            } else {
+                newMap.style.display = '';
+            }
+            break;
     }
 });
 
@@ -570,3 +592,74 @@ document.addEventListener('pointermove', (e) => {
     pointerY = e.pageY - viewHalfY;
 
 });
+
+
+setTimeout(() => {
+    for (let mx = 0; mx < space.width; mx++) {
+        for (let mz = 0; mz < space.depth; mz++) {
+            let my = 0;
+
+            if (space.get(mx, my, mz) != 'air' && space.get(mx, my, mz) != undefined) {
+                ctx.drawImage(
+                    blocks.materials[space.get(mx, my, mz)][2].map.image,
+                    0,
+                    0,
+                    64,
+                    64,
+                    mx * 16,
+                    mz * 16,
+                    16,
+                    16
+                );
+                my++;
+            }
+
+            if (space.get(mx, my, mz) != 'air' && space.get(mx, my, mz) != undefined) {
+                ctx.drawImage(
+                    blocks.materials[space.get(mx, my, mz)][2].map.image,
+                    0,
+                    0,
+                    64,
+                    64,
+                    mx * 16,
+                    mz * 16,
+                    16,
+                    16
+                );
+                my++;
+            }
+
+            if (space.get(mx, my, mz) != 'air' && space.get(mx, my, mz) != undefined) {
+                ctx.drawImage(
+                    blocks.materials[space.get(mx, my, mz)][2].map.image,
+                    0,
+                    0,
+                    64,
+                    64,
+                    mx * 16,
+                    mz * 16,
+                    16,
+                    16
+                );
+                my++;
+            }
+
+            if (space.get(mx, my, mz) != 'air' && space.get(mx, my, mz) != undefined) {
+                ctx.drawImage(
+                    blocks.materials[space.get(mx, my, mz)][2].map.image,
+                    0,
+                    0,
+                    64,
+                    64,
+                    mx * 16,
+                    mz * 16,
+                    16,
+                    16
+                );
+                my++;
+            }
+        }
+    }
+
+
+}, 500);

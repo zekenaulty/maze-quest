@@ -34,17 +34,17 @@ export class Space extends EventTarget {
 
         vm.#width = w;
         vm.#height = h;
-        vm.#depth = z;
+        vm.#depth = d;
         vm.#x = x;
         vm.#y = y;
         vm.z = z;
 
         vm.#data = new Array(w);
-        for (const ix = 0; ix < w; ix++) {
+        for (let ix = 0; ix < w; ix++) {
             vm.#data[ix] = new Array(h);
-            for (const iy = 0; iy < h; iy++) {
+            for (let iy = 0; iy < h; iy++) {
                 vm.#data[ix][iy] = new Array(d);
-                for (const iz = 0; iz < d; iz++) {
+                for (let iz = 0; iz < d; iz++) {
                     vm.#data[ix][iy][iz] = 'air';
                 }
             }
@@ -64,6 +64,21 @@ export class Space extends EventTarget {
     get rotations() {
         const vm = this;
         return vm.#rotations;
+    }
+
+    get width() {
+        const vm = this;
+        return vm.#width;
+    }
+
+    get height() {
+        const vm = this;
+        return vm.#height;
+    }
+
+    get depth() {
+        const vm = this;
+        return vm.#depth;
     }
 
     get(x, y, z) {

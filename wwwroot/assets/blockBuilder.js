@@ -49,6 +49,11 @@ export class BlockBuilder extends EventTarget {
         return vm.#instanced;
     }
 
+    get materials() {
+        const vm = this;
+        return vm.#materials;
+    }
+
     random() {
         const vm = this;
         return vm.names[Math.floor(Math.random() * vm.names.length)];
@@ -161,7 +166,6 @@ export class BlockBuilder extends EventTarget {
             vm.#materials[b.name][3].map = n.map.clone();
             vm.#materials[b.name][4].map = n.map.clone();
             vm.#materials[b.name][5].map = n.map.clone();
-
             if (b.meta) {
                 let offset = b.map.width / b.map.height;
                 n.map.offset.set(0, 0);
@@ -171,7 +175,7 @@ export class BlockBuilder extends EventTarget {
                     offset: offset,
                     frame: 0,
                     ticks: 0,
-                    clock: new THREE.Clock(),
+//                    clock: new THREE.Clock(),
                     frameCount: b.map.height / b.map.width,
                     frametime: b.meta.animation.frametime ? b.meta.animation.frametime : 1,
                     frames: b.meta.animation.frames ? b.meta.animation.frames : []
@@ -230,6 +234,7 @@ export class BlockBuilder extends EventTarget {
             vm.#block(b.name);
         });
 
+        vm.fix();
     }
 
     fix() {

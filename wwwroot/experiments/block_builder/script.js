@@ -32,7 +32,6 @@ const animate = () => {
   renderer.render(scene, camera);
   stats.update();
   blocks.animate();
-  //console.log(camera.position);
 }
 
 init();
