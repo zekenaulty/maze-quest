@@ -2175,6 +2175,77 @@
     ]
   },
   {
+    "name": "grass_block",
+    "map": [
+      {
+        "name": "grass_block_side",
+        "type": "map",
+        "color": 13027014,
+        "opacity": 1,
+        "transparent": false,
+        "isAlt": false,
+        "file": "grass_block_side.png",
+        "width": 64,
+        "height": 64
+      },
+      {
+        "name": "grass_block_side",
+        "type": "map",
+        "color": 13027014,
+        "opacity": 1,
+        "transparent": false,
+        "isAlt": false,
+        "file": "grass_block_side.png",
+        "width": 64,
+        "height": 64
+      },
+      {
+        "name": "grass_block_top",
+        "type": "map",
+        "color": "green",
+        "opacity": 1,
+        "transparent": false,
+        "isAlt": false,
+        "file": "grass_block_top.png",
+        "width": 64,
+        "height": 64
+      },
+      {
+        "name": "dirt",
+        "type": "map",
+        "color": 13027014,
+        "opacity": 1,
+        "transparent": false,
+        "isAlt": false,
+        "file": "dirt.png",
+        "width": 64,
+        "height": 64
+      },
+      {
+        "name": "grass_block_side",
+        "type": "map",
+        "color": 13027014,
+        "opacity": 1,
+        "transparent": false,
+        "isAlt": false,
+        "file": "grass_block_side.png",
+        "width": 64,
+        "height": 64
+      },
+      {
+        "name": "grass_block_side",
+        "type": "map",
+        "color": 13027014,
+        "opacity": 1,
+        "transparent": false,
+        "isAlt": false,
+        "file": "grass_block_side.png",
+        "width": 64,
+        "height": 64
+      }
+    ]
+  },
+  {
     "name": "gilded_blackstone",
     "map": {
       "name": "gilded_blackstone",

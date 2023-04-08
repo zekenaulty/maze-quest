@@ -41,22 +41,6 @@ const locationWidth = 256;
 compassMap.width = '256';
 compassMap.height = '256';
 
-
-const newMap = document.createElement('canvas');
-const ctx = newMap.getContext('2d');
-const mapWidth = maze.columns * w * 16;
-const mapHeight = maze.rows * d * 16;
-newMap.width = mapWidth;
-newMap.height = mapHeight;
-newMap.style.width = 768 + 'px';
-newMap.style.height = 768 + 'px';
-newMap.style.top = '10px';
-newMap.style.left = '10px';
-newMap.style.position = 'fixed';
-newMap.style.zIndex = '50';
-newMap.style.display = 'none';
-document.body.appendChild(newMap);
-
 const scaler = new CanvasRectangleScaler(256, 256, 257);
 const maze = new Maze(scaler.rows, scaler.columns);
 const mazeRenderer = new CanvasRectangle(maze, scaler, mazeContext);
@@ -93,6 +77,20 @@ const body_g = new THREE.BoxGeometry(0.5, 2.5, 0.5);
 const body_m = new THREE.MeshBasicMaterial();
 const body = new THREE.Mesh(body_g, body_m);
 
+const newMap = document.createElement('canvas');
+const ctx = newMap.getContext('2d');
+const mapWidth = maze.columns * w * 16;
+const mapHeight = maze.rows * d * 16;
+newMap.width = mapWidth;
+newMap.height = mapHeight;
+newMap.style.width = 768 + 'px';
+newMap.style.height = 768 + 'px';
+newMap.style.top = '10px';
+newMap.style.left = '10px';
+newMap.style.position = 'fixed';
+newMap.style.zIndex = '50';
+newMap.style.display = 'none';
+document.body.appendChild(newMap);
 
 let roomz = [
     BasicRoom,
@@ -238,10 +236,12 @@ const init = () => {
     stats.domElement.style.top = '16px';
     stats.domElement.style.left = '';
     stats.domElement.style.right = '16px';
-    scene.add(turf);
     scene.add(body);
 
 }
+
+const mapRoomWidth = w * 16;
+const mapRoomDepth = d * 16;
 
 const animate = () => {
     requestAnimationFrame(animate);
@@ -255,25 +255,33 @@ const animate = () => {
     mapContext.save();
     mapContext.beginPath();
     mapContext.clearRect(0, 0, compassMap.width, compassMap.height);
-    mapContext.arc(centerMap, centerMap, 77, 0, 2 * Math.PI, false);
+    mapContext.arc(centerMap, centerMap, 76, 0, 2 * Math.PI, false);
     mapContext.clip();
-    mapContext.fillStyle = 'white';
-    mapContext.fillRect(0, 0, compassMap.width, compassMap.height);
-    let dx = 128 - (maze.active.column * cellSize + (cellSize / 2));
-    let dy = 128 - (maze.active.row * cellSize + (cellSize / 2));
-
+    //mapContext.fillStyle = 'white';
+    //mapContext.fillRect(0, 0, compassMap.width, compassMap.height);
+    let sx = (body.position.x * 16) - (mapRoomWidth / 2) + 8;
+    let sy = (body.position.z * 16) - (mapRoomDepth / 2) + 8;
+    console.log(`${sx}, ${sy}`);
     mapContext.drawImage(
-        mazeCanvas,
+        newMap,
+        sx,
+        sy,
+        mapRoomWidth,
+        mapRoomDepth,
         0,
         0,
-        256,
-        256,
-        dx,
-        dy,
         256,
         256
     );
+
     mapContext.restore();
+
+
+    mapContext.beginPath();
+    mapContext.fillStyle - 'blue';
+    mapContext.arc(128, 128, 8, 0, 2 * Math.PI);
+    mapContext.fill();
+    mapContext.closePath();
 
 }
 
@@ -663,3 +671,5 @@ setTimeout(() => {
 
 
 }, 500);
+
+console.log(scene);

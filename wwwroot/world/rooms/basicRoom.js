@@ -11,7 +11,7 @@ export class BasicRoom {
 
     booksBlock = 'bookshelf';
 
-    floorBlock = 'cobblestone_alt';
+    floorBlock = 'stone'; 'cobblestone_alt';
     wallBlock = 'stone_bricks_alt';
     doorFrameBlock = 'chiseled_stone_bricks_alt';
     cornerPostBlock = 'oak_log';
