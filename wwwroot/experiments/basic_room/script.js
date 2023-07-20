@@ -218,6 +218,7 @@ const init = () => {
     compassMap.style.top = `${window.innerHeight - compassSize - 14.5}px`;
     compassMap.style.width = `${compassSize}px`;
     compassMap.style.height = `${compassSize}px`;
+    compass.style.display = ``;
 
     location.style.top = `${window.innerHeight - 19}px`;
     location.style.width = `${locationWidth}px`;
@@ -234,7 +235,7 @@ const init = () => {
     document.body.appendChild(stats.dom);
     stats.domElement.style.position = 'fixed';
     stats.domElement.style.top = '16px';
-    stats.domElement.style.left = '';
+    stats.domElement.style.left = '33px';
     stats.domElement.style.right = '16px';
     scene.add(body);
 
@@ -278,7 +279,7 @@ const animate = () => {
 
 
     mapContext.beginPath();
-    mapContext.fillStyle - 'blue';
+    mapContext.fillStyle = 'blue';
     mapContext.arc(128, 128, 8, 0, 2 * Math.PI);
     mapContext.fill();
     mapContext.closePath();
@@ -670,6 +671,6 @@ setTimeout(() => {
     }
 
 
-}, 500);
+});
 
 console.log(scene);

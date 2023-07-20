@@ -1,0 +1,10 @@
+﻿@page
+@model MazeQuest.pages.BlocksModel
+@{
+    <p>@Model.root</p>
+    <p>@Model.blocks</p>
+    foreach(var @url in @Model.urls)
+    {
+        <img src="@url" title="@url" /><br />
+    }
+}
