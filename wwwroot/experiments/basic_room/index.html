@@ -102,54 +102,6 @@
             right: 10px;
         }
 
-        .n {
-            position: fixed;
-            top: 65px;
-            right: 10px;
-        }
-
-        .ne {
-            position: fixed;
-            top: 95px;
-            right: 10px;
-        }
-
-        .e {
-            position: fixed;
-            top: 125px;
-            right: 10px;
-        }
-
-        .se {
-            position: fixed;
-            top: 155px;
-            right: 10px;
-        }
-
-        .s {
-            position: fixed;
-            top: 185px;
-            right: 10px;
-        }
-
-        .sw {
-            position: fixed;
-            top: 215px;
-            right: 10px;
-        }
-
-        .w {
-            position: fixed;
-            top: 245px;
-            right: 10px;
-        }
-
-        .nw {
-            position: fixed;
-            top: 275px;
-            right: 10px;
-        }
-
         .output {
             position: fixed;
             z-index: 2;
@@ -215,7 +167,6 @@
             height: 256px;
             opacity: 1;
         }
-
     </style>
     <link rel="stylesheet" href="../../res/fa/all.min.css" />
     <link rel="stylesheet" href="../../res/cyborg.css" id="theme" />
@@ -240,8 +191,8 @@
         </div>
     </div>
 
-    <img src="../../assets/sprites/compass_bg.png" style="display:none;" class="compass" />
-    <div class="location">loading</div>
+    <img src="../../assets/sprites/compass_bg.png" class="compass" />
+    <div class="location"></div>
     <pre class="maze-text"></pre>
     <canvas class="compass-map"></canvas>
     <script type="module" src="./script.js"></script>
