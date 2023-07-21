@@ -234,7 +234,7 @@ const init = () => {
     document.body.appendChild(stats.dom);
     stats.domElement.style.position = 'fixed';
     stats.domElement.style.top = '16px';
-    stats.domElement.style.left = '';
+    stats.domElement.style.left = '16px';
     stats.domElement.style.right = '16px';
     scene.add(body);
 
