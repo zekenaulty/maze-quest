@@ -212,14 +212,14 @@ const init = () => {
         0.1,
         25
     );
-    compass.style.top = `${window.innerHeight - compassSize - 16}px`;
+    compass.style.top = `10px`;// `${window.innerHeight - compassSize - 16}px`;
     compass.style.width = `${compassSize}px`;
     compass.style.height = `${compassSize}px`;
-    compassMap.style.top = `${window.innerHeight - compassSize - 14.5}px`;
+    compassMap.style.top = `10px`;// `${window.innerHeight - compassSize - 14.5}px`;
     compassMap.style.width = `${compassSize}px`;
     compassMap.style.height = `${compassSize}px`;
 
-    location.style.top = `${window.innerHeight - 19}px`;
+    location.style.top = `0px`;// `${window.innerHeight - 19}px`;
     location.style.width = `${locationWidth}px`;
 
     camera.rotation.order = 'YXZ';
@@ -529,11 +529,11 @@ document.addEventListener('keydown', (e) => {
             look.down = true;
             break;
         case 'ArrowLeft':
-            //case 'q':
+            case 'q':
             look.left = true;
             break;
         case 'ArrowRight':
-            //case 'e':
+            case 'e':
             look.right = true;
             break;
     }
@@ -560,11 +560,11 @@ document.addEventListener('keyup', (e) => {
             look.down = false;
             break;
         case 'ArrowLeft':
-            //case 'q':
+            case 'q':
             look.left = false;
             break;
         case 'ArrowRight':
-            //case 'e':
+            case 'e':
             look.right = false;
             break;
         case 'm':
